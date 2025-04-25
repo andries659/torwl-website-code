@@ -47,20 +47,23 @@ export default function App() {
 
   return (
     <>
-      {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-black/30 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Site Name */}
-          <div className="text-white text-lg font-semibold">TOR-W: L</div>
+      {/* Floating Hamburger - Always top-right */}
+      <button
+        className="fixed top-4 right-4 z-50 text-white text-3xl lg:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
 
-          {/* Hamburger */}
-          <button
-            className="text-white text-2xl lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
+      {/* Header */}
+      <header
+        className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${
+          isOpen ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="text-white text-lg font-semibold">TOR-W: L</div>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex gap-6 font-bold">
@@ -72,8 +75,9 @@ export default function App() {
 
       {/* Mobile Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden`}
+        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:hidden`}
       >
         <button
           className="text-white text-2xl mb-4"
