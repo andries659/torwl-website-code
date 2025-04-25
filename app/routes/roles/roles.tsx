@@ -107,7 +107,7 @@ export default function Roles() {
           version="v1.0.0"
           alignment="Crewmate"
           description="Get clues from dead bodies."
-          howToUse="You can 'reaserch' a body to get clues. You can also see the footprints of other players when you press a button."
+          howToUse="You can 'research' a body to get clues. You can also see the footprints of other players when you press a button."
         />
         <RoleCard
           title="Gambler"
@@ -157,11 +157,39 @@ export default function Roles() {
         <h1 className="text-3xl font-bold text-white mb-6"><span style={{ color: "#ff4d4d" }}>Impostor</span> Roles</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <RoleCard
+            title="Burrower"
+            version="v1.0.0"
+            alignment="Impostor"
+            description="Can dig vents around the map."
+            howToUse="You are able to dig vents anywhere on the map."
+          />
+          <RoleCard
+            title="Hitman"
+            version="v1.0.0"
+            alignment="Impostor"
+            description="Can slow time down and kill."
+            howToUse="You are able to slow down the time and pick your targets."
+          />
+          <RoleCard
+            title="Janitor"
+            version="v1.0.0"
+            alignment="Impostor"
+            description="Can drag & hide bodies."
+            howToUse="You are able to drag around bodies around the map, and hide them in vents."
+          />
+          <RoleCard
+            title="Surgeon"
+            version="v1.0.0"
+            alignment="Impostor"
+            description="Poison the crew to win."
+            howToUse="You are able to inject players and kill them, and if you disect the body, it's unreportable."
+          />
+          <RoleCard
             title="Swapshifter"
             version="v1.0.0"
             alignment="Impostor"
-            description="Can instantly kill a target during the chaos phase."
-            howToUse="Pick off isolated players and avoid detection."
+            description="Switch people around."
+            howToUse="You are able to choose people to make them switch places, it also works with you."
           />
         </div>
       </div>
@@ -176,6 +204,20 @@ export default function Roles() {
             description="Must fool the crew."
             howToUse="Act suspicious to get ejected and win."
           />
+          <RoleCard
+            title="Traitor"
+            version="v1.0.0"
+            alignment="Neutral"
+            description="Betray the Impostors."
+            howToUse="You can see who your target it, and you must betray that Impostor to win."
+          />
+          <RoleCard
+            title="Reaper"
+            version="v1.0.0"
+            alignment="Neutral"
+            description="Collect the souls."
+            howToUse="Go around the map and collect souls from dead bodies."
+          />
         </div>
       </div>
 
@@ -188,6 +230,27 @@ export default function Roles() {
             alignment="Modifier"
             description="You're fast."
             howToUse="You're just a bit faster than the average player."
+          />
+          <RoleCard
+            title="Child"
+            version="v1.0.0"
+            alignment="Modifier"
+            description="You're small."
+            howToUse="You're just smaller than the average player."
+          />
+          <RoleCard
+            title="Giant"
+            version="v1.0.0"
+            alignment="Modifier"
+            description="You're BIG."
+            howToUse="You're bigger than the average player."
+          />
+          <RoleCard
+            title="VIP"
+            version="v1.0.0"
+            alignment="Modifier"
+            description="You're the VIP."
+            howToUse="You're just there to brag how cool you look."
           />
         </div>
       </div>
