@@ -1,5 +1,9 @@
 import { useState } from "react";
 import type { Route } from "./+types/roles";
+import Crewmate from '/app/routes/roles/crewmates.png';
+import Impostor from '/app/routes/roles/impostors.png';
+import Neutral from '/app/routes/roles/neutrals.png';
+import Modifier from '/app/routes/roles/modifiers.png';
 
 export function meta({ }: Route.MetaArgs) {
   return [{ title: "Roles" }];
@@ -8,7 +12,7 @@ export function meta({ }: Route.MetaArgs) {
 type RoleCardProps = {
   title: string;
   alignment: "Impostor" | "Crewmate" | "Neutral" | "Coven" | "Disease" | "Modifier";
-  version: "v1.0.0";
+  version: "v1.0.0" | "v1.1.0";
   description: string;
   howToUse: string;
 };
@@ -17,7 +21,8 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
   const [hovered, setHovered] = useState(false);
 
   const versionColor = {
-    "v1.0.0": "#0ee865",    // a hotpink-ish color, idk
+    "v1.0.0": "#0ee865",    // a green & mint mix
+    "v1.1.0": "#fc6b03",    // i really hope this doesnt clash with the bg ;-;
   }[version];
 
   const bgColor = {
@@ -26,7 +31,7 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
     Neutral: "#a0a0a0",     // gray
     Coven: "#c084fc",       // purple
     Disease: "#055c02",     // a disgusting green color
-    Modifier: "#c4c104",    //yellow-ish
+    Modifier: "#c4c104",    // yellow-ish
   }[alignment];
 
 
@@ -79,7 +84,7 @@ export default function Roles() {
       <p className="text-l text-white mb-6">The page dedicated to all the roles in the TOR-W: L mod</p>
 
       {/* Grid for RoleCards */}
-      <h1 className="text-3xl font-bold text-white mb-6"><span style={{ color: "#00d9ff" }}>Crewmate</span> Roles</h1>
+      <h1 className="text-3xl font-bold text-white mb-6"><img src={Crewmate} style={{ width: '45px', height: '45px', display: 'inline' }} /> <span style={{ color: "#00d9ff" }}>Crewmate</span> Roles</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <RoleCard
           title="Captain"
@@ -87,13 +92,6 @@ export default function Roles() {
           alignment="Crewmate"
           description="Zoom out and check on the crew."
           howToUse="You can zoom out for certain amount of time, and you can call meetings from anywhere."
-        />
-        <RoleCard
-          title="Chameleon"
-          version="v1.0.0"
-          alignment="Crewmate"
-          description="Turn invisible while not moving."
-          howToUse="Whenever you stand still, you go invisible. But as soon as you move again, you are visible."
         />
         <RoleCard
           title="Coroner"
@@ -146,15 +144,22 @@ export default function Roles() {
         />
         <RoleCard
           title="Teleporter"
-          version="v1.0.0"
+          version="v1.1.0"
           alignment="Crewmate"
           description="Teleport across the map."
           howToUse="You can zoom out to pick a place to teleport to."
         />
+        <RoleCard
+          title="Chameleon"
+          version="v1.1.0"
+          alignment="Crewmate"
+          description="Turn invisible while not moving."
+          howToUse="Whenever you stand still, you go invisible. But as soon as you move again, you are visible."
+        />
       </div>
 
       <div>
-        <h1 className="text-3xl font-bold text-white mb-6"><span style={{ color: "#ff4d4d" }}>Impostor</span> Roles</h1>
+        <h1 className="text-3xl font-bold text-white mb-6"><img src={Impostor} style={{ width: '45px', height: '45px', display: 'inline' }} /> <span style={{ color: "#ff4d4d" }}>Impostor</span> Roles</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <RoleCard
             title="Burrower"
@@ -195,7 +200,7 @@ export default function Roles() {
       </div>
 
       <div>
-        <h1 className="text-3xl font-bold text-white mb-6"><span style={{ color: "#a0a0a0" }}>Neutral</span> Roles</h1>
+        <h1 className="text-3xl font-bold text-white mb-6"><img src={Neutral} style={{ width: '45px', height: '45px', display: 'inline' }} /> <span style={{ color: "#a0a0a0" }}>Neutral</span> Roles</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <RoleCard
             title="Jester"
@@ -222,7 +227,7 @@ export default function Roles() {
       </div>
 
       <div>
-        <h1 className="text-3xl font-bold text-[#c4c104] mb-6">Modifiers</h1>
+        <h1 className="text-3xl font-bold text-[#c4c104] mb-6"><img src={Modifier} style={{ width: '45px', height: '45px', display: 'inline' }} /> Modifiers</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <RoleCard
             title="Flash"
