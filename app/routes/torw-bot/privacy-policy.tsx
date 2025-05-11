@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
   
           <h2 className="text-2xl text-purple-500 font-semibold">🗃️ Data Retention</h2>
           <p className="text-lg text-white text-justify">
-            We retain your information for as long as necessary to provide <b>Events Bot</b>’s services or as required by law. We will delete your information upon your request or when it is no longer needed.
+            We retain your information for as long as necessary to provide <b>TOR-W Bot</b>’s services or as required by law. We will delete your information upon your request or when it is no longer needed.
           </p>
   
           <h2 className="text-2xl text-purple-500 font-semibold">🔐 Data Security</h2>
