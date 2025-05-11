@@ -214,7 +214,7 @@ export default function Roles() {
             version="v1.0.0"
             alignment="Neutral"
             description="Betray the Impostors."
-            howToUse="You can see who your target it, and you must betray that Impostor to win."
+            howToUse="You can see who your target is, and you must betray that Impostor to win."
           />
           <RoleCard
             title="Reaper"
