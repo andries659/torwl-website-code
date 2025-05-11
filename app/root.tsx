@@ -62,8 +62,7 @@ export default function App() {
           <nav className="hidden lg:flex gap-6 font-bold">
             <a href="/" className="text-white hover:underline">Home</a>
             <a href="/roles" className="text-white hover:underline">Roles</a>
-            <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Contribute!</a>
-
+        
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -77,6 +76,20 @@ export default function App() {
                 </div>
               )}
             </div>
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                TOR-W Bot
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48">
+                  <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
+                  <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+                </div>
+              )}
+            </div>
+            <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Contribute!</a>
           </nav>
         </div>
       </header>
