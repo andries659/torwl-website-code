@@ -109,7 +109,6 @@ export default function App() {
         <nav className="flex flex-col gap-4 text-lg font-semibold">
           <a href="/" onClick={() => setIsOpen(false)}>Home</a>
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
-          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Contribute!</a>
 
           {/* Events Bot Section with Dropdown */}
           <div className="relative">
@@ -126,6 +125,21 @@ export default function App() {
               </div>
             )}
           </div>
+          <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle dropdown visibility
+            >
+              TOR-W Bot
+            </button>
+            {/* Dropdown Menu for Terms of Service and Privacy Policy */}
+            {isDropdownOpen && (
+              <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded">
+                <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
+                <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+              </div>
+            )}
+          </div>
+          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Contribute!</a>
         </nav>
       </aside>
 
