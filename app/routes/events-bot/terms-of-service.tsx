@@ -12,7 +12,7 @@ export default function TermsOfService() {
         <h1 style={{ color: "#32a860" }} className="text-4xl font-bold">📜 Terms of Service</h1>
         <header className="flex flex-col items-center gap-9"><br />
           <p className="text-lg text-white text-justify">
-            This Terms of Service Agreement (the <b>“Agreement”</b>) is entered into between <b>Anshul Chauhan</b> ("Bot Owner") and the user ("User") of the <b>[Bot Name]</b> Discord bot (the "Bot").
+            This Terms of Service Agreement (the <b>“Agreement”</b>) is entered into between <b>Andries (.angel_xd.)</b> ("Bot Owner") and the user ("User") of the <b>Events Bot</b> Discord bot (the "Bot").
           </p>
   
           <p className="text-lg text-white text-justify">
@@ -56,7 +56,7 @@ export default function TermsOfService() {
   
           <h2 style={{ color: "#32a860" }} className="text-2xl font-semibold">8. ⚖️ Governing Law</h2>
           <p className="text-lg text-white text-justify">
-            This Agreement is governed by the laws of <b>[Your country/state/province]</b>. Disputes shall be resolved through arbitration under the rules of <b>[Your arbitration provider]</b>.
+            This Agreement is governed by the laws of <b>Mpumalanga</b>. Disputes shall be resolved through arbitration under the rules of <b>[Your arbitration provider]</b>.
           </p>
   
           <h2 style={{ color: "#32a860" }} className="text-2xl font-semibold">9. 📘 Entire Agreement</h2>
