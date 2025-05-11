@@ -223,6 +223,13 @@ export default function Roles() {
             description="Collect the souls."
             howToUse="Go around the map and collect souls from dead bodies."
           />
+          <RoleCard
+            title="Executioner"
+            version="v1.1.0"
+            alignment="Neutral"
+            description="Vote your target to win."
+            howToUse="You can see your target with a Target tag. If you vote that player, you win the game."
+          />
         </div>
       </div>
 
