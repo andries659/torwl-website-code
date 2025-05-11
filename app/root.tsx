@@ -37,11 +37,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isEventsOpen, setIsEventsOpen] = useState(false);
+  const [isTorwOpen, setIsTorwOpen] = useState(false);
 
   return (
     <>
-      {/* Floating Hamburger - Always top-right */}
+      {/* Floating Hamburger - Mobile Only */}
       <button
         className="fixed top-4 right-4 z-50 text-white text-3xl lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
@@ -51,10 +52,7 @@ export default function App() {
       </button>
 
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"
-          }`}
-      >
+      <header className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="text-white text-lg font-semibold">TOR-W: L</div>
 
@@ -62,43 +60,34 @@ export default function App() {
           <nav className="hidden lg:flex gap-6 font-bold">
             <a href="/" className="text-white hover:underline">Home</a>
             <a href="/roles" className="text-white hover:underline">Roles</a>
-        
+
             <div className="relative">
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                Events Bot
-              </button>
-              {isDropdownOpen && (
+              <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
+              {isEventsOpen && (
                 <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48">
                   <a href="/events-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
                   <a href="/events-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
                 </div>
               )}
             </div>
+
             <div className="relative">
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                TOR-W Bot
-              </button>
-              {isDropdownOpen && (
+              <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
+              {isTorwOpen && (
                 <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48">
                   <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
                   <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
                 </div>
               )}
             </div>
+
             <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Contribute!</a>
           </nav>
         </div>
       </header>
 
       {/* Mobile Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden`}
-      >
+      <aside className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}>
         <button
           className="text-white text-2xl mb-4"
           onClick={() => setIsOpen(false)}
@@ -110,35 +99,26 @@ export default function App() {
           <a href="/" onClick={() => setIsOpen(false)}>Home</a>
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
 
-          {/* Events Bot Section with Dropdown */}
           <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle dropdown visibility
-            >
-              Events Bot
-            </button>
-            {/* Dropdown Menu for Terms of Service and Privacy Policy */}
-            {isDropdownOpen && (
-              <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded">
-                <a href="/events-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
-                <a href="/events-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+            <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
+            {isEventsOpen && (
+              <div className="mt-2 bg-gray-800 text-white py-2 px-4 rounded">
+                <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+                <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
               </div>
             )}
           </div>
+
           <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle dropdown visibility
-            >
-              TOR-W Bot
-            </button>
-            {/* Dropdown Menu for Terms of Service and Privacy Policy */}
-            {isDropdownOpen && (
-              <div className="absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded">
-                <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
-                <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+            <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
+            {isTorwOpen && (
+              <div className="mt-2 bg-gray-800 text-white py-2 px-4 rounded">
+                <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+                <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
               </div>
             )}
           </div>
+
           <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Contribute!</a>
         </nav>
       </aside>
