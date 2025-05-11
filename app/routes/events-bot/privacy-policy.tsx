@@ -2,7 +2,7 @@ import type { Route } from "./+types/privacy-policy";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "Privacy Policy" },
+    { title: "Events Bot - Privacy Policy" },
   ];
 }
 
