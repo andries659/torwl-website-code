@@ -56,7 +56,7 @@ export default function TermsOfService() {
   
           <h2 style={{ color: "#32a860" }} className="text-2xl font-semibold">8. ⚖️ Governing Law</h2>
           <p className="text-lg text-white text-justify">
-            This Agreement is governed by the laws of <b>Mpumalanga</b>. Disputes shall be resolved through arbitration under the rules of <b>[Your arbitration provider]</b>.
+            This Agreement is governed by the laws of <b>Mpumalanga</b>. Disputes shall be resolved through arbitration under the rules of <b>the Arbitration Foundation of Southern Africa (AFSA)</b>.
           </p>
   
           <h2 style={{ color: "#32a860" }} className="text-2xl font-semibold">9. 📘 Entire Agreement</h2>
