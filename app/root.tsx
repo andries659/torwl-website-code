@@ -81,7 +81,7 @@ export default function App() {
               )}
             </div>
 
-            <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Contribute!</a>
+            <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white underline">Contribute!</a>
           </nav>
         </div>
       </header>
@@ -119,7 +119,7 @@ export default function App() {
             )}
           </div>
 
-          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Contribute!</a>
+          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>Contribute!</a>
         </nav>
       </aside>
 
