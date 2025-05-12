@@ -123,7 +123,7 @@ export default function App() {
             )}
           </div>
 
-          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>Contribute!</a>
+          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>Contribute! <span class="material-symbols-outlined">open_in_new</span></a>
         </nav>
       </aside>
 
