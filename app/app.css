@@ -32,6 +32,7 @@ body {
     'FILL' 0,
     'wght' 400,
     'GRAD' 0,
-    'opsz' 24;
-  font-size: 32px; /* adjust this value as needed */
+    'opsz' 15;
+  font-size: 32px;
+  color: #ff0000; /* red */
 }
