@@ -100,24 +100,24 @@ export default function App() {
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
 
           <div className="relative">
-            <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
-            <div className={`mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform ${
-              isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-            }`}>
-              <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
-              <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
-            </div>
-          </div>
+  <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
+  <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${
+    isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+  }`}>
+    <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+    <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
+  </div>
+</div>
 
-          <div className="relative">
-            <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
-            <div className={`mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform ${
-              isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-            }`}>
-              <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
-              <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
-            </div>
-          </div>
+<div className="relative">
+  <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
+  <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${
+    isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+  }`}>
+    <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+    <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
+  </div>
+</div>
 
           <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>
             Contribute! <span className="material-symbols-outlined">open_in_new</span>
