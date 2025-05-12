@@ -8,7 +8,7 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function PrivacyPolicy() {
     return (
-      <div className="privacy-page text-center min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <div className="text-center">
         <h1 className="text-4xl text-purple-500 font-bold">🔒 Privacy Policy for TOR-W Bot</h1>
         <header className="flex flex-col items-center gap-9"><br />
           <h2 className="text-2xl text-purple-500 font-semibold">📄 Introduction</h2>
