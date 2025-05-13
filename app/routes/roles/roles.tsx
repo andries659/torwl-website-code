@@ -52,7 +52,7 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
         backgroundColor: hovered ? `${bgColor}33` : `${bgColor}1A`,
       }}
     >
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-start mb-2">
         <div>
           <h2 className="text-xl font-semibold text-white">{title}</h2>
           <span
@@ -66,7 +66,7 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
           </span>
         </div>
         <span
-          className="text-sm font-bold"
+          className="text-sm font-bold mt-1"
           style={{ color: alignmentColor }}
         >
           {alignment}
