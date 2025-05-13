@@ -1,4 +1,11 @@
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "react-router";
 import { useState } from "react";
 
 import type { Route } from "./+types/root";
@@ -16,8 +23,8 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
   {
-  rel: "stylesheet",
-  href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined",
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined",
   },
 ];
 
@@ -44,6 +51,41 @@ export default function App() {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isTorwOpen, setIsTorwOpen] = useState(false);
 
+  const closeMenu = () => setIsOpen(false);
+
+  const Dropdown = ({
+    label,
+    isOpen,
+    toggle,
+    links,
+  }: {
+    label: string;
+    isOpen: boolean;
+    toggle: () => void;
+    links: { href: string; text: string }[];
+  }) => (
+    <div className="relative">
+      <button onClick={toggle}>{label}</button>
+      <div
+        className={`absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48 transition-all duration-300 ease-in-out transform ${isOpen
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+          }`}
+      >
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="block py-1 hover:underline"
+            onClick={closeMenu}
+          >
+            {link.text}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <>
       <button
@@ -54,73 +96,124 @@ export default function App() {
         ☰
       </button>
 
-      <header className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"}`}>
+      <header
+        className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"
+          }`}
+      >
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="text-white text-lg font-semibold">TOR-W: L</div>
-
           <nav className="hidden lg:flex gap-6 font-bold">
-            <a href="/" className="text-white hover:underline">Home</a>
-            <a href="/roles" className="text-white hover:underline">Roles</a>
+            <a href="/" className="text-white hover:underline">
+              Home
+            </a>
+            <a href="/roles" className="text-white hover:underline">
+              Roles
+            </a>
 
-            <div className="relative">
-              <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
-              <div className={`absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48 transition-all duration-300 ease-in-out transform ${
-                isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-              }`}>
-                <a href="/events-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
-                <a href="/events-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
-              </div>
-            </div>
+            <Dropdown
+              label="Events Bot"
+              isOpen={isEventsOpen}
+              toggle={() => setIsEventsOpen(!isEventsOpen)}
+              links={[
+                {
+                  href: "/events-bot/terms-of-service",
+                  text: "Terms of Service",
+                },
+                {
+                  href: "/events-bot/privacy-policy",
+                  text: "Privacy Policy",
+                },
+              ]}
+            />
 
-            <div className="relative">
-              <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
-              <div className={`absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48 transition-all duration-300 ease-in-out transform ${
-                isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-              }`}>
-                <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
-                <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
-              </div>
-            </div>
+            <Dropdown
+              label="TOR-W Bot"
+              isOpen={isTorwOpen}
+              toggle={() => setIsTorwOpen(!isTorwOpen)}
+              links={[
+                {
+                  href: "/torw-bot/terms-of-service",
+                  text: "Terms of Service",
+                },
+                {
+                  href: "/torw-bot/privacy-policy",
+                  text: "Privacy Policy",
+                },
+              ]}
+            />
 
-            <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="text-white underline">Contribute!</a>
+            <a
+              href="https://github.com/andries659/test-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline"
+            >
+              Contribute!
+            </a>
           </nav>
         </div>
       </header>
 
-      <aside className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}>
+      <aside
+        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
+          } lg:hidden`}
+      >
         <button
           className="text-white text-2xl mb-4"
-          onClick={() => setIsOpen(false)}
+          onClick={closeMenu}
           aria-label="Close menu"
         >
           ✕
         </button>
         <nav className="flex flex-col gap-4 text-lg font-semibold">
-          <a href="/" onClick={() => setIsOpen(false)}>Home</a>
-          <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
+          <a href="/" onClick={closeMenu}>
+            Home
+          </a>
+          <a href="/roles" onClick={closeMenu}>
+            Roles
+          </a>
 
-          <div className="relative">
-  <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
-  <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${
-    isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-  }`}>
-    <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
-    <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
-  </div>
-</div>
+          <Dropdown
+            label="Events Bot"
+            isOpen={isEventsOpen}
+            toggle={() => setIsEventsOpen(!isEventsOpen)}
+            links={[
+              {
+                href: "/events-bot/terms-of-service",
+                text: "Terms of Service",
+              },
+              {
+                href: "/events-bot/privacy-policy",
+                text: "Privacy Policy",
+              },
+            ]}
+          />
 
-<div className="relative">
-  <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
-  <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${
-    isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-  }`}>
-    <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
-    <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
-  </div>
-</div>
+          <Dropdown
+            label="TOR-W Bot"
+            isOpen={isTorwOpen}
+            toggle={() => setIsTorwOpen(!isTorwOpen)}
+            links={[
+              {
+                href: "/torw-bot/terms-of-service",
+                text: "Terms of Service",
+              },
+              {
+                href: "/torw-bot/privacy-policy",
+                text: "Privacy Policy",
+              },
+            ]}
+          />
 
-          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>
-            Contribute! <span className="material-symbols-outlined">open_in_new</span>
+          <a
+            href="https://github.com/andries659/test-website"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+            onClick={closeMenu}
+          >
+            Contribute!{" "}
+            <span className="material-symbols-outlined">open_in_new</span>
           </a>
         </nav>
       </aside>
@@ -143,7 +236,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The requested page could not be found."
         : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
+  } else if (import.meta.env.DEV && error instanceof Error) {
     details = error.message;
     stack = error.stack;
   }
