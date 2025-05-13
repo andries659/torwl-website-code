@@ -21,8 +21,8 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
   const [hovered, setHovered] = useState(false);
 
   const versionColor = {
-    "v1.0.0": "#0ee865",    // a green & mint mix
-    "v1.1.0": "#fc6b03",    // i really hope this doesnt clash with the bg ;-;
+    "v1.0.0": "#0ee865",    // green & mint mix
+    "v1.1.0": "#fc6b03",    // orange
   }[version];
 
   const bgColor = {
@@ -30,21 +30,18 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
     Crewmate: "#00d9ff",    // cyan
     Neutral: "#a0a0a0",     // gray
     Coven: "#c084fc",       // purple
-    Disease: "#055c02",     // a disgusting green color
-    Modifier: "#c4c104",    // yellow-ish
+    Disease: "#055c02",     // green
+    Modifier: "#c4c104",    // yellow
   }[alignment];
-
 
   const alignmentColor = {
-    Impostor: "#ff4d4d",    // Red
-    Crewmate: "#00d9ff",    // A Cyan Shade, IDK
-    Neutral: "#828282",     // Gray
-    Coven: "#c084fc",       // Purple
-    Disease: "#055c02",     // a disgusting green color
-    Modifier: "#c4c104",    // yellow-ish
+    Impostor: "#ff4d4d",
+    Crewmate: "#00d9ff",
+    Neutral: "#828282",
+    Coven: "#c084fc",
+    Disease: "#055c02",
+    Modifier: "#c4c104",
   }[alignment];
-
-
 
   return (
     <div
@@ -52,22 +49,27 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
       onMouseLeave={() => setHovered(false)}
       className="border border-white/5 rounded-lg p-6 shadow-md w-full sm:w-[95%] mx-auto mb-6 opacity-80 hover:opacity-100 hover:-translate-y-1 transition-all duration-300 transform"
       style={{
-        backgroundColor: hovered ? `${bgColor}33` : `${bgColor}1A`, // Light blur + dynamic BG
+        backgroundColor: hovered ? `${bgColor}33` : `${bgColor}1A`,
       }}
     >
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-xl font-semibold text-white">{title}</h2>
+        <div>
+          <h2 className="text-xl font-semibold text-white">{title}</h2>
+          <span
+            className="inline-block mt-1 px-2 py-0.5 text-xs font-bold rounded-full"
+            style={{
+              backgroundColor: versionColor,
+              color: "#000000",
+            }}
+          >
+            {version}
+          </span>
+        </div>
         <span
           className="text-sm font-bold"
           style={{ color: alignmentColor }}
         >
           {alignment}
-        </span>
-        <span
-          className="text-sm font-bold"
-          style={{ color: versionColor }}
-        >
-          {version}
         </span>
       </div>
       <p className="text-sm text-gray-300 mb-4">{description}</p>
