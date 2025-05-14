@@ -1,11 +1,4 @@
-import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import { useState } from "react";
 
 import type { Route } from "./+types/root";
@@ -51,43 +44,9 @@ export default function App() {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isTorwOpen, setIsTorwOpen] = useState(false);
 
-  const closeMenu = () => setIsOpen(false);
-
-  const Dropdown = ({
-    label,
-    isOpen,
-    toggle,
-    links,
-  }: {
-    label: string;
-    isOpen: boolean;
-    toggle: () => void;
-    links: { href: string; text: string }[];
-  }) => (
-    <div className="relative">
-      <button onClick={toggle}>{label}</button>
-      <div
-        className={`absolute left-0 top-full mt-2 bg-gray-800 text-white py-2 px-4 rounded shadow-md z-50 w-48 transition-all duration-300 ease-in-out transform ${isOpen
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
-          }`}
-      >
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="block py-1 hover:underline"
-            onClick={closeMenu}
-          >
-            {link.text}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <>
+      {/* Mobile hamburger button */}
       <button
         className="fixed top-4 right-4 z-50 text-white text-3xl lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
@@ -96,129 +55,84 @@ export default function App() {
         ☰
       </button>
 
+      {/* Desktop Left Sidebar */}
+      <aside className="hidden lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-64 lg:bg-gray-900 lg:text-white lg:p-6 lg:flex lg:flex-col lg:gap-4 z-40">
+        <div className="text-xl font-bold mb-4">TOR-W: L</div>
+
+        <a href="/" className="hover:underline font-bold">Home</a>
+        <a href="/roles" className="hover:underline font-bold">Roles</a>
+
+        <div className="relative font-bold">
+          <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
+          <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
+            <a href="/events-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
+            <a href="/events-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div className="relative font-bold">
+          <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
+          <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
+            <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
+            <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
+          </div>
+        </div>
+
+        <a
+          href="https://github.com/andries659/test-website"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline font-bold"
+        >
+          Contribute! <span className="material-symbols-outlined">open_in_new</span>
+        </a>
+      </aside>
+
+      {/* Top header for desktop and mobile */}
       <header
-        className={`fixed top-0 left-0 w-full z-40 backdrop-blur bg-black/30 border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"
+        className={`fixed top-0 left-0 right-0 z-30 h-16 px-6 flex items-center bg-black/30 backdrop-blur border-b border-white/10 transition-transform duration-300 ease-in-out ${isOpen ? "-translate-y-full" : "translate-y-0"
           }`}
       >
-        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="text-white text-lg font-semibold">TOR-W: L</div>
-          <nav className="hidden lg:flex gap-6 font-bold">
-            <a href="/" className="text-white hover:underline">
-              Home
-            </a>
-            <a href="/roles" className="text-white hover:underline">
-              Roles
-            </a>
-
-            <Dropdown
-              label="Events Bot"
-              isOpen={isEventsOpen}
-              toggle={() => setIsEventsOpen(!isEventsOpen)}
-              links={[
-                {
-                  href: "/events-bot/terms-of-service",
-                  text: "Terms of Service",
-                },
-                {
-                  href: "/events-bot/privacy-policy",
-                  text: "Privacy Policy",
-                },
-              ]}
-            />
-
-            <Dropdown
-              label="TOR-W Bot"
-              isOpen={isTorwOpen}
-              toggle={() => setIsTorwOpen(!isTorwOpen)}
-              links={[
-                {
-                  href: "/torw-bot/terms-of-service",
-                  text: "Terms of Service",
-                },
-                {
-                  href: "/torw-bot/privacy-policy",
-                  text: "Privacy Policy",
-                },
-              ]}
-            />
-
-            <a
-              href="https://github.com/andries659/test-website"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white underline"
-            >
-              Contribute!
-            </a>
-          </nav>
-        </div>
+        <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
       </header>
 
-      <aside
-        className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-40 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden`}
-      >
+      {/* Mobile Sidebar Drawer */}
+      <aside className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-50 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}>
         <button
           className="text-white text-2xl mb-4"
-          onClick={closeMenu}
+          onClick={() => setIsOpen(false)}
           aria-label="Close menu"
         >
           ✕
         </button>
         <nav className="flex flex-col gap-4 text-lg font-semibold">
-          <a href="/" onClick={closeMenu}>
-            Home
-          </a>
-          <a href="/roles" onClick={closeMenu}>
-            Roles
-          </a>
+          <a href="/" onClick={() => setIsOpen(false)}>Home</a>
+          <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
 
-          <Dropdown
-            label="Events Bot"
-            isOpen={isEventsOpen}
-            toggle={() => setIsEventsOpen(!isEventsOpen)}
-            links={[
-              {
-                href: "/events-bot/terms-of-service",
-                text: "Terms of Service",
-              },
-              {
-                href: "/events-bot/privacy-policy",
-                text: "Privacy Policy",
-              },
-            ]}
-          />
+          <div className="relative">
+            <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot</button>
+            <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
+              <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+              <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
+            </div>
+          </div>
 
-          <Dropdown
-            label="TOR-W Bot"
-            isOpen={isTorwOpen}
-            toggle={() => setIsTorwOpen(!isTorwOpen)}
-            links={[
-              {
-                href: "/torw-bot/terms-of-service",
-                text: "Terms of Service",
-              },
-              {
-                href: "/torw-bot/privacy-policy",
-                text: "Privacy Policy",
-              },
-            ]}
-          />
+          <div className="relative">
+            <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot</button>
+            <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
+              <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
+              <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
+            </div>
+          </div>
 
-          <a
-            href="https://github.com/andries659/test-website"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-            onClick={closeMenu}
-          >
-            Contribute!{" "}
-            <span className="material-symbols-outlined">open_in_new</span>
+          <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>
+            Contribute! <span className="material-symbols-outlined">open_in_new</span>
           </a>
         </nav>
       </aside>
 
-      <main className="pt-20 px-6">
+      {/* Main content */}
+      <main className="pt-20 px-6 lg:pt-16 lg:ml-64">
         <Outlet />
       </main>
     </>
@@ -236,7 +150,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The requested page could not be found."
         : error.statusText || details;
-  } else if (import.meta.env.DEV && error instanceof Error) {
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
   }
