@@ -10,8 +10,8 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return (
     <div className="text-center">
+      <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1><br></br>
       <img src={Logo} alt="TOR-W Logo" className="mx-auto my-6 w-128 h-auto" />
-      <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
       <header className="flex flex-col items-center gap-9"><br></br>
         <a href="https://discord.com/invite/HczqtuBfcu" target="_blank"><img src="https://dcbadge.limes.pink/api/server/HczqtuBfcu" /></a>
         <h2 className="text-2xl text-yellow-500 font-semibold">❔ About Us</h2>
