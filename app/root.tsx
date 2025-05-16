@@ -63,7 +63,7 @@ export default function App() {
         <a href="/roles" className="hover:underline font-bold">Roles</a>
 
         <div className="relative font-bold">
-          <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined-drop">arrow_drop_down</span></button>
+          <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
           <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
             <a href="/events-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
             <a href="/events-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
@@ -71,7 +71,7 @@ export default function App() {
         </div>
 
         <div className="relative font-bold">
-          <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot <span className="material-symbols-outlined-drop">arrow_drop_down</span></button>
+          <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
           <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
             <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline">Terms of Service</a>
             <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
@@ -110,7 +110,7 @@ export default function App() {
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
 
           <div className="relative">
-            <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined-drop">arrow_drop_down</span></button>
+            <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
             <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isEventsOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
               <a href="/events-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
               <a href="/events-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
@@ -118,7 +118,7 @@ export default function App() {
           </div>
 
           <div className="relative">
-            <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot <span className="material-symbols-outlined-drop">arrow_drop_down</span></button>
+            <button onClick={() => setIsTorwOpen(!isTorwOpen)}>TOR-W Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
             <div className={`absolute left-0 mt-2 bg-gray-800 text-white py-2 px-4 rounded transition-all duration-300 ease-in-out transform z-50 w-48 ${isTorwOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"}`}>
               <a href="/torw-bot/terms-of-service" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Terms of Service</a>
               <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
