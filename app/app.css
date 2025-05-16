@@ -4,7 +4,7 @@
 
 html,
 body {
-  background: linear-gradient(to bottom, #000080, #1b1b1b);
+  background: linear-gradient(to bottom, #6b6b6b, #242424);
   color: #000000;
 
   @media (prefers-color-scheme: dark) {
