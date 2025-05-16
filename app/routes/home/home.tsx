@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import Logo from '/app/routes/home/logo.png';
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -9,6 +10,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return (
     <div className="text-center">
+      <img src={Logo} alt="TOR-W Logo" className="mx-auto my-6 w-32 h-auto" />
       <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
       <header className="flex flex-col items-center gap-9"><br></br>
         <a href="https://discord.com/invite/HczqtuBfcu" target="_blank"><img src="https://dcbadge.limes.pink/api/server/HczqtuBfcu" /></a>
