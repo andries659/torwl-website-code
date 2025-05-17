@@ -56,10 +56,10 @@ const roadmapItems = [
 export default function Roadmap() {
   return (
     <main className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold">Project Roadmap</h1>
+      <h1 className="text-3xl font-bold text-gray-900">Project Roadmap</h1>
 
       <section>
-        <h2 className="text-xl font-semibold mb-2">Tag Legend</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">Tag Legend</h2>
         <div className="flex flex-wrap gap-4">
           {Object.entries(tagColors).map(([label, color]) => (
             <div key={label} className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function Roadmap() {
             key={index}
             className={`p-4 rounded shadow ${statusColors[item.status] || "bg-gray-200"}`}
           >
-            <div className="text-xl font-semibold">{item.title}</div>
+            <div className="text-xl font-semibold text-gray-900">{item.title}</div>
             <div className="text-gray-700 italic mb-1">Status: {item.status}</div>
             <div className="text-gray-800 mb-2">{item.description}</div>
             <div className="flex gap-2 flex-wrap">
