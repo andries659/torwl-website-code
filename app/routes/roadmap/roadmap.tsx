@@ -30,34 +30,10 @@ const statusColors: Record<string, string> = {
 
 const roadmapItems = [
   {
-    title: "Core game logic",
-    status: "Completed",
-    description: "All core systems are implemented and stable.",
-    tags: ["Done!"],
-  },
-  {
-    title: "Role system",
+    title: "Translations",
     status: "In Progress",
     description: "Implementing modular custom roles.",
     tags: ["In The Works", "Unstable"],
-  },
-  {
-    title: "UI redesign",
-    status: "Planned",
-    description: "Revamping the interface for a cleaner look.",
-    tags: ["Unfinished"],
-  },
-  {
-    title: "Multiplayer sync",
-    status: "Bugged",
-    description: "Players are occasionally desynced in matches.",
-    tags: ["Bugged", "Unstable"],
-  },
-  {
-    title: "Settings menu",
-    status: "In Progress",
-    description: "Custom configuration support in progress.",
-    tags: ["Almost Done!"],
   },
 ];
 
