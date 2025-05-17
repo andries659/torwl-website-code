@@ -31,9 +31,15 @@ const statusColors: Record<string, string> = {
 const roadmapItems = [
   {
     title: "Translations",
-    status: "In Progress",
-    description: "Implementing modular custom roles.",
+    status: "Planned",
+    description: "Maming translations per language set in the game, such as Español and Français.",
     tags: ["In The Works", "Unfinished"],
+  },
+  {
+    title: "Roles",
+    status: "Planned",
+    description: <>Add new roles for v1.2.0, which starts introducing <span style={{ color: "#a855f7" }}>Coven</span> Roles.</>,
+    tags: ["In The Works", "Almost Done!"],
   },
 ];
 
