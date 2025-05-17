@@ -22,10 +22,10 @@ const statusMap: Record<string, string> = {
 };
 
 const statusColors: Record<string, string> = {
-  "🎉│Done": "bg-green-400",
-  "💡│Doing": "bg-yellow-400",
-  "🐛│Bug Fixes": "bg-red-400",
-  "🗂️│To Do": "bg-blue-400",
+  "🎉│Done": "bg-green-300",
+  "💡│Doing": "bg-yellow-300",
+  "🐛│Bug Fixes": "bg-red-300",
+  "🗂️│To Do": "bg-blue-300",
 };
 
 const roadmapItems = [
