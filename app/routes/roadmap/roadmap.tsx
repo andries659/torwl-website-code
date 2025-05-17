@@ -14,10 +14,10 @@ const tagColors: Record<string, string> = {
 };
 
 const statusColors: Record<string, string> = {
-  Completed: "bg-green-200",
-  "In Progress": "bg-yellow-200",
-  Bugged: "bg-red-200",
-  Planned: "bg-blue-200",
+  "🎉│Done": "bg-green-400",
+  "💡│Doing": "bg-yellow-400",
+  "🐛│Bug Fixes": "bg-red-400",
+  "🗂️│To Do": "bg-blue-400",
 };
 
 const roadmapItems = [
