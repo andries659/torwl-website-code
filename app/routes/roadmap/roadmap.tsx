@@ -41,6 +41,18 @@ const roadmapItems = [
     description: <>Add new roles for v1.2.0, which starts introducing <span style={{ color: "#a855f7" }}>Coven</span> Roles.</>,
     tags: ["In The Works", "Almost Done!"],
   },
+  {
+    title: "Hacker - bugged; can't unhack nodes",
+    status: "Bugged",
+    description: "Whenever the hacker 'Hacks' the crew, the crew is unable to unhack any of the nodes",
+    tags: ["Bugged", "Unstable"],
+  },
+  {
+    title: "Giant - bugged; can't climb up ladders",
+    status: "Bugged",
+    description: "Whenever with the Giant modifier, the player get's pushed off of the ladders, into the out of bounds section of the map",
+    tags: ["Bugged", "Unstable"],
+  },
 ];
 
 export default function Roadmap() {
