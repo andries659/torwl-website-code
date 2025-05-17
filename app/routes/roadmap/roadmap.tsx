@@ -13,9 +13,17 @@ const tagColors: Record<string, string> = {
   "Almost Done!": "bg-purple-500",
 };
 
+// Map basic statuses to emoji-prefixed versions
+const statusMap: Record<string, string> = {
+  Completed: "🎉│Done",
+  "In Progress": "💡│Doing",
+  Bugged: "🐛│Bug Fixes",
+  Planned: "🗂️│To Do",
+};
+
 const statusColors: Record<string, string> = {
-  🎉│Done: "bg-green-400",
-  💡│Doing: "bg-yellow-400",
+  "🎉│Done": "bg-green-400",
+  "💡│Doing": "bg-yellow-400",
   "🐛│Bug Fixes": "bg-red-400",
   "🗂️│To Do": "bg-blue-400",
 };
@@ -71,26 +79,28 @@ export default function Roadmap() {
       </section>
 
       <ul className="space-y-4">
-        {roadmapItems.map((item, index) => (
-          <li
-            key={index}
-            className={`p-4 rounded shadow ${statusColors[item.status] || "bg-gray-200"}`}
-          >
-            <div className="text-xl font-semibold text-gray-900">{item.title}</div>
-            <div className="text-gray-700 italic mb-1">Status: {item.status}</div>
-            <div className="text-gray-800 mb-2">{item.description}</div>
-            <div className="flex gap-2 flex-wrap">
-              {item.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className={`w-3 h-3 rounded-full ${tagColors[tag]}`}
-                  title={tag}
-                ></span>
-              ))}
-            </div>
-          </li>
-        ))}
+        {roadmapItems.map((item, index) => {
+          const displayStatus = statusMap[item.status] || item.status;
+          const bgColor = statusColors[displayStatus] || "bg-gray-200";
+
+          return (
+            <li key={index} className={`p-4 rounded shadow ${bgColor}`}>
+              <div className="text-xl font-semibold text-gray-900">{item.title}</div>
+              <div className="text-gray-700 italic mb-1">Status: {displayStatus}</div>
+              <div className="text-gray-800 mb-2">{item.description}</div>
+              <div className="flex gap-2 flex-wrap">
+                {item.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`w-3 h-3 rounded-full ${tagColors[tag]}`}
+                    title={tag}
+                  ></span>
+                ))}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </main>
   );
-}
+                                                                  }
