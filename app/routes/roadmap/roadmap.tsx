@@ -33,7 +33,7 @@ const roadmapItems = [
     title: "Translations",
     status: "In Progress",
     description: "Implementing modular custom roles.",
-    tags: ["In The Works", "Unstable"],
+    tags: ["In The Works", "Unfinished"],
   },
 ];
 
