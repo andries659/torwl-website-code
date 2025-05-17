@@ -61,6 +61,7 @@ export default function App() {
 
         <a href="/" className="hover:underline font-bold">Home</a>
         <a href="/roles" className="hover:underline font-bold">Roles</a>
+        <a href="/roadmap" className="hover:underline font-bold">Roadmap</a>
 
         <div className="relative font-bold">
           <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
@@ -108,6 +109,7 @@ export default function App() {
         <nav className="flex flex-col gap-4 text-lg font-semibold">
           <a href="/" onClick={() => setIsOpen(false)}>Home</a>
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
+          <a href="/roadmap" onClick={() => setIsOpen(false)}}>Roadmap</a>
 
           <div className="relative">
             <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
