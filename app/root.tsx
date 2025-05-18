@@ -1,5 +1,5 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -43,6 +43,26 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isTorwOpen, setIsTorwOpen] = useState(false);
+
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark" || window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark(prev => !prev);
 
   return (
     <>
@@ -95,6 +115,16 @@ export default function App() {
           }`}
       >
         <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
+      </header>
+
+      {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle dark mode"
+          className="text-white text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition"
+        >
+          {isDark ? "Light Mode" : "Dark Mode"}
+        </button>
       </header>
 
       {/* Mobile Sidebar Drawer */}
