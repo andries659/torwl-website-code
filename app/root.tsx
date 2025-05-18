@@ -115,7 +115,6 @@ export default function App() {
           }`}
       >
         <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
-      </header>
 
       {/* Dark Mode Toggle Button */}
         <button
