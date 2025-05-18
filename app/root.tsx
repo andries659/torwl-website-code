@@ -118,12 +118,18 @@ export default function App() {
 
       {/* Dark Mode Toggle Button */}
         <button
-          onClick={toggleTheme}
-          aria-label="Toggle dark mode"
-          className="text-white text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition"
-        >
-          {isDark ? "Light Mode" : "Dark Mode"}
-        </button>
+  onClick={toggleTheme}
+  aria-label="Toggle dark mode"
+  className="toggle-theme-btn text-white text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-black relative overflow-hidden"
+>
+  <span className={`icon sun-icon ${!isDark ? "visible" : "hidden"}`} aria-hidden="true">
+    ☀️
+  </span>
+  <span className={`icon moon-icon ${isDark ? "visible" : "hidden"}`} aria-hidden="true">
+    🌙
+  </span>
+  <span className="sr-only">{isDark ? "Switch to light mode" : "Switch to dark mode"}</span>
+</button>
       </header>
 
       {/* Mobile Sidebar Drawer */}
