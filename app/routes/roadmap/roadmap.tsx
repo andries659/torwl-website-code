@@ -65,42 +65,37 @@ const plannedRoles = [
   {
     name: "Dark Fairy",
     team: "Coven",
-    description: "N/A",
+    description: "Darken players to add them to your team. If you lose, the darkened players lose as well, and the same for winning.",
   },
   {
     name: "Mimic",
     team: "Neutral",
-    description: "N/A",
-  },
-  {
-    name: "Collector",
-    team: "Neutral",
-    description: "N/A",
+    description: "You can vote someone to kill them and take their place.",
   },
   {
     name: "Survivor",
     team: "Neutral",
-    description: "N/A",
+    description: "Stay alive to win, that's all.",
   },
   {
     name: "Puppeteer",
     team: "Impostor",
-    description: "N/A",
+    description: "Controll other players and let them kill for you.",
   },
   {
-    name: "Torch",
+    name: "Glow",
     team: "Modifier",
-    description: "N/A",
+    description: "You give off light when lights are down.",
   },
   {
     name: "Bait",
     team: "Modifier",
-    description: "N/A",
+    description: "Make your killer self-report.",
   },
   {
     name: "Burst",
     team: "Modifier",
-    description: "N/A",
+    description: "You kill other players in your radius when you die.",
   },
 ];
 
@@ -155,14 +150,23 @@ export default function Roadmap() {
             >
               <div
                 className="bg-black p-6 rounded-xl text-white h-full relative 
-                   hover:shadow-[0_0_15px_rgba(225,225,225,1)] 
-                   hover:-translate-y-1 active:-translate-y-1 
-                   transition duration-200 ease-in-out"
+                           hover:shadow-[0_0_15px_rgba(225,225,225,1)] 
+                           hover:-translate-y-1 active:-translate-y-1 
+                           transition duration-200 ease-in-out"
               >
-                {/* NEW! tag */}
-                <div className="absolute top-2 right-2 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded">
-                  NEW!
+                {/* ROLE / MODIFIER tag */}
+                <div className="absolute top-2 right-2">
+                  {role.team === "Modifier" ? (
+                    <span className="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">
+                      MODIFIER
+                    </span>
+                  ) : (
+                    <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">
+                      ROLE
+                    </span>
+                  )}
                 </div>
+
                 {/* Content */}
                 <h3 className="text-xl font-bold mb-2">{role.name}</h3>
                 <p className="italic text-sm mb-1">Team: {role.team}</p>
