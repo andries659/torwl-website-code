@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import { useState } from "react";
-import Logo from '/app/routes/home/logo.png';
+import logo from './logo.png'; // Updated path if local, adjust as needed
+import { Filter } from "bad-words";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -17,19 +18,26 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-  
+
+    const filter = new Filter();
+    if (filter.isProfane(message)) {
+      setStatus("error");
+      alert("⚠️ Your feedback contains inappropriate language.");
+      return;
+    }
+
     try {
-      const webhookUrl = "https://discord.com/api/webhooks/1373591931115802654/hqidEdHPb5EAA64RDr5VpiH8b1cwSfrODdEygsSsiV0d0FWIGc0Wl7DnJ6wIYuYecMNL"; // 🔧 Replace with your webhook
+      const webhookUrl = "https://discord.com/api/webhooks/1373591931115802654/hqidEdHPb5EAA64RDr5VpiH8b1cwSfrODdEygsSsiV0d0FWIGc0Wl7DnJ6wIYuYecMNL"; // 🔒 Don't expose real webhook URLs in frontend
       const payload = {
         content: `📥 **New Feedback Received**\n\n**User:** ${username}\n**Type:** ${feedbackType}\n**Message:**\n${message}`
       };
-  
+
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
-  
+
       if (response.ok) {
         setStatus("sent");
         setUsername("");
@@ -47,12 +55,14 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-10">
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
         <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
-        <img src={Logo} alt="TOR-W Logo" className="mx-auto my-6 w-70 h-auto" />
+        <img src={logo} alt="TOR-W Logo" className="mx-auto my-6 w-70 h-auto" />
+
         <header className="flex flex-col items-center gap-9">
           <a href="https://discord.com/invite/HczqtuBfcu" target="_blank" rel="noopener noreferrer">
             <img src="https://dcbadge.limes.pink/api/server/HczqtuBfcu" alt="Discord Server Badge" />
           </a>
 
+          {/* About */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">❔ About Us</h2>
             <p className="text-lg text-white mt-2">
@@ -61,6 +71,7 @@ export default function Home() {
             </p>
           </section>
 
+          {/* Features */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🌟 Features</h2>
             <p className="text-lg text-white text-justify mt-2">
@@ -77,6 +88,7 @@ export default function Home() {
             </p>
           </section>
 
+          {/* Compatibility */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
             <p className="text-lg text-white text-justify mt-2">
@@ -86,6 +98,7 @@ export default function Home() {
             </p>
           </section>
 
+          {/* Installation */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">📥 Installation</h2>
             <p className="text-lg text-white text-justify mt-2">
