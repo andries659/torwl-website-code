@@ -1,5 +1,5 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -43,26 +43,6 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isTorwOpen, setIsTorwOpen] = useState(false);
-
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark" || window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return false;
-  });
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(prev => !prev);
 
   return (
     <>
@@ -116,6 +96,7 @@ export default function App() {
       >
         <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
 
+<<<<<<< HEAD
       {/* Dark Mode Toggle Button */}
         <button
   onClick={toggleTheme}
@@ -132,6 +113,8 @@ export default function App() {
 </button>
       </header>
 
+=======
+>>>>>>> parent of 2aa3816 (I hope the dark/light thingy works)
       {/* Mobile Sidebar Drawer */}
       <aside className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-50 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}>
         <button
