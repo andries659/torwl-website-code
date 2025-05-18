@@ -97,6 +97,7 @@ export default function App() {
         <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* Dark Mode Toggle Button */}
         <button
   onClick={toggleTheme}
@@ -113,6 +114,8 @@ export default function App() {
 </button>
       </header>
 
+=======
+>>>>>>> parent of 2aa3816 (I hope the dark/light thingy works)
 =======
 >>>>>>> parent of 2aa3816 (I hope the dark/light thingy works)
       {/* Mobile Sidebar Drawer */}
