@@ -118,9 +118,10 @@ export default function Home() {
             required
           >
             <option value="">Select Feedback Type</option>
-            <option value="Bug Report">🐞 Bug Report</option>
-            <option value="Suggestion">💡 Suggestion</option>
-            <option value="Other">📝 Other</option>
+            <option value="🐞 Bug Report">🐞 Bug Report</option>
+            <option value="🎯 Feedback">🎯 Feedback</option>
+            <option value="💡 Suggestion">💡 Suggestion</option>
+            <option value="📝 Other">📝 Other</option>
           </select>
 
           <textarea
