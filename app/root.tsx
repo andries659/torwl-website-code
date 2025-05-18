@@ -96,20 +96,7 @@ export default function App() {
       >
         <div className="text-2xl font-extrabold text-white">TOR-W: L</div>
       </header>
-
-<<<<<<< HEAD
-      {/* Dark Mode Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          aria-label="Toggle dark mode"
-          className="text-white text-xl px-3 py-1 border border-white rounded hover:bg-white hover:text-black transition"
-        >
-          {isDark ? "Light Mode" : "Dark Mode"}
-        </button>
-      </header>
-
-=======
->>>>>>> parent of 2aa3816 (I hope the dark/light thingy works)
+      
       {/* Mobile Sidebar Drawer */}
       <aside className={`fixed top-0 left-0 h-full w-2/3 max-w-xs bg-gray-900 text-white p-6 z-50 transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:hidden`}>
         <button
