@@ -6,7 +6,8 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          '"Inter"',
+          '"Audiowide"',
+          'cursive',
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

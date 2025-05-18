@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  background: linear-gradient(to bottom, #6b6b6b, #242424);
+  background: linear-gradient(to bottom, #424242, #242424);
   color: #000000;
 
   @media (prefers-color-scheme: dark) {

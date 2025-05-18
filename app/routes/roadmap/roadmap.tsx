@@ -55,6 +55,55 @@ const roadmapItems = [
   },
 ];
 
+// 🚀 New roles section (you can customize or expand this)
+const plannedRoles = [
+  {
+    name: "Witch Doctor",
+    team: "Coven",
+    description: "Can curse players to disable their abilities temporarily.",
+  },
+  {
+    name: "Dark Fairy",
+    team: "Coven",
+    description: "N/A",
+  },
+  {
+    name: "Mimic",
+    team: "Neutral",
+    description: "N/A",
+  },
+  {
+    name: "Collector",
+    team: "Neutral",
+    description: "N/A",
+  },
+  {
+    name: "Survivor",
+    team: "Neutral",
+    description: "N/A",
+  },
+  {
+    name: "Puppeteer",
+    team: "Impostor",
+    description: "N/A",
+  },
+  {
+    name: "Torch",
+    team: "Modifier",
+    description: "N/A",
+  },
+  {
+    name: "Bait",
+    team: "Modifier",
+    description: "N/A",
+  },
+  {
+    name: "Burst",
+    team: "Modifier",
+    description: "N/A",
+  },
+];
+
 export default function Roadmap() {
   return (
     <main className="p-6 space-y-6">
@@ -95,6 +144,34 @@ export default function Roadmap() {
           );
         })}
       </ul>
+      {/* 💠 Role Cards Section */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-bold text-white mb-4">🧙 Planned Roles (v1.2.0)</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {plannedRoles.map((role, index) => (
+            <div
+              key={index}
+              className="p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 relative"
+            >
+              <div
+                className="bg-black p-6 rounded-xl text-white h-full relative 
+                   hover:shadow-[0_0_15px_rgba(225,225,225,1)] 
+                   hover:-translate-y-1 active:-translate-y-1 
+                   transition duration-200 ease-in-out"
+              >
+                {/* NEW! tag */}
+                <div className="absolute top-2 right-2 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded">
+                  NEW!
+                </div>
+                {/* Content */}
+                <h3 className="text-xl font-bold mb-2">{role.name}</h3>
+                <p className="italic text-sm mb-1">Team: {role.team}</p>
+                <p>{role.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
-                                                                  }
+}
