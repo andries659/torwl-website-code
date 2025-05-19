@@ -9,7 +9,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function TermsOfService() {
     return (
       <div className="text-center">
-        <h1 style={{ color: "#32a860" }} className="text-4xl font-bold">📜 Terms of Service</h1>
+        <h1 style={{ color: "#32a860" }} className="text-4xl font-bold">📜 Terms of Service For Events Bot</h1>
         <header className="flex flex-col items-center gap-9"><br />
           <p className="text-lg text-white text-justify">
             This Terms of Service Agreement (the <b>“Agreement”</b>) is entered into between <b>Andries (.angel_xd.)</b> ("Bot Owner") and the user ("User") of the <b>Events Bot</b> Discord bot (the "Bot").
