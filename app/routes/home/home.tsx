@@ -80,11 +80,11 @@ export default function Home() {
                 className="font-bold text-fuchsia-400 hover:underline hover:text-fuchsia-300">
                 wiki
               </a>, but here are a couple of them:<br /><br />
-              ♦ ✅ Gradient Colors<br />
-              ♦ ✅ Special Voting Modes<br />
-              ♦ ✅ Feature-Rich Roles<br />
-              ♦ ✅ New Game Options<br />
-              ♦ ✅ Exciting Gamemodes
+              ✅ Gradient Colors<br />
+              ✅ Special Voting Modes<br />
+              ✅ Feature-Rich Roles<br />
+              ✅ New Game Options<br />
+              ✅ Exciting Gamemodes
             </p>
           </section>
 
@@ -92,9 +92,9 @@ export default function Home() {
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
             <p className="text-lg text-white text-justify mt-2">
-              ♦ ✔️ Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).<br />
-              ♦ ❗️ TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.<br />
-              ♦ 🔒 Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.
+              ✔️ Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).<br />
+              ❗️ TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.<br />
+              🔒 Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.
             </p>
           </section>
 
