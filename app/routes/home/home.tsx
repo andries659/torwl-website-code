@@ -52,8 +52,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-6 sm:gap-10">
-      <div className="w-full max-w-full sm:max-w-7xl bg-black/50 rounded-2xl p-6 sm:p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-10">
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
         <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
         <img src={logo} alt="TOR-W Logo" className="mx-auto my-6 w-70 h-auto" />
 
@@ -80,11 +80,11 @@ export default function Home() {
                 className="font-bold text-fuchsia-400 hover:underline hover:text-fuchsia-300">
                 wiki
               </a>, but here are a couple of them:<br /><br />
-              ✅ Gradient Colors<br />
-              ✅ Special Voting Modes<br />
-              ✅ Feature-Rich Roles<br />
-              ✅ New Game Options<br />
-              ✅ Exciting Gamemodes
+              ♦ ✅ Gradient Colors<br />
+              ♦ ✅ Special Voting Modes<br />
+              ♦ ✅ Feature-Rich Roles<br />
+              ♦ ✅ New Game Options<br />
+              ♦ ✅ Exciting Gamemodes
             </p>
           </section>
 
@@ -92,9 +92,9 @@ export default function Home() {
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
             <p className="text-lg text-white text-justify mt-2">
-              ✔️ Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).<br />
-              ❗️ TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.<br />
-              🔒 Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.
+              ♦ ✔️ Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).<br />
+              ♦ ❗️ TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.<br />
+              ♦ 🔒 Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.
             </p>
           </section>
 
@@ -103,16 +103,16 @@ export default function Home() {
             <h2 className="text-2xl text-yellow-500 font-semibold">📥 Installation</h2>
             <p className="text-lg text-white text-justify mt-2">
               <b>🛠️ For manual installation, you must also download:<br /><br /></b>
-              • Unity.Il2Cpp win-x86 BepInEx build<br />
-              • Reactor<br />
-              • Mira API<br /><br />
+              ♦ Unity.Il2Cpp win-x86 BepInEx build<br />
+              ♦ Reactor<br />
+              ♦ Mira API<br /><br />
             </p>
           </section>
         </header>
       </div>
 
       {/* Feedback Form */}
-      <div className="w-full max-w-full sm:max-w-7xl bg-black/50 rounded-2xl p-6 sm:p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
         <h2 className="text-2xl font-bold text-yellow-500 text-center">📝 Send Feedback</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
           <input
