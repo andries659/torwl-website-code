@@ -32,7 +32,7 @@ const roadmapItems = [
   {
     title: "Translations",
     status: "Planned",
-    description: "Maming translations per language set in the game, such as Español and Français.",
+    description: "Making translations per language set in the game, such as Español and Français.",
     tags: ["In The Works", "Unfinished"],
   },
   {
