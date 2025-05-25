@@ -78,7 +78,7 @@ export default function App() {
             <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
           </div>
         </div>
-
+        <a href="/website-updates" className="hover:underline font-bold">Website Updates</a>
         <a
           href="https://github.com/andries659/test-website"
           target="_blank"
@@ -126,6 +126,8 @@ export default function App() {
               <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
             </div>
           </div>
+
+          <a href="/website-updates" onClick={() => setIsOpen(false)}>Website Updates</a>
 
           <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>
             Contribute! <span className="material-symbols-outlined">open_in_new</span>
