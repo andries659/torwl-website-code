@@ -1,5 +1,4 @@
 import type { Route } from "./+types/posts";
-import { Link } from "@remix-run/react"; // Or your router's Link component
 import { CalendarIcon, UserIcon } from "lucide-react";
 import PostMeta from "../../components/PostMeta";
 
@@ -29,9 +28,12 @@ export default function PostsPage() {
             key={post.href}
             className="rounded-xl border p-4 hover:bg-muted transition-colors"
           >
-            <Link to={post.href} className="block text-xl font-semibold hover:underline">
+            <a
+              href={post.href}
+              className="block text-xl font-semibold hover:underline"
+            >
               {post.title}
-            </Link>
+            </a>
             <PostMeta
               category={post.category}
               date={post.date}
