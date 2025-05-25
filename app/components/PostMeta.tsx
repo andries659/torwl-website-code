@@ -6,13 +6,23 @@ interface PostMetaProps {
   author: string;
 }
 
+// Define your custom colors for known categories
+const categoryColors: Record<string, string> = {
+  website: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+  mod: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  default: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
+};
+
 export default function PostMeta({ category, date, author }: PostMetaProps) {
+  const normalized = category.toLowerCase();
+  const badgeClass = categoryColors[normalized] || categoryColors.default;
+
   return (
     <div className="mb-4 text-sm text-muted-foreground">
-      <span className="bg-primary/10 text-primary rounded-md px-2 py-1 text-xs font-medium">
+      <span className={`rounded-md px-2 py-1 text-xs font-medium ${badgeClass}`}>
         {category}
       </span>
-      <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
+      <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
         <span className="flex items-center gap-1">
           <CalendarIcon className="h-4 w-4" />
           {date}

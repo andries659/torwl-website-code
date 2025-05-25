@@ -8,5 +8,6 @@ export default [
   route("/torw-bot/privacy-policy", "routes/torw-bot/privacy-policy.tsx"),
   route("/torw-bot/terms-of-service", "routes/torw-bot/terms-of-service.tsx"),
   route("/roadmap", "routes/roadmap/roadmap.tsx"),
-  route("/website-updates", "routes/posts/website-updates.tsx"),
+  route("/posts/website-updates", "routes/posts/website-updates.tsx"),
+  route("/posts", "routes/posts/posts.tsx"),
 ] satisfies RouteConfig;

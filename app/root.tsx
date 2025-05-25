@@ -62,6 +62,7 @@ export default function App() {
         <a href="/" className="hover:underline font-bold">Home</a>
         <a href="/roles" className="hover:underline font-bold">Roles</a>
         <a href="/roadmap" className="hover:underline font-bold">Roadmap</a>
+        <a href="/posts" className="hover:underline font-bold">Posts</a>
 
         <div className="relative font-bold">
           <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
@@ -78,7 +79,6 @@ export default function App() {
             <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline">Privacy Policy</a>
           </div>
         </div>
-        <a href="/website-updates" className="hover:underline font-bold">Website Updates</a>
         <a
           href="https://github.com/andries659/test-website"
           target="_blank"
@@ -110,6 +110,7 @@ export default function App() {
           <a href="/" onClick={() => setIsOpen(false)}>Home</a>
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
           <a href="/roadmap" onClick={() => setIsOpen(false)}>Roadmap</a>
+          <a href="/posts" onClick={() => setIsOpen(false)}>Posts</a>
 
           <div className="relative">
             <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
@@ -126,8 +127,6 @@ export default function App() {
               <a href="/torw-bot/privacy-policy" className="block py-1 hover:underline" onClick={() => setIsOpen(false)}>Privacy Policy</a>
             </div>
           </div>
-
-          <a href="/website-updates" onClick={() => setIsOpen(false)}>Website Updates</a>
 
           <a href="https://github.com/andries659/test-website" target="_blank" rel="noopener noreferrer" className="underline" onClick={() => setIsOpen(false)}>
             Contribute! <span className="material-symbols-outlined">open_in_new</span>
