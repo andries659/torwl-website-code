@@ -1,5 +1,5 @@
 import type { Route } from "./+types/website-updates";
-import PostMeta from "@/components/PostMeta"; // adjust path if needed
+import PostMeta from "../../components/PostMeta";
 
 export function meta({ }: Route.MetaArgs) {
   return [
