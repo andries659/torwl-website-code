@@ -8,7 +8,7 @@ interface PostMetaProps {
 
 // Define your custom colors for known categories
 const categoryColors: Record<string, string> = {
-  website: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+  website: "bg-blue-600 text-black dark:bg-indigo-900 dark:text-indigo-200",
   mod: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
   default: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };
