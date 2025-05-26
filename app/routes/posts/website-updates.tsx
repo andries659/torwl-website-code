@@ -12,7 +12,7 @@ export default function WebsiteUpdates() {
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
       <PostMeta
         category="Website"
-        date="May 20, 2025"
+        date="May 25, 2025"
         author="Andries"
       />
 
