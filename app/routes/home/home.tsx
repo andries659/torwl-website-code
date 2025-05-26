@@ -80,11 +80,11 @@ export default function Home() {
                 className="font-bold text-fuchsia-400 hover:underline hover:text-fuchsia-300">
                 wiki
               </a>, but here are a couple of them:<br /><br />
-              ✅ Gradient Colors<br />
-              ✅ Special Voting Modes<br />
-              ✅ Feature-Rich Roles<br />
-              ✅ New Game Options<br />
-              ✅ Exciting Gamemodes
+              <li>Gradient Colors</li>
+              <li>Special Voting Modes</li>
+              <li>Feature-Rich Roles</li>
+              <li>New Game Options</li>
+              <li>Exciting Gamemodes</li>
             </p>
           </section>
 
@@ -92,9 +92,9 @@ export default function Home() {
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
             <p className="text-lg text-white text-justify mt-2">
-              ✔️ Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).<br />
-              ❗️ TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.<br />
-              🔒 Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.
+              <li>Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).</li>
+              <li>TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.</li>
+              <li>TOR-W: Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.</li>
             </p>
           </section>
 
@@ -103,9 +103,9 @@ export default function Home() {
             <h2 className="text-2xl text-yellow-500 font-semibold">📥 Installation</h2>
             <p className="text-lg text-white text-justify mt-2">
               <b>🛠️ For manual installation, you must also download:<br /><br /></b>
-              ♦ Unity.Il2Cpp win-x86 BepInEx build<br />
-              ♦ Reactor<br />
-              ♦ Mira API<br /><br />
+              <li>Unity.Il2Cpp win-x86 BepInEx build</li>
+              <li>Reactor</li>
+              <li>Mira API</li><br /><br />
             </p>
           </section>
         </header>
