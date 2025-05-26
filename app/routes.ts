@@ -9,5 +9,6 @@ export default [
   route("/torw-bot/terms-of-service", "routes/torw-bot/terms-of-service.tsx"),
   route("/roadmap", "routes/roadmap/roadmap.tsx"),
   route("/posts/website-updates", "routes/posts/website-updates.tsx"),
+  route("/posts/mod-updates", "routes/posts/mod-updates.tsx"),
   route("/posts", "routes/posts/posts.tsx"),
 ] satisfies RouteConfig;
