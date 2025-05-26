@@ -29,7 +29,7 @@ export default function ModUpdates() {
         {/* Image directly below the heading */}
         <div className="mb-4">
           <img
-            src="https://image-uploader-wf9z.onrender.com/uploads/1748278400406-Untitled33_20250526184301.png" // Replace with your image path
+            src="/public/version-1-0-0.png" // Replace with your image path
             alt="Latest Mod Update Banner"
             className="rounded-lg w-full object-cover"
           />
