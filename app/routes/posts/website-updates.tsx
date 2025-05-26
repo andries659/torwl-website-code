@@ -28,7 +28,10 @@ export default function WebsiteUpdates() {
         <ul className="list-disc list-inside space-y-2">
           <li>Added new UI for post meta display.</li>
           <li>Improved layout on mobile devices.</li>
-          <li>Bug fix: header icons now align properly.</li>
+          <li>Added the Posts section with Website Updates.</li>
+          <li>Added roles from v1.1.0 to the Roles page.</li>
+          <li>Made a sleek design for Roadmaps page.</li>
+          <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
         </ul>
       </div>
     </div>
