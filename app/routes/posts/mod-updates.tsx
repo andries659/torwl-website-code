@@ -12,15 +12,15 @@ export default function ModUpdates() {
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
       <PostMeta
         category="Mod"
-        date="May 25, 2025"
+        date="May 26, 2025"
         author="Andries"
       />
 
       <h1 className="text-3xl font-bold mt-6">Mod Updates</h1>
 
       <p className="mt-4 text-muted-foreground">
-        Welcome to the website updates page! Here, you'll find the latest features, bug fixes,
-        and changes to our site. Stay tuned for more!
+        Welcome to the mod updates page! Here, you'll find the latest features, bug fixes,
+        and changes to our mod. Stay tuned for more!
       </p>
 
       <div className="mt-8 text-left">
