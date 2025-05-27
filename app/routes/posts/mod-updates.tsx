@@ -44,6 +44,14 @@ export default function ModUpdates() {
           <li>Made a sleek design for Roadmaps page.</li>
           <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
         </ul>
+
+        <div className="mb-4">
+          <img
+            src="/version-1-1-0.png" // Replace with your image path
+            alt="Latest Mod Update Banner"
+            className="rounded-lg w-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
