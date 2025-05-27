@@ -13,6 +13,7 @@ export default function WebsiteUpdates() {
       <PostMeta
         category="Website"
         date="May 25, 2025"
+        updated="May 27, 2025"
         author="Andries"
       />
 
@@ -32,6 +33,8 @@ export default function WebsiteUpdates() {
           <li>Added roles from v1.1.0 to the Roles page.</li>
           <li>Made a sleek design for Roadmaps page.</li>
           <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
+          <li>Added the "Mod Updates" to the Posts page.</li>
+          <li>Added the "Website Updates" to the Posts page.</li>
         </ul>
       </div>
     </div>

@@ -13,6 +13,15 @@ const posts = [
     href: "/posts/website-updates",
     category: "Website",
     date: "May 25, 2025",
+    updated: "May 27, 2025",
+    author: "Andries",
+  },
+  {
+    title: "Mod Updates",
+    href: "/posts/mod-updates",
+    category: "Mod",
+    date: "May 26, 2025",
+    updated: "May 27, 2025",
     author: "Andries",
   },
   // Add more posts here
@@ -26,7 +35,7 @@ export default function PostsPage() {
         {posts.map((post) => (
           <li
             key={post.href}
-            className="rounded-xl border p-4 hover:bg-muted transition-colors"
+            className="rounded-xl border p-6 hover:bg-muted transition-colors"
           >
             <a
               href={post.href}
@@ -37,6 +46,7 @@ export default function PostsPage() {
             <PostMeta
               category={post.category}
               date={post.date}
+              updated={post.updated}
               author={post.author}
             />
           </li>
