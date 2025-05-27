@@ -79,12 +79,14 @@ export default function Home() {
               <a href="https://launchpad.xtracube.dev/" target="_blank" rel="noopener noreferrer"
                 className="font-bold text-fuchsia-400 hover:underline hover:text-fuchsia-300">
                 wiki
-              </a>, but here are a couple of them:<br /><br />
-              <li>Gradient Colors</li>
-              <li>Special Voting Modes</li>
-              <li>Feature-Rich Roles</li>
-              <li>New Game Options</li>
-              <li>Exciting Gamemodes</li>
+              </a>, but here are a couple of them:<br />
+              <ul className="list-disc list-inside text-left text-white mt-4 space-y-1">
+                <li>Gradient Colors</li>
+                <li>Special Voting Modes</li>
+                <li>Feature-Rich Roles</li>
+                <li>New Game Options</li>
+                <li>Exciting Gamemodes</li>
+              </ul>
             </p>
           </section>
 
@@ -92,9 +94,11 @@ export default function Home() {
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
             <p className="text-lg text-white text-justify mt-2">
-              <li>Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).</li>
-              <li>TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.</li>
-              <li>TOR-W: Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.</li>
+              <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
+                <li>Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).</li>
+                <li>TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.</li>
+                <li>TOR-W: Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.</li>
+              </ul>
             </p>
           </section>
 
@@ -102,10 +106,12 @@ export default function Home() {
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">📥 Installation</h2>
             <p className="text-lg text-white text-justify mt-2">
-              <b>🛠️ For manual installation, you must also download:<br /><br /></b>
-              <li>Unity.Il2Cpp win-x86 BepInEx build</li>
-              <li>Reactor</li>
-              <li>Mira API</li><br /><br />
+              <b>For manual installation, you must also download:<br /></b>
+              <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
+                <li>Unity.Il2Cpp win-x86 BepInEx build</li>
+                <li>Reactor</li>
+                <li>Mira API</li>
+              </ul><br />
             </p>
           </section>
         </header>

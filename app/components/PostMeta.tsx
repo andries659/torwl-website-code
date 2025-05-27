@@ -9,9 +9,9 @@ interface PostMetaProps {
 
 // Define your custom colors for known categories
 const categoryColors: Record<string, string> = {
-  website: "bg-blue-600 text-black dark:bg-indigo-900 dark:text-indigo-200",
-  mod: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  default: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
+  website: "bg-blue-600 text-black",
+  mod: "bg-purple-600 text-black",
+  default: "bg-gray-100 text-gray-800",
 };
 
 export default function PostMeta({ category, date, updated, author }: PostMetaProps) {
@@ -20,7 +20,7 @@ export default function PostMeta({ category, date, updated, author }: PostMetaPr
 
   return (
     <div className="mb-4 text-sm text-muted-foreground">
-      <span className={`rounded-md px-2 py-1 text-xs font-medium ${badgeClass}`}>
+      <span className={`rounded-full px-4 py-0.8 text-base font-semibold ${badgeClass}`}>
         {category}
       </span>
       <div className="mt-2 flex flex-wrap items-center justify-center gap-4">

@@ -30,36 +30,33 @@ export default function ModUpdates() {
         {/* Image directly below the heading */}
         <div className="mb-4">
           <img
-            src="/version-1-0-0.png" // Replace with your image path
+            src="/version-1-0-0.png"
             alt="Latest Mod Update Banner"
-            className="rounded-lg w-full object-cover"
+            className="mx-auto rounded-lg max-h-24 w-auto object-contain"
           />
         </div>
 
         <ul className="list-disc list-inside space-y-2">
-          <li>Added new UI for post meta display.</li>
-          <li>Improved layout on mobile devices.</li>
-          <li>Added the Posts section with Website Updates.</li>
-          <li>Added roles from v1.1.0 to the Roles page.</li>
-          <li>Made a sleek design for Roadmaps page.</li>
-          <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
+          <li>Added 17 new colors.</li>
+          <li>Added the "Traitor" role.</li>
         </ul>
+        <br />
 
         <div className="mb-4">
           <img
-            src="/version-1-1-0.png" // Replace with your image path
+            src="/version-1-1-0.png"
             alt="Latest Mod Update Banner"
-            className="rounded-lg w-full object-cover"
+            className="mx-auto rounded-lg max-h-24 w-auto object-contain"
           />
         </div>
 
         <ul className="list-disc list-inside space-y-2">
-          <li>Added new UI for post meta display.</li>
-          <li>Improved layout on mobile devices.</li>
-          <li>Added the Posts section with Website Updates.</li>
-          <li>Added roles from v1.1.0 to the Roles page.</li>
-          <li>Made a sleek design for Roadmaps page.</li>
-          <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
+          <li>Added the "Teleporter" role.</li>
+          <li>Added the "Chameleon" role.</li>
+          <li>Added the "Executioner" role.</li>
+          <li>Added the "Neutral Killer" role as a template role.</li>
+          <li>Updated the cosmetics for the "VIP" modifier.</li>
+          <li>Updated the "Crewmate Roles" to "♦ Crewmate Roles ♦" and so on for the others.</li>
         </ul>
       </div>
     </div>
