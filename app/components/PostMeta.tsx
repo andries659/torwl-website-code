@@ -1,8 +1,9 @@
-import { CalendarIcon, UserIcon } from "lucide-react";
+import { CalendarIcon, UserIcon, ClockIcon } from "lucide-react";
 
 interface PostMetaProps {
   category: string;
   date: string;
+  updated?: string; // Optional updated date
   author: string;
 }
 
@@ -13,7 +14,7 @@ const categoryColors: Record<string, string> = {
   default: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };
 
-export default function PostMeta({ category, date, author }: PostMetaProps) {
+export default function PostMeta({ category, date, updated, author }: PostMetaProps) {
   const normalized = category.toLowerCase();
   const badgeClass = categoryColors[normalized] || categoryColors.default;
 
@@ -27,6 +28,12 @@ export default function PostMeta({ category, date, author }: PostMetaProps) {
           <CalendarIcon className="h-4 w-4" />
           {date}
         </span>
+        {updated && (
+          <span className="flex items-center gap-1">
+            <ClockIcon className="h-4 w-4" />
+            Updated: {updated}
+          </span>
+        )}
         <span className="flex items-center gap-1">
           <UserIcon className="h-4 w-4" />
           {author}
