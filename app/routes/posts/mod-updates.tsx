@@ -13,6 +13,7 @@ export default function ModUpdates() {
       <PostMeta
         category="Mod"
         date="May 26, 2025"
+        updated="May 27, 2025"
         author="Andries"
       />
 
