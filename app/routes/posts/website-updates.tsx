@@ -36,6 +36,15 @@ export default function WebsiteUpdates() {
           <li>Added the "Mod Updates" to the Posts page.</li>
           <li>Added the "Website Updates" to the Posts page.</li>
         </ul>
+
+        <div className="mb-4">
+          <img
+            src="/BUGZONE-1024x160.webp"
+            alt="Latest Mod Update Banner"
+            className="mx-auto rounded-lg max-h-24 w-auto object-contain"
+          />
+        </div>
+        <p>So far there asre no bugs as of right now!</p>
       </div>
     </div>
   );
