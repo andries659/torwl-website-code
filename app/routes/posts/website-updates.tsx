@@ -36,7 +36,7 @@ export default function WebsiteUpdates() {
           <li>Added the "Mod Updates" to the Posts page.</li>
           <li>Added the "Website Updates" to the Posts page.</li>
         </ul>
-
+        <br />
         <div className="mb-4">
           <img
             src="/BUGZONE-1024x160.webp"
