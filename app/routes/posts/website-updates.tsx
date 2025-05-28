@@ -13,7 +13,7 @@ export default function WebsiteUpdates() {
       <PostMeta
         category="Website"
         date="May 25, 2025"
-        updated="May 27, 2025"
+        updated="May 28, 2025"
         author="Andries"
       />
 
