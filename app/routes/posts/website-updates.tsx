@@ -44,7 +44,8 @@ export default function WebsiteUpdates() {
             className="mx-auto rounded-lg max-h-24 w-auto object-contain"
           />
         </div>
-        <p>So far there asre no bugs as of right now!</p>
+        <p>So far there are no bugs as of right now!</p>
+        <br />
       </div>
     </div>
   );
