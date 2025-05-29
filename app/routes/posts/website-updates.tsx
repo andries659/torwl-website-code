@@ -7,17 +7,6 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
-const updates = [
-  "Added new UI for post meta display.",
-  "Improved layout on mobile devices.",
-  "Added the Posts section with Website Updates.",
-  "Added roles from v1.1.0 to the Roles page.",
-  "Made a sleek design for Roadmaps page.",
-  "Added some smooth dropdown transitions for TOR-W & Events Bots.",
-  "Added the 'Mod Updates' to the Posts page.",
-  "Added the 'Website Updates' to the Posts page.",
-];
-
 export default function WebsiteUpdates() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
@@ -58,7 +47,11 @@ export default function WebsiteUpdates() {
             className="mx-auto rounded-lg max-h-24 w-auto object-contain"
           />
         </div>
-        <p>So far there are no bugs as of right now!</p>
+        <p>Welcome to the Bug Zone of the website. This is where most of the bugs will be posted for awareness.</p>
+        <h2 className="text-xl font-semibold mb-2 text-cyan-600">Known Bugs</h2>
+        <ul className="list-disc list-inside space-y-2">
+          <li>The "More News" link in the "News" page does not take you anywhere else yet.</li>
+        </ul>
         <br />
       </div>
     </div>
