@@ -48,6 +48,7 @@ export default function WebsiteUpdates() {
           />
         </div>
         <p>Welcome to the Bug Zone of the website. This is where most of the bugs will be posted for awareness.</p>
+        
         <h2 className="text-xl font-semibold mb-2 text-cyan-600">Known Bugs</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>The "More News" link in the "News" page does not take you anywhere else yet.</li>
