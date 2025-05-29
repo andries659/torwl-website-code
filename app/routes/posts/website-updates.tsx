@@ -25,7 +25,7 @@ export default function WebsiteUpdates() {
       </p>
 
       <div className="mt-8 text-left">
-        <h2 style={{ color: "#424232" }} className="text-xl font-semibold mb-2">Latest Changes</h2>
+        <h2 style={{ color: "#787766" }} className="text-xl font-semibold mb-2">Latest Changes</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>Added new UI for post meta display.</li>
           <li>Improved layout on mobile devices.</li>
@@ -49,7 +49,7 @@ export default function WebsiteUpdates() {
         </div>
         <p>Welcome to the Bug Zone of the website. This is where most of the bugs will be posted for awareness.</p>
         <br />
-        <h2 style={{ color: "#424232" }} className="text-xl font-semibold mb-2">Known Bugs</h2>
+        <h2 style={{ color: "#787766" }} className="text-xl font-semibold mb-2">Known Bugs</h2>
         <ul className="list-disc list-inside space-y-2">
           <li>The "More News" link in the "News" page does not take you anywhere else yet.</li>
         </ul>
