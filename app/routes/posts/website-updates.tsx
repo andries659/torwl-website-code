@@ -7,13 +7,24 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
+const updates = [
+  "Added new UI for post meta display.",
+  "Improved layout on mobile devices.",
+  "Added the Posts section with Website Updates.",
+  "Added roles from v1.1.0 to the Roles page.",
+  "Made a sleek design for Roadmaps page.",
+  "Added some smooth dropdown transitions for TOR-W & Events Bots.",
+  "Added the 'Mod Updates' to the Posts page.",
+  "Added the 'Website Updates' to the Posts page.",
+];
+
 export default function WebsiteUpdates() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
       <PostMeta
         category="Website"
         date="May 25, 2025"
-        updated="May 28, 2025"
+        updated="May 29, 2025"
         author="Andries"
       />
 
@@ -35,6 +46,9 @@ export default function WebsiteUpdates() {
           <li>Added some smooth dropdown transitions for TOR-W & Events Bots.</li>
           <li>Added the "Mod Updates" to the Posts page.</li>
           <li>Added the "Website Updates" to the Posts page.</li>
+          <li>Changed the "Posts" section to "News".</li>
+          <li>Made some cards for the "News" section (The new sleek design).</li>
+          <li>Added images to the cards.</li>
         </ul>
         <br />
         <div className="mb-4">

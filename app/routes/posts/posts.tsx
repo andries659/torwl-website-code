@@ -1,57 +1,68 @@
 import type { Route } from "./+types/posts";
-import { CalendarIcon, UserIcon } from "lucide-react";
-import PostMeta from "../../components/PostMeta";
+import { CalendarIcon } from "lucide-react";
 
 export function meta({ }: Route.MetaArgs) {
-  return [{ title: "Posts" }];
+  return [{ title: "News" }];
 }
 
-// Example post list – in a real app you'd fetch or import this
 const posts = [
   {
     title: "Website Updates",
-    href: "/posts/website-updates",
+    href: "/news/website-updates",
     category: "Website",
     date: "May 25, 2025",
     updated: "May 27, 2025",
     author: "Andries",
+    image: "/web-updates.webp", // Add appropriate image paths
+    tags: ["UPDATE", "WEBSITE", "DEV LOG"],
   },
   {
     title: "Mod Updates",
-    href: "/posts/mod-updates",
+    href: "/news/mod-updates",
     category: "Mod",
     date: "May 26, 2025",
     updated: "May 27, 2025",
     author: "Andries",
+    image: "/mod-updates.webp",
+    tags: ["MOD", "PATCH NOTES", "DEV LOG"],
   },
-  // Add more posts here
 ];
 
 export default function PostsPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10">
-      <h1 className="mb-6 text-3xl font-bold text-center">Posts</h1>
-      <ul className="space-y-6">
+    <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="flex items-center">
+        <h1 className="text-3xl font-extrabold text-white">News</h1>
+        <div className="ml-4 h-0.5 w-20 bg-red-500" />
+      </div>
+      <br />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <li
-            key={post.href}
-            className="rounded-xl border p-6 hover:bg-muted transition-colors"
-          >
-            <a
-              href={post.href}
-              className="block text-xl font-semibold hover:underline"
-            >
-              {post.title}
-            </a>
-            <PostMeta
-              category={post.category}
-              date={post.date}
-              updated={post.updated}
-              author={post.author}
+          <a key={post.href} href={post.href} className="group block rounded-xl overflow-hidden hover:shadow-lg transition-shadow border border-neutral-800 bg-neutral-900">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-48 object-cover"
             />
-          </li>
+            <div className="p-4 space-y-2">
+              <div className="flex flex-wrap gap-2 text-xs font-bold uppercase text-white">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="bg-red-600 px-2 py-0.5 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                <CalendarIcon className="w-4 h-4" />
+                {post.date}
+              </div>
+              <h2 className="text-lg font-bold text-white group-hover:underline">{post.title}</h2>
+            </div>
+          </a>
         ))}
-      </ul>
+      </div>
+      <br />
+      <a href="/news" className="text-sm font-semibold text-red-500 hover:underline">More News →</a>
     </div>
   );
 }
