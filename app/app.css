@@ -10,7 +10,7 @@ body {
   height: 100%;
   margin: 0;
   animation: animateBackground 30s ease-in-out infinite;
-  background: linear-gradient(120deg, #2f2f2f, #3b3b3b, #1f1f1f);
+  background: linear-gradient(120deg, #1c1c1c, #3b3b3b, #1f1f1f);
   background-size: 400% 400%;
   color: #000000;
 
