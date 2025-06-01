@@ -4,31 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🎯 Animated dark background directly on body */
+/* 🎯 Static dark background */
 html,
 body {
   height: 100%;
   margin: 0;
-  animation: animateBackground 30s ease-in-out infinite;
   background: linear-gradient(120deg, #1c1c1c, #3b3b3b, #1f1f1f);
-  background-size: 400% 400%;
+  background-size: cover;
   color: #000000;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
-  }
-}
-
-/* 💫 Subtle background animation */
-@keyframes animateBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
