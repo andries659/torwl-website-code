@@ -4,39 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎯 Animated dark background directly on body */
 html,
 body {
-  @apply text-black;
-  background: linear-gradient(to bottom, #424242, #242424);
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  animation: animateBackground 30s ease-in-out infinite;
+  background: linear-gradient(120deg, #2f2f2f, #3b3b3b, #1f1f1f);
+  background-size: 400% 400%;
+  color: #000000;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
 
-/* ✅ Animated background overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 30%, #3a3a3a, #1e1e1e 60%);
-  animation: floatBackground 40s ease-in-out infinite;
-  opacity: 0.2;
-  z-index: -1;
-  pointer-events: none; /* Prevent background from blocking clicks */
-}
-
-/* ✅ Smooth background motion */
-@keyframes floatBackground {
-  0%   { transform: translate(0%, 0%); }
-  50%  { transform: translate(-10%, -10%); }
-  100% { transform: translate(0%, 0%); }
+/* 💫 Subtle background animation */
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* 🌈 Rainbow Text Animation */
