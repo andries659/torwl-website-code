@@ -121,9 +121,9 @@ export default function Home() {
   <div className="flex items-start space-x-4">
     <div className="text-3xl">📢</div>
     <div>
-      <h3 className="text-lg font-bold">Town of Host: Enhanced</h3>
+      <h3 className="text-lg font-bold">Town Of Re-Worked: Launchpad</h3>
       <p className="mt-2 text-sm text-gray-200">
-        Elevate your Among Us gameplay with our host-only mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
+        Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
       </p>
       <button className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors">
         Read More
