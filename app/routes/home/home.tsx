@@ -9,6 +9,12 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
+<meta property="og:title" content="My TOR-W Website" />
+<meta property="og:description" content="An Among Us mod with roles, features, and lore." />
+<meta property="og:image" content="https://torw-official.netlify.app/assets/logo-CStrCI5F.png" />
+<meta property="og:url" content="https://torw-official.netlify.app/" />
+<meta property="og:type" content="website" />
+
 export default function Home() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
