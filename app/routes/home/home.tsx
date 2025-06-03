@@ -29,7 +29,7 @@ export default function Home() {
     try {
       const webhookUrl = "https://discord.com/api/webhooks/1373591931115802654/hqidEdHPb5EAA64RDr5VpiH8b1cwSfrODdEygsSsiV0d0FWIGc0Wl7DnJ6wIYuYecMNL"; // 🔒 Don't expose real webhook URLs in frontend
       const payload = {
-        content: `📥 **New Feedback Received**\n\n**User:** ${username}\n**Type:** ${feedbackType}\n**Message:**\n${message}`
+        content: `📥 **Feedback Received**\n\n**User:** ${username}\n**Type:** ${feedbackType}\n**Message:**\n${message}`
       };
 
       const response = await fetch(webhookUrl, {
