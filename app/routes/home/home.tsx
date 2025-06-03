@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-10">
-      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
         <img src={logo} alt="TOR-W Logo" className="mx-auto my-6 w-70 h-auto" />
 
@@ -117,8 +117,23 @@ export default function Home() {
         </header>
       </div>
 
+      <div className="max-w-sm rounded-2xl border-2 border-yellow-400 bg-black/50 p-6 text-white shadow-lg backdrop-blur-md">
+  <div className="flex items-start space-x-4">
+    <div className="text-3xl">📢</div>
+    <div>
+      <h3 className="text-lg font-bold">Town Of Re-Worked: Launchpad</h3>
+      <p className="mt-2 text-sm text-gray-200">
+        Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
+      </p>
+      <button className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors">
+        Read More
+      </button>
+    </div>
+  </div>
+</div>
+
       {/* Feedback Form */}
-      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border border-yellow-500">
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <h2 className="text-2xl font-bold text-yellow-500 text-center">📝 Send Feedback</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
           <input
