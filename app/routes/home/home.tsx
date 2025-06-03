@@ -118,11 +118,11 @@ export default function Home() {
         </header>
       </div>
 
-      <div className="max-w-sm rounded-2xl border-2 border-yellow-400 bg-black/50 p-6 text-white shadow-lg backdrop-blur-md">
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <div className="flex items-start space-x-4">
           <div className="text-3xl">📢</div>
           <div>
-            <h3 className="text-lg font-bold">Town Of Re-Worked: Launchpad</h3>
+            <h3 className="text-2xl font-bold text-yellow-500">Town Of Re-Worked: Launchpad</h3>
             <p className="mt-2 text-sm text-gray-200">
               Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
             </p>
@@ -134,10 +134,38 @@ export default function Home() {
             </button>
 
             {showModal && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                <div className="bg-white p-6 rounded-lg">Here’s more info!</div>
+              <div
+                onClick={() => setShowModal(false)}
+                className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+              >
+                <div
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the modal itself
+                  className="bg-white p-6 rounded-lg text-black"
+                >
+                  So far there’s no extra info!<br />
+                  :(
+                </div>
               </div>
             )}
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl border-2 border-yellow-500 mx-auto">
+        <div className="flex items-start space-x-4">
+          <div className="text-3xl">✨</div>
+          <div className="flex-1 text-center">
+            <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
+            <p className="mt-2 text-sm text-gray-200">
+              The mod is posted on GitHub. So by pressing the "Download" button will take you to the latest release published.<br />
+              The mod will not be updated for a long time now, due to my exams.
+            </p>
+            <button
+              onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/latest', '_blank')}
+              className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+            >
+              Download
+            </button>
           </div>
         </div>
       </div>
@@ -149,7 +177,7 @@ export default function Home() {
           <input
             type="text"
             className="w-full p-3 bg-black/40 border border-white/20 rounded"
-            placeholder="Your Discord Username (e.g. andries123)"
+            placeholder="Discord Username (e.g. andries123)"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
