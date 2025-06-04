@@ -83,7 +83,6 @@ export default function Roles() {
   return (
     <div className="text-center p-6 space-y-6">
       <h1 className="text-3xl font-bold text-white mb-6">Roles</h1>
-      <div className="ml-4 h-0.5 w-20 bg-red-500" />
       <p className="text-l text-white mb-6">The page dedicated to all the roles in the TOR-W: L mod</p>
 
       {/* Grid for RoleCards */}
