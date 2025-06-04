@@ -184,8 +184,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-      );
-      }
 
       {/* Feedback Form */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
