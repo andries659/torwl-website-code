@@ -170,8 +170,8 @@ export default function Home() {
           </p>
 
           {releaseTitle && (
-            <p className="mt-2 text-sm text-yellow-400">
-              <strong>Latest release:</strong> {releaseTitle}
+            <p className="mt-2 text-sm text-white">
+              <strong>Latest release:</strong> <span className="text-yellow-400">{releaseTitle}</span>
             </p>
           )}
 
