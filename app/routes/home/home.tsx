@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from './logo.png'; // Updated path if local, adjust as needed
 import { Filter } from "bad-words";
 
