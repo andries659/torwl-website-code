@@ -15,6 +15,7 @@ export default function Home() {
   const [username, setUsername] = useState("");
   const [feedbackType, setFeedbackType] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [releaseTitle, setReleaseTitle] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +52,13 @@ export default function Home() {
       setStatus("error");
     }
   };
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases/latest')
+      .then(res => res.json())
+      .then(data => setReleaseTitle(data.name))
+      .catch(err => console.error('Failed to fetch release title:', err));
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-10">
@@ -152,23 +160,30 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl border-2 border-yellow-500 mx-auto">
-        <div className="flex items-start space-x-4">
-          <div className="text-3xl">✨</div>
-          <div className="flex-1 text-center">
-            <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
-            <p className="mt-2 text-sm text-gray-200">
-              The mod is posted on GitHub. So by pressing the "Download" button will take you to the latest release published.<br />
-              The mod will not be updated for a long time now, due to my exams.
+      <div className="flex items-start space-x-4">
+        <div className="text-3xl">✨</div>
+        <div className="flex-1 text-center">
+          <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
+          <p className="mt-2 text-sm text-gray-200">
+            The mod is posted on GitHub. Pressing the "Download" button will take you to the latest release published.<br />
+            The mod will not be updated for a long time now, due to my exams.
+          </p>
+
+          {releaseTitle && (
+            <p className="mt-2 text-sm text-yellow-400">
+              <strong>Latest release:</strong> {releaseTitle}
             </p>
-            <button
-              onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/latest', '_blank')}
-              className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
-            >
-              Download
-            </button>
-          </div>
+          )}
+
+          <button
+            onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/latest', '_blank')}
+            className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+          >
+            Download
+          </button>
         </div>
       </div>
+    </div>
 
       {/* Feedback Form */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
