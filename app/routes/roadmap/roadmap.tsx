@@ -5,12 +5,12 @@ export function meta() {
 }
 
 const tagColors: Record<string, string> = {
-  "Done!": "bg-green-500",
-  "In The Works": "bg-yellow-500",
-  "Bugged": "bg-red-500",
-  "Unstable": "bg-orange-500",
-  "Unfinished": "bg-blue-500",
-  "Almost Done!": "bg-purple-500",
+  "Done!": "bg-green-600",
+  "In The Works": "bg-yellow-600",
+  "Bugged": "bg-red-600",
+  "Unstable": "bg-orange-600",
+  "Unfinished": "bg-blue-600",
+  "Almost Done!": "bg-purple-600",
 };
 
 // Map basic statuses to emoji-prefixed versions
@@ -32,7 +32,7 @@ const roadmapItems = [
   {
     title: "Auto Code Posting",
     status: "Planned",
-    description: "Making it possible to post the lobby code without ghe need to share the codes in the server.",
+    description: "Making it possible to post the lobby code without the need to share the codes in the server.",
     tags: ["In The Works", "Unfinished"],
   },
   {
