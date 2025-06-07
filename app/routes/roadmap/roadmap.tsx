@@ -30,6 +30,12 @@ const statusColors: Record<string, string> = {
 
 const roadmapItems = [
   {
+    title: "Auto Code Posting",
+    status: "Planned",
+    description: "Making it possible to post the lobby code without ghe need to share the codes in the server.",
+    tags: ["In The Works", "Unfinished"],
+  },
+  {
     title: "Translations",
     status: "Planned",
     description: "Making translations per language set in the game, such as Español and Français.",
