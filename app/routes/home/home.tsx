@@ -231,6 +231,9 @@ export default function Home() {
           {status === "sent" && <p className="text-green-400 text-sm">✅ Feedback sent!</p>}
           {status === "error" && <p className="text-red-400 text-sm">❌ Failed to send. Try again.</p>}
         </form>
+        <blockquote className="border-l-4 border-yellow-500 pl-4 italic text-white mt-4">
+  "TOR-W is built for fans, by fans — aiming to enhance the Among Us experience while staying true to its roots."
+</blockquote>
       </div>
     </div>
   );
