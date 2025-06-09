@@ -235,6 +235,7 @@ export default function Home() {
       <blockquote className="border-l-4 border-yellow-500 pl-4 italic text-white mt-4">
          "TOR-W is built for fans, by fans — aiming to enhance the Among Us experience while staying true to its roots."
       </blockquote>
+      <br />
     </div>
   );
 }
