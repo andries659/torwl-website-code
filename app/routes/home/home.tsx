@@ -135,26 +135,11 @@ export default function Home() {
               Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
             </p>
             <button
-              onClick={() => setShowModal(true)}
-              className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
-            >
-              Read More
-            </button>
-
-            {showModal && (
-              <div
-                onClick={() => setShowModal(false)}
-                className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-              >
-                <div
-                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the modal itself
-                  className="bg-white p-6 rounded-lg text-black"
-                >
-                  So far there’s no extra info!<br />
-                  :(
-                </div>
-              </div>
-            )}
+  onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/wiki', '_blank')}
+  className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+>
+  Read More
+</button>
           </div>
         </div>
       </div>
@@ -176,7 +161,7 @@ export default function Home() {
           )}
 
           <button
-            onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/latest', '_blank')}
+            onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/download/v1.1.0/TOR-W-L.zip', '_blank')}
             className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
           >
             Download
