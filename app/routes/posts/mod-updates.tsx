@@ -11,37 +11,24 @@ export default function ModUpdates() {
   return (
     <div className="text-center">
 
-      {/* 🔥 Animated Wave CSS 🔥 */}
-      <style>
-        {`
-          @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .wave-animation {
-            animation: wave 8s linear infinite;
-          }
-        `}
-      </style>
-
-      {/* 🔥 Full-Width Top Section 🔥 */}
-      <div className="w-screen flex flex-col items-center justify-center mb-8">
+      {/* 🔥 Proper Full-Width Section (No Stretching) 🔥 */}
+      <div className="w-full flex flex-col items-center justify-center mb-8">
         {/* Full-Width Image */}
         <img
-          src="/mod-updates.webp"
+          src="/images/mod-updates.webp"
           alt="Crewmates Update Banner"
-          className="w-full max-h-[500px] object-cover"
+          className="w-full max-w-screen-lg object-cover"
         />
 
-        {/* Full-Width Animated Wave */}
-        <div className="relative w-screen overflow-hidden mt-[-10px]">
+        {/* Full-Width Static Wave */}
+        <div className="relative w-full overflow-hidden mt-[-10px]">
           <svg
-            className="w-[200%] h-24 wave-animation"
+            className="w-full h-24"
             viewBox="0 0 1440 320"
             preserveAspectRatio="none"
           >
             <path
-              fill="#393939"
+              fill="#000000"
               d="M0,160L80,165.3C160,171,320,181,480,192C640,203,800,213,960,192C1120,171,1280,117,1360,90.7L1440,64V320H0Z"
             ></path>
           </svg>
@@ -67,7 +54,6 @@ export default function ModUpdates() {
         <div className="mt-8 text-left">
           <h2 className="text-xl font-semibold mb-2">Latest Changes</h2>
 
-          {/* Image directly below the heading */}
           <div className="mb-4">
             <img
               src="/version-1-0-0.png"
