@@ -19,6 +19,27 @@ export default function ModUpdates() {
 
       <h1 className="text-3xl font-bold mt-6">Mod Updates</h1>
 
+      {/* Split Image and Curve Start */}
+      <div className="flex flex-col items-center justify-center mt-8">
+        {/* Your Combined Split Image */}
+        <img
+          src="/images/mod-updates.webp" // Replace with your image path
+          alt="Crewmates Update Banner"
+          className="w-11/12 max-w-4xl rounded-lg shadow-lg"
+        />
+
+        {/* Curved Shape */}
+        <div className="relative w-full mt-[-50px]">
+          <svg viewBox="0 0 1440 320" className="w-full h-32">
+            <path
+              fill="#000000"
+              d="M0,160L80,165.3C160,171,320,181,480,192C640,203,800,213,960,192C1120,171,1280,117,1360,90.7L1440,64V320H1360C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320H0Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      {/* Split Image and Curve End */}
+
       <p className="mt-4 text-muted-foreground">
         Welcome to the mod updates page! Here, you'll find the latest features, bug fixes,
         and changes to our mod. Stay tuned for more!
