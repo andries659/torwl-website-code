@@ -14,6 +14,19 @@ interface Release {
   published_at: string;
 }
 
+// ✅ Simple Markdown parser: supports headers, lists, bold, line breaks
+function parseMarkdown(md: string): string {
+  return md
+    .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+    .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+    .replace(/^\s*[-*] (.*$)/gim, "<li>$1</li>")
+    .replace(/(?:\r\n|\r|\n)/g, "<br>")
+    .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
+    .replace(/<li>(.*?)<\/li>/gim, "<ul><li>$1</li></ul>")
+    .replace(/<\/ul>\s*<ul>/gim, ""); // Merge adjacent lists
+}
+
 function formatDate(isoDate: string) {
   const date = new Date(isoDate);
   return date.toLocaleDateString("en-US", {
@@ -33,7 +46,6 @@ export default function ModUpdates() {
       .catch((err) => console.error("Error fetching releases:", err));
   }, []);
 
-  // Find the newest release date
   const latestDate =
     releases.length > 0
       ? releases
@@ -71,8 +83,9 @@ export default function ModUpdates() {
               className="text-left prose prose-invert max-w-none mx-auto"
               dangerouslySetInnerHTML={{
                 __html:
-                  (window as any).marked?.parse(release.body || "") ??
-                  "<p>No changelog provided.</p>",
+                  release.body?.trim()
+                    ? parseMarkdown(release.body)
+                    : "<p>No changelog provided.</p>",
               }}
             />
           </div>
