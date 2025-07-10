@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { marked } from "marked"; // For Markdown rendering
 import type { Route } from "./+types/mod-updates";
 import PostMeta from "../../components/PostMeta";
 
@@ -18,7 +19,7 @@ export default function ModUpdates() {
   const [releases, setReleases] = useState<Release[]>([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases")
+    fetch("https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/releases")
       .then(res => res.json())
       .then(data => setReleases(data))
       .catch(err => console.error("Error fetching releases:", err));
@@ -40,28 +41,20 @@ export default function ModUpdates() {
         and changes to our mod. Stay tuned for more!
       </p>
 
-      <div className="mt-8 text-left">
-        <h2 className="text-xl font-semibold mb-4">Latest Changes</h2>
-
-        {releases.map((release, idx) => (
-          <div key={release.id} className="mb-8">
-            <div className="mb-2">
-              <img
-                src={`/version-${release.tag_name}.png`}
-                alt={`Update ${release.tag_name}`}
-                className="mx-auto rounded-lg max-h-24 w-auto object-contain"
-              />
-            </div>
-
-            <h3 className="text-lg font-bold mb-2">{release.name}</h3>
-            <p className="text-sm text-muted-foreground mb-2">
+      <div className="mt-8 flex flex-col items-center gap-6">
+        {releases.map((release) => (
+          <div
+            key={release.id}
+            className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500"
+          >
+            <h2 className="text-2xl font-bold mb-2">{release.name}</h2>
+            <p className="text-sm text-muted-foreground mb-4">
               Published on {new Date(release.published_at).toLocaleDateString()}
             </p>
-            <ul className="list-disc list-inside space-y-2">
-              {release.body.split("\n").map((line, i) =>
-                line.trim() ? <li key={i}>{line.replace(/^[-*]\s*/, "")}</li> : null
-              )}
-            </ul>
+            <div
+              className="text-left prose prose-invert max-w-none mx-auto"
+              dangerouslySetInnerHTML={{ __html: marked.parse(release.body || "") }}
+            />
           </div>
         ))}
       </div>
