@@ -1,65 +1,70 @@
+import { useEffect, useState } from "react";
 import type { Route } from "./+types/mod-updates";
 import PostMeta from "../../components/PostMeta";
 
 export function meta({ }: Route.MetaArgs) {
-return [
-{ title: "Mod Updates" },
-];
+  return [{ title: "Mod Updates" }];
+}
+
+interface Release {
+  id: number;
+  name: string;
+  body: string;
+  tag_name: string;
+  published_at: string;
 }
 
 export default function ModUpdates() {
-return (
-<div className="max-w-2xl mx-auto px-4 py-8 text-center">
-<PostMeta  
-category="Mod"  
-date="May 26, 2025"  
-updated="May 27, 2025"  
-author="Andries"  
-/>
+  const [releases, setReleases] = useState<Release[]>([]);
 
-<h1 className="text-3xl font-bold mt-6">Mod Updates</h1>  
+  useEffect(() => {
+    fetch("https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases")
+      .then(res => res.json())
+      .then(data => setReleases(data))
+      .catch(err => console.error("Error fetching releases:", err));
+  }, []);
 
-  <p className="mt-4 text-muted-foreground">  
-    Welcome to the mod updates page! Here, you'll find the latest features, bug fixes,  
-    and changes to our mod. Stay tuned for more!  
-  </p>  
+  return (
+    <div className="max-w-2xl mx-auto px-4 py-8 text-center">
+      <PostMeta
+        category="Mod"
+        date={releases[0]?.published_at ?? "Unknown"}
+        updated={releases[0]?.published_at ?? "Unknown"}
+        author="Andries"
+      />
 
-  <div className="mt-8 text-left">  
-    <h2 className="text-xl font-semibold mb-2">Latest Changes</h2>  
+      <h1 className="text-3xl font-bold mt-6">Mod Updates</h1>
 
-    {/* Image directly below the heading */}  
-    <div className="mb-4">  
-      <img  
-        src="/version-1-0-0.png"  
-        alt="Latest Mod Update Banner"  
-        className="mx-auto rounded-lg max-h-24 w-auto object-contain"  
-      />  
-    </div>  
+      <p className="mt-4 text-muted-foreground">
+        Welcome to the mod updates page! Here, you'll find the latest features, bug fixes,
+        and changes to our mod. Stay tuned for more!
+      </p>
 
-    <ul className="list-disc list-inside space-y-2">  
-      <li>Added 17 new colors.</li>  
-      <li>Added the "Traitor" role.</li>  
-    </ul>  
-    <br />  
+      <div className="mt-8 text-left">
+        <h2 className="text-xl font-semibold mb-4">Latest Changes</h2>
 
-    <div className="mb-4">  
-      <img  
-        src="/version-1-1-0.png"  
-        alt="Latest Mod Update Banner"  
-        className="mx-auto rounded-lg max-h-24 w-auto object-contain"  
-      />  
-    </div>  
+        {releases.map((release, idx) => (
+          <div key={release.id} className="mb-8">
+            <div className="mb-2">
+              <img
+                src={`/version-${release.tag_name}.png`}
+                alt={`Update ${release.tag_name}`}
+                className="mx-auto rounded-lg max-h-24 w-auto object-contain"
+              />
+            </div>
 
-    <ul className="list-disc list-inside space-y-2">  
-      <li>Added the "Teleporter" role.</li>  
-      <li>Added the "Chameleon" role.</li>  
-      <li>Added the "Executioner" role.</li>  
-      <li>Added the "Neutral Killer" role as a template role.</li>  
-      <li>Updated the cosmetics for the "VIP" modifier.</li>  
-      <li>Updated the "Crewmate Roles" to "♦ Crewmate Roles ♦" and so on for the others.</li>  
-    </ul>  
-  </div>  
-</div>
-
-);
+            <h3 className="text-lg font-bold mb-2">{release.name}</h3>
+            <p className="text-sm text-muted-foreground mb-2">
+              Published on {new Date(release.published_at).toLocaleDateString()}
+            </p>
+            <ul className="list-disc list-inside space-y-2">
+              {release.body.split("\n").map((line, i) =>
+                line.trim() ? <li key={i}>{line.replace(/^[-*]\s*/, "")}</li> : null
+              )}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
