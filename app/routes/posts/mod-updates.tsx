@@ -14,22 +14,39 @@ interface Release {
   published_at: string;
 }
 
+function formatDate(isoDate: string) {
+  const date = new Date(isoDate);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export default function ModUpdates() {
   const [releases, setReleases] = useState<Release[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases")
-      .then(res => res.json())
-      .then(data => setReleases(data))
-      .catch(err => console.error("Error fetching releases:", err));
+      .then((res) => res.json())
+      .then((data) => setReleases(data))
+      .catch((err) => console.error("Error fetching releases:", err));
   }, []);
+
+  // Find the newest release date
+  const latestDate =
+    releases.length > 0
+      ? releases
+          .map((r) => new Date(r.published_at))
+          .sort((a, b) => b.getTime() - a.getTime())[0]
+      : null;
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
       <PostMeta
         category="Mod"
-        date={releases[0]?.published_at ?? "Unknown"}
-        updated={releases[0]?.published_at ?? "Unknown"}
+        date={latestDate ? formatDate(latestDate.toISOString()) : "Unknown"}
+        updated={latestDate ? formatDate(latestDate.toISOString()) : "Unknown"}
         author="Andries"
       />
 
@@ -48,12 +65,14 @@ export default function ModUpdates() {
           >
             <h2 className="text-2xl font-bold mb-2">{release.name}</h2>
             <p className="text-sm text-muted-foreground mb-4">
-              Published on {new Date(release.published_at).toLocaleDateString()}
+              Published on {formatDate(release.published_at)}
             </p>
             <div
               className="text-left prose prose-invert max-w-none mx-auto"
               dangerouslySetInnerHTML={{
-                __html: (window as any).marked?.parse(release.body || "") || "",
+                __html:
+                  (window as any).marked?.parse(release.body || "") ??
+                  "<p>No changelog provided.</p>",
               }}
             />
           </div>
