@@ -18,7 +18,7 @@ export default function ModUpdates() {
   const [releases, setReleases] = useState<Release[]>([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/releases")
+    fetch("https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases")
       .then(res => res.json())
       .then(data => setReleases(data))
       .catch(err => console.error("Error fetching releases:", err));
