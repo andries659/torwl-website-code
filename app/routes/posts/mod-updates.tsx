@@ -45,7 +45,7 @@ export default function ModUpdates() {
     <div className="max-w-2xl mx-auto px-4 py-8 text-center">
       <PostMeta
         category="Mod"
-        date={latestDate ? formatDate(latestDate.toISOString()) : "Unknown"}
+        date="May 26, 2025"
         updated={latestDate ? formatDate(latestDate.toISOString()) : "Unknown"}
         author="Andries"
       />
