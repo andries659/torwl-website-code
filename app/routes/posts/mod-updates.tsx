@@ -12,9 +12,14 @@ interface Release {
   body: string;
   tag_name: string;
   published_at: string;
+  assets: {
+    name: string;
+    browser_download_url: string;
+    size: number;
+  }[];
 }
 
-// 🧠 Formats ISO dates to readable form
+// Format ISO date → July 10, 2025
 function formatDate(isoDate: string) {
   const date = new Date(isoDate);
   return date.toLocaleDateString("en-US", {
@@ -24,11 +29,18 @@ function formatDate(isoDate: string) {
   });
 }
 
-// ✅ Basic Markdown & block tag parser
+// Format bytes to readable (MB, KB)
+function formatFileSize(bytes: number): string {
+  const kb = bytes / 1024;
+  const mb = kb / 1024;
+  return mb >= 1 ? `${mb.toFixed(1)} MB` : `${kb.toFixed(1)} KB`;
+}
+
+// Lightweight markdown + block tag parser
 function parseMarkdown(md: string): string {
   let html = md;
 
-  // Support for callout blocks
+  // Custom callout blocks
   html = html.replace(
     /^> *\[!(WARNING|INFO|TIP|NOTE|DANGER)\]\s*\n?>?(.*(?:\n?>?.+)*)/gim,
     (_, type, content) => {
@@ -39,26 +51,20 @@ function parseMarkdown(md: string): string {
         NOTE: "border-white/40 bg-white/5",
         DANGER: "border-red-500 bg-red-100/10",
       };
-      return `<div class="border-l-4 p-4 my-2 rounded-md ${colorMap[type] || ""}">
+      return `<div class="border-l-4 p-4 my-4 rounded-md ${colorMap[type] || ""}">
         <strong>${type}:</strong> ${content.replace(/^> ?/gm, "").trim()}
       </div>`;
     }
   );
 
-  // Headings
+  // Basic Markdown
   html = html.replace(/^### (.*)$/gim, "<h3>$1</h3>");
   html = html.replace(/^## (.*)$/gim, "<h2>$1</h2>");
   html = html.replace(/^# (.*)$/gim, "<h1>$1</h1>");
-
-  // Lists
   html = html.replace(/^\s*[-*] (.*)$/gim, "<li>$1</li>");
   html = html.replace(/(<li>.*<\/li>)/gim, "<ul>$1</ul>");
   html = html.replace(/<\/ul>\s*<ul>/gim, "");
-
-  // Bold
   html = html.replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>");
-
-  // Line breaks
   html = html.replace(/\n/g, "<br>");
 
   return html.trim();
@@ -117,12 +123,41 @@ export default function ModUpdates() {
               </button>
 
               {isOpen && (
-                <div
-                  className="text-left prose prose-invert max-w-none mx-auto mt-6"
-                  dangerouslySetInnerHTML={{
-                    __html: parseMarkdown(release.body || "No changelog provided."),
-                  }}
-                />
+                <div className="mt-6 text-left">
+                  {/* Release notes */}
+                  <div
+                    className="prose prose-invert max-w-none mx-auto"
+                    dangerouslySetInnerHTML={{
+                      __html: parseMarkdown(release.body || "No changelog provided."),
+                    }}
+                  />
+
+                  {/* Divider */}
+                  {release.assets.length > 0 && (
+                    <div className="my-6 flex items-center gap-4 text-muted-foreground">
+                      <div className="flex-grow border-t border-white/20" />
+                      <span className="text-sm uppercase tracking-wide">Downloads</span>
+                      <div className="flex-grow border-t border-white/20" />
+                    </div>
+                  )}
+
+                  {/* Downloads */}
+                  {release.assets.map((asset, index) => (
+                    <div key={index} className="text-sm mb-2">
+                      <a
+                        href={asset.browser_download_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:underline"
+                      >
+                        {asset.name}
+                      </a>{" "}
+                      <span className="text-muted-foreground">
+                        ({formatFileSize(asset.size)})
+                      </span>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           );
