@@ -12,7 +12,7 @@ export function meta({ }: Route.MetaArgs) {
 type RoleCardProps = {
   title: string;
   alignment: "Impostor" | "Crewmate" | "Neutral" | "Coven" | "Disease" | "Modifier";
-  version: "v1.0.0" | "v1.1.0";
+  version: "v1.0.0" | "v1.1.0" | "v1.1.1";
   description: string;
   howToUse: string;
 };
@@ -23,6 +23,7 @@ function RoleCard({ title, alignment, version, description, howToUse }: RoleCard
   const versionColor = {
     "v1.0.0": "#0ee865",    // green & mint mix
     "v1.1.0": "#fc6b03",    // orange
+    "v1.1.1": "#bd8f11",
   }[version];
 
   const bgColor = {
@@ -151,13 +152,6 @@ export default function Roles() {
           description="Teleport across the map."
           howToUse="You can zoom out to pick a place to teleport to."
         />
-        <RoleCard
-          title="Chameleon"
-          version="v1.1.0"
-          alignment="Crewmate"
-          description="Turn invisible while not moving."
-          howToUse="Whenever you stand still, you go invisible. But as soon as you move again, you are visible."
-        />
       </div>
 
       <div>
@@ -232,6 +226,13 @@ export default function Roles() {
             description="Vote your target to win."
             howToUse="You can see your target with a Target tag. If you vote that player, you win the game."
           />
+          <RoleCard
+            title="Neutral Killer"
+            version="v1.1.1"
+            alignment="Neutral"
+            description="Kill everyone to win."
+            howToUse="ou're basically an Impostor who wins and works alone to win."
+          />
         </div>
       </div>
 
@@ -260,11 +261,25 @@ export default function Roles() {
             howToUse="You're bigger than the average player."
           />
           <RoleCard
-            title="VIP"
+            title="V.I.P"
             version="v1.0.0"
             alignment="Modifier"
             description="You're the VIP."
             howToUse="You're just there to brag how cool you look."
+          />
+          <RoleCard
+            title="Bait"
+            version="v1.1.1"
+            alignment="Modifier"
+            description="Your killer self reports when they kill you."
+            howToUse="There is not really a use, but the use is that your killer self reports when they kill you."
+          />
+          <RoleCard
+            title="Torch"
+            version="v1.1.1"
+            alignment="Modifier"
+            description="You can see in the dark!"
+            howToUse="You're given access to a torch to see when lights are down."
           />
         </div>
       </div>
