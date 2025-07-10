@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { marked } from "marked"; // For Markdown rendering
 import type { Route } from "./+types/mod-updates";
 import PostMeta from "../../components/PostMeta";
 
@@ -53,7 +52,9 @@ export default function ModUpdates() {
             </p>
             <div
               className="text-left prose prose-invert max-w-none mx-auto"
-              dangerouslySetInnerHTML={{ __html: marked.parse(release.body || "") }}
+              dangerouslySetInnerHTML={{
+                __html: (window as any).marked?.parse(release.body || "") || "",
+              }}
             />
           </div>
         ))}
