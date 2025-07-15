@@ -13,7 +13,6 @@ const tagColors: Record<string, string> = {
   "Almost Done!": "bg-purple-600",
 };
 
-// Map basic statuses to emoji-prefixed versions
 const statusMap: Record<string, string> = {
   Completed: "🎉│Done",
   "In Progress": "💡│Doing",
@@ -55,47 +54,55 @@ const roadmapItems = [
   },
 ];
 
-// 🚀 New roles section (you can customize or expand this)
+// ✅ Add `finished: true` for roles/modifiers that are done
 const plannedRoles = [
   {
     name: "Witch Doctor",
     team: "Coven",
     description: "Can curse players to disable their abilities temporarily.",
+    finished: true,
   },
   {
     name: "Dark Fairy",
     team: "Coven",
     description: "Darken players to add them to your team. If you lose, the darkened players lose as well, and the same for winning.",
+    finished: true,
   },
   {
     name: "Mimic",
     team: "Neutral",
     description: "You can vote someone to kill them and take their place.",
+    finished: false,
   },
   {
     name: "Survivor",
     team: "Neutral",
     description: "Stay alive to win, that's all.",
+    finished: false,
   },
   {
     name: "Puppeteer",
     team: "Impostor",
     description: "Controll other players and let them kill for you.",
+    finished: false,
   },
   {
     name: "Glow",
     team: "Modifier",
     description: "You give off light when lights are down.",
+    finished: true,
   },
   {
     name: "Bait",
     team: "Modifier",
     description: "Make your killer self-report.",
+    finished: false,
   },
   {
     name: "Burst",
     team: "Modifier",
     description: "You kill other players in your radius when you die.",
+    finished: false,
   },
 ];
 
@@ -139,6 +146,7 @@ export default function Roadmap() {
           );
         })}
       </ul>
+
       {/* 💠 Role Cards Section */}
       <section className="mt-10">
         <h2 className="text-2xl font-bold text-white mb-4">🧙 Planned Roles (v1.2.0)</h2>
@@ -154,8 +162,8 @@ export default function Roadmap() {
                            hover:-translate-y-1 active:-translate-y-1 
                            transition duration-200 ease-in-out"
               >
-                {/* ROLE / MODIFIER tag */}
-                <div className="absolute top-2 right-2">
+                {/* ROLE / MODIFIER / FINISHED badges */}
+                <div className="absolute top-2 right-2 flex flex-wrap gap-1">
                   {role.team === "Modifier" ? (
                     <span className="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">
                       MODIFIER
@@ -163,6 +171,16 @@ export default function Roadmap() {
                   ) : (
                     <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">
                       ROLE
+                    </span>
+                  )}
+
+                  {/* ✅ Show Finished tag conditionally */}
+                  {role.finished && (
+                    <span
+                      className="text-white text-xs font-bold px-2 py-1 rounded bg-gradient-to-r from-blue-900 to-blue-400"
+                      style={{ whiteSpace: "nowrap" }}
+                    >
+                      Finished!
                     </span>
                   )}
                 </div>
@@ -178,4 +196,4 @@ export default function Roadmap() {
       </section>
     </main>
   );
-}
+              }
