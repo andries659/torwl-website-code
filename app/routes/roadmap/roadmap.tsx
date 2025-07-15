@@ -96,13 +96,13 @@ const plannedRoles = [
     name: "Bait",
     team: "Modifier",
     description: "Make your killer self-report.",
-    finished: false,
+    finished: true,
   },
   {
     name: "Burst",
     team: "Modifier",
     description: "You kill other players in your radius when you die.",
-    finished: false,
+    finished: true,
   },
 ];
 
