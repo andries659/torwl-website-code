@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import { useState, useEffect } from "react";
 import logo from './logo.png'; // Updated path if local, adjust as needed
 import { Filter } from "bad-words";
+import ServerInstallation from './components/ServerInstallation'; // Adjust the path if needed
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -169,6 +170,10 @@ export default function Home() {
         </div>
       </div>
     </div>
+
+    <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
+  <ServerInstallation />
+</div>
 
       {/* Feedback Form */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
