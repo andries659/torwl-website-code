@@ -1,13 +1,11 @@
 import type { Route } from "./+types/home";
 import { useState, useEffect } from "react";
-import logo from './logo.png'; // Updated path if local, adjust as needed
+import logo from "./logo.png"; // Make sure this path is correct
 import { Filter } from "bad-words";
-import ServerInstallation from './components/ServerInstallation'; // Adjust the path if needed
+import ServerInstallation from "./components/ServerInstallation"; // Make sure this component exists
 
 export function meta({ }: Route.MetaArgs) {
-  return [
-    { title: "Home" },
-  ];
+  return [{ title: "Home" }];
 }
 
 export default function Home() {
@@ -15,8 +13,7 @@ export default function Home() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [username, setUsername] = useState("");
   const [feedbackType, setFeedbackType] = useState("");
-  const [showModal, setShowModal] = useState(false);
-  const [releaseTitle, setReleaseTitle] = useState('');
+  const [releaseTitle, setReleaseTitle] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +27,7 @@ export default function Home() {
     }
 
     try {
-      const webhookUrl = "https://discord.com/api/webhooks/1388945014977069158/tMtqYbu56Pzwd0zP-yiRZ4BUaknuqxNxavc6jf-5AbuMrUcUSxeVnXos0shKSsQoOoZd"; // 🔒 Don't expose real webhook URLs in frontend
+      const webhookUrl = "https://discord.com/api/webhooks/1388945014977069158/tMtqYbu56Pzwd0zP-yiRZ4BUaknuqxNxavc6jf-5AbuMrUcUSxeVnXos0shKSsQoOoZd";
       const payload = {
         content: `📥 **Feedback Received**\n\n**User:** ${username}\n**Type:** ${feedbackType}\n**Message:**\n${message}`
       };
@@ -55,125 +52,119 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases/latest')
+    fetch("https://api.github.com/repos/TownofReworked/TORWLaunchpad/releases/latest")
       .then(res => res.json())
       .then(data => setReleaseTitle(data.name))
-      .catch(err => console.error('Failed to fetch release title:', err));
+      .catch(err => console.error("Failed to fetch release title:", err));
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 gap-10">
+      {/* Header Card */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <h1 className="text-4xl text-yellow-500 font-bold">🚀 TOR-W Launchpad</h1>
-        <img src={logo} alt="TOR-W Logo" className="mx-auto my-6 w-68 h-auto" />
+        <img src={logo.src} alt="TOR-W Logo" className="mx-auto my-6 w-68 h-auto" />
 
         <header className="flex flex-col items-center gap-9">
           <a href="https://discord.com/invite/HczqtuBfcu" target="_blank" rel="noopener noreferrer">
             <img src="https://dcbadge.limes.pink/api/server/HczqtuBfcu" alt="Discord Server Badge" />
           </a>
 
-          {/* About */}
+          {/* About Section */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">❔ About Us</h2>
             <p className="text-lg text-white mt-2">
-              TOR-W: Launchpad is a mod for Among Us that adds in brand new roles, features, and gamemodes!<br />
-              It is designed so that the roles and features stay somewhat consistent with the original game and don't feel out of place!
+              TOR-W: Launchpad is a mod for Among Us that adds brand new roles, features, and gamemodes!<br />
+              It's designed to stay true to the original game while expanding the possibilities.
             </p>
           </section>
 
           {/* Features */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🌟 Features</h2>
-            <p className="text-lg text-white text-justify mt-2">
-              You can read about all of the features on the{" "}
-              <a href="https://launchpad.xtracube.dev/" target="_blank" rel="noopener noreferrer"
-                className="font-bold text-fuchsia-400 hover:underline hover:text-fuchsia-300">
-                wiki
-              </a>, but here are a couple of them:<br />
-              <ul className="list-disc list-inside text-left text-white mt-4 space-y-1">
-                <li>Gradient Colors</li>
-                <li>Special Voting Modes</li>
-                <li>Feature-Rich Roles</li>
-                <li>New Game Options</li>
-                <li>Exciting Gamemodes</li>
-              </ul>
-            </p>
+            <ul className="list-disc list-inside text-left text-white mt-4 space-y-1">
+              <li>Gradient Colors</li>
+              <li>Special Voting Modes</li>
+              <li>Feature-Rich Roles</li>
+              <li>New Game Options</li>
+              <li>Exciting Gamemodes</li>
+            </ul>
           </section>
 
           {/* Compatibility */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">🔧 Compatibility</h2>
-            <p className="text-lg text-white text-justify mt-2">
-              <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
-                <li>Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).</li>
-                <li>TOR-W: Launchpad is <b>NOT</b> a host-only mod. Every player needs to install it to enjoy.</li>
-                <li>TOR-W: Launchpad does <b>NOT</b> work on normal Among Us servers. We host our own private game servers instead.</li>
-              </ul>
-            </p>
+            <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
+              <li>Supports 2025.3.25 (16.0.0) on PC (Android support coming soon™).</li>
+              <li>Not a host-only mod — all players must install it.</li>
+              <li>Only works on private TOR-W servers (not official Among Us servers).</li>
+            </ul>
           </section>
 
-          {/* Installation */}
+          {/* Manual Installation */}
           <section>
             <h2 className="text-2xl text-yellow-500 font-semibold">📥 Installation</h2>
             <p className="text-lg text-white text-justify mt-2">
-              <b>For manual installation, you must also download:<br /></b>
-              <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
-                <li>Unity.Il2Cpp win-x86 BepInEx build</li>
-                <li>Reactor</li>
-                <li>Mira API</li>
-              </ul><br />
+              <b>For manual installation, download and install:</b>
             </p>
+            <ul className="list-disc list-inside text-left text-white mt-2 space-y-1">
+              <li>Unity.Il2Cpp win-x86 BepInEx build</li>
+              <li>Reactor</li>
+              <li>Mira API</li>
+            </ul>
           </section>
         </header>
       </div>
 
+      {/* Promo / Highlight */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <div className="flex items-start space-x-4">
           <div className="text-3xl">📢</div>
           <div>
             <h3 className="text-2xl font-bold text-yellow-500">Town Of Re-Worked: Launchpad</h3>
             <p className="mt-2 text-sm text-gray-200">
-              Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create a unique experience for your crew. Ideal for streamers and private lobbies!
+              Elevate your Among Us gameplay with our client-sided mod. Customize settings, add new roles, and create unique experiences.
             </p>
             <button
-  onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/wiki', '_blank')}
-  className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
->
-  Read More
-</button>
+              onClick={() => window.open("https://github.com/TownofReworked/TORWLaunchpad/wiki", "_blank")}
+              className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+            >
+              Read More
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl border-2 border-yellow-500 mx-auto">
-      <div className="flex items-start space-x-4">
-        <div className="text-3xl">✨</div>
-        <div className="flex-1 text-center">
-          <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
-          <p className="mt-2 text-sm text-gray-200">
-            The mod is posted on GitHub. Pressing the "Download" button will take you to the latest release published.<br />
-            The mod will not be updated for a long time now, due to my exams.
-          </p>
-
-          {releaseTitle && (
-            <p className="mt-2 text-sm text-white">
-              <strong>Latest release:</strong> <span className="text-yellow-400">{releaseTitle}</span>
+      {/* Download */}
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl border-2 border-yellow-500">
+        <div className="flex items-start space-x-4">
+          <div className="text-3xl">✨</div>
+          <div className="flex-1 text-center">
+            <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
+            <p className="mt-2 text-sm text-gray-200">
+              Click below to get the latest version from GitHub. Updates may be delayed due to exams.
             </p>
-          )}
-
-          <button
-            onClick={() => window.open('https://github.com/TownofReworked/TORWLaunchpad/releases/download/v1.1.0/TOR-W-L.zip', '_blank')}
-            className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
-          >
-            Download
-          </button>
+            {releaseTitle && (
+              <p className="mt-2 text-sm text-white">
+                <strong>Latest release:</strong> <span className="text-yellow-400">{releaseTitle}</span>
+              </p>
+            )}
+            <button
+              onClick={() =>
+                window.open("https://github.com/TownofReworked/TORWLaunchpad/releases/download/v1.1.0/TOR-W-L.zip", "_blank")
+              }
+              className="mt-4 rounded-full bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+            >
+              Download
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
-  <ServerInstallation />
-</div>
+      {/* Server Installation Component */}
+      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
+        <ServerInstallation />
+      </div>
 
       {/* Feedback Form */}
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
@@ -187,7 +178,6 @@ export default function Home() {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-
           <select
             className="w-full p-3 bg-black/40 border border-white/20 rounded text-white"
             value={feedbackType}
@@ -200,7 +190,6 @@ export default function Home() {
             <option value="💡 Suggestion">💡 Suggestion</option>
             <option value="📝 Other">📝 Other</option>
           </select>
-
           <textarea
             className="w-full p-3 bg-black/40 border border-white/20 rounded resize-none"
             rows={4}
@@ -209,7 +198,6 @@ export default function Home() {
             onChange={(e) => setMessage(e.target.value)}
             required
           />
-
           <button
             type="submit"
             disabled={status === "sending" || message.trim() === ""}
@@ -217,13 +205,13 @@ export default function Home() {
           >
             {status === "sending" ? "Sending..." : "Submit"}
           </button>
-
           {status === "sent" && <p className="text-green-400 text-sm">✅ Feedback sent!</p>}
           {status === "error" && <p className="text-red-400 text-sm">❌ Failed to send. Try again.</p>}
         </form>
       </div>
+
       <blockquote className="border-l-4 border-yellow-500 pl-4 italic text-white mt-4">
-         "TOR-W is built for fans, by fans — aiming to enhance the Among Us experience while staying true to its roots."
+        "TOR-W is built for fans, by fans — aiming to enhance the Among Us experience while staying true to its roots."
       </blockquote>
       <br />
     </div>
