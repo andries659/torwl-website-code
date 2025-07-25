@@ -2,7 +2,6 @@ import type { Route } from "./+types/home";
 import { useState, useEffect } from "react";
 import logo from "./logo.png"; // Make sure this path is correct
 import { Filter } from "bad-words";
-import ServerInstallation from "./components/ServerInstallation"; // Make sure this component exists
 
 export function meta({ }: Route.MetaArgs) {
   return [{ title: "Home" }];
@@ -159,11 +158,6 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Server Installation Component */}
-      <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
-        <ServerInstallation />
       </div>
 
       {/* Feedback Form */}
