@@ -94,7 +94,7 @@ const plannedRoles = [
   {
     name: "Blackmailer",
     team: "Impostor",
-    description: "Mute other players so they can't talk in the <b>next</b> meeting.",
+    description: <>Mute other players so they can't talk in the <b>next</b> meeting.</>,
     finished: false,
     percent: 0,
   },
