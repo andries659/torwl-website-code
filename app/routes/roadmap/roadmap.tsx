@@ -59,7 +59,7 @@ const plannedRoles = [
   {
     name: "Snitch",
     team: "Crewmate",
-    description: "Finish tasks to see the <span style={{ color: "red" }}>Impostors</span>. Be warned, once you see them, they can see you.",
+    description: "Finish tasks to see the <span className="text-red-500">Impostors</span>. Be warned, once you see them, they can see you.",
     finished: false,
     percent: 0,
   },
