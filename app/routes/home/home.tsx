@@ -142,7 +142,7 @@ export default function Home() {
           <div className="flex-1 text-center">
             <h3 className="text-2xl font-bold text-yellow-500">Download</h3>
             <p className="mt-2 text-sm text-gray-200">
-              Click below to get the latest version from GitHub. Updates may be delayed due to exams.
+              Click below to get the latest version from GitHub. Updates may be delayed due to school as of right now.
             </p>
             {releaseTitle && (
               <p className="mt-2 text-sm text-white">
