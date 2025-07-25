@@ -148,7 +148,7 @@ export default function Roadmap() {
               <div className="text-xl font-semibold text-gray-900">{item.title}</div>
               <div className="text-gray-700 mb-1">Status: {displayStatus}</div>
               <div className="text-gray-800 mb-2">{item.description}</div>
-              <div className="flex gap-2 flex-wrap">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
