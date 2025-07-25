@@ -63,6 +63,7 @@ export default function App() {
         <a href="/roles" className="hover:underline font-bold">Roles</a>
         <a href="/roadmap" className="hover:underline font-bold">Roadmap</a>
         <a href="/news" className="hover:underline font-bold">News</a>
+        <a href="/server-installation" className="hover:underline font-bold">Server Installation</a>
 
         <div className="relative font-bold">
           <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
@@ -103,6 +104,7 @@ export default function App() {
           <a href="/roles" onClick={() => setIsOpen(false)}>Roles</a>
           <a href="/roadmap" onClick={() => setIsOpen(false)}>Roadmap</a>
           <a href="/news" onClick={() => setIsOpen(false)}>News</a>
+          <a href="/server-installation" onClick={() => setIsOpen(false)}>Server Installation</a>
 
           <div className="relative">
             <button onClick={() => setIsEventsOpen(!isEventsOpen)}>Events Bot <span className="material-symbols-outlined">arrow_drop_down</span></button>
