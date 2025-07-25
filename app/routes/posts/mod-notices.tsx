@@ -2,7 +2,7 @@ import type { Route } from "./+types/installation";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import emoji from "node-emoji";
+import * as emoji from "node-emoji"; // ✅ fixed import
 
 export function meta({ }: Route.MetaArgs) {
   return [{ title: "Mod Notices" }];
