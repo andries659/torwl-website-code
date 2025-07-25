@@ -2,21 +2,42 @@ import type { Route } from "./+types/installation";
 import React from "react";
 
 export function meta({ }: Route.MetaArgs) {
-  return [{ title: "Server Installtion" }];
+  return [{ title: "Server Installation" }];
 }
 
 export default function ServerInstallation() {
   const moddedServers = [
-    { name: "Modded EU", href: "amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false" },
-    { name: "Modded NA", href: "amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.org&usedtls=false" },
-    { name: "Modded Asia", href: "amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false" },
+    {
+      name: "Modded EU",
+      href: "amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false",
+    },
+    {
+      name: "Modded NA",
+      href: "amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.org&usedtls=false",
+    },
+    {
+      name: "Modded Asia",
+      href: "amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false",
+    },
   ];
 
   const nikoServers = [
-    { name: "NikoCat EU", href: "amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false" },
-    { name: "NikoCat NA", href: "amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false" },
-    { name: "NikoCat Asia", href: "amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false" },
-    { name: "NikoCat CN", href: "amongus://init?servername=Niko233(CN)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.me&usedtls=false" },
+    {
+      name: "NikoCat EU",
+      href: "amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false",
+    },
+    {
+      name: "NikoCat NA",
+      href: "amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false",
+    },
+    {
+      name: "NikoCat Asia",
+      href: "amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false",
+    },
+    {
+      name: "NikoCat CN",
+      href: "amongus://init?servername=Niko233(CN)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.me&usedtls=false",
+    },
   ];
 
   return (
@@ -48,7 +69,7 @@ export default function ServerInstallation() {
           </a>
         </div>
         <p className="text-sm mt-2 text-center">
-          This file is provided for convenience. We at <b>TEN</b> do not maintain or guarantee its safety. Use at your own discretion.
+          This file is provided for convenience. We at <b>TOR-W</b> do not maintain or guarantee its safety. Use at your own discretion.
         </p>
       </div>
 
@@ -60,7 +81,8 @@ export default function ServerInstallation() {
           <li>Click on a server link below to join directly.</li>
         </ol>
 
-        <div className="text-center mt-4">
+        {/* Modded Servers */}
+        <div className="text-center mt-6">
           <p className="font-bold text-lg">Modded Servers</p>
           <div className="mt-2 flex flex-wrap justify-center gap-2">
             {moddedServers.map((server) => (
@@ -78,26 +100,28 @@ export default function ServerInstallation() {
             ))}
           </div>
         </div>
-      </div>
-      {/* NikoCat Servers */}
-        <p className="font-bold text-lg text-center">NikoCat233's Modded Servers</p>
-        <p className="text-sm text-gray-300 text-center mb-4">
-          These have a built-in Anti-Cheat tailored for host-only mods.
-        </p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {nikoServers.map((server) => (
-            <a
-              key={server.name}
-              href={server.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={`https://img.shields.io/badge/${encodeURIComponent(server.name)}-E4405F?style=for-the-badge&logo=naver&logoColor=white&color=324ec0`}
-                alt={server.name}
-              />
-            </a>
-          ))}
+
+        {/* NikoCat Servers */}
+        <div className="text-center mt-8">
+          <p className="font-bold text-lg">NikoCat233's Modded Servers</p>
+          <p className="text-sm text-gray-300 mb-4">
+            These have a built-in Anti-Cheat tailored for host-only mods.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {nikoServers.map((server) => (
+              <a
+                key={server.name}
+                href={server.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={`https://img.shields.io/badge/${encodeURIComponent(server.name)}-E4405F?style=for-the-badge&logo=naver&logoColor=white&color=324ec0`}
+                  alt={server.name}
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       <br />
