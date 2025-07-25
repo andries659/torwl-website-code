@@ -61,6 +61,7 @@ const plannedRoles = [
     team: "Crewmate",
     description: "Finish tasks to see the <color=red>Impostors</color>. Be warned, once you see them, they can see you.",
     finished: false,
+    percent: 0,
   },
   {
     name: "Witch Doctor",
@@ -179,6 +180,36 @@ export default function Roadmap() {
                       ROLE
                     </span>
                   )}
+                  {
+  role.percent && (
+    <span
+      className={`text-white text-xs font-bold px-2 py-1 rounded ${
+        role.percent === 10
+          ? "bg-gradient-to-r from-red-800 to-red-500"
+          : role.percent === 20
+          ? "bg-gradient-to-r from-red-700 to-red-400"
+          : role.percent === 30
+          ? "bg-gradient-to-r from-orange-600 to-orange-300"
+          : role.percent === 40
+          ? "bg-gradient-to-r from-yellow-600 to-yellow-300"
+          : role.percent === 50
+          ? "bg-gradient-to-r from-yellow-500 to-yellow-200"
+          : role.percent === 60
+          ? "bg-gradient-to-r from-lime-500 to-lime-300"
+          : role.percent === 70
+          ? "bg-gradient-to-r from-green-600 to-green-400"
+          : role.percent === 80
+          ? "bg-gradient-to-r from-green-500 to-green-300"
+          : role.percent === 90
+          ? "bg-gradient-to-r from-green-500 to-green-200"
+          : "bg-gradient-to-r from-emerald-500 to-emerald-200"
+      }`}
+      style={{ whiteSpace: "nowrap" }}
+    >
+      {role.percent}%
+    </span>
+  );
+}
 
                   {/* ✅ Show Finished tag conditionally */}
                   {role.finished && (
