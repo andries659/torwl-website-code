@@ -8,19 +8,29 @@ export function meta({ }: Route.MetaArgs) {
   return [{ title: "Mod Notices" }];
 }
 
+function renderDiscordEmoji(text: string): string {
+  const regex = /<a?:([\w]+):(\d+)>/g;
+  return text.replace(regex, (_, name, id) => {
+    const ext = _.startsWith('<a:') ? 'gif' : 'webp';
+    return `![](https://cdn.discordapp.com/emojis/${id}.${ext}?size=32)`;
+  });
+}
+
 // Replace emoji shortcodes with actual emojis
 const rawNotices = [
   `> ⚠️ **Warning:** Version \`1.2.4\` is not compatible with Among Us v2024.7.23!  
   Please downgrade or wait for an update.`,
 
-  `<img src="https://cdn.discordapp.com/emojis/1226304396686524478.webp?size=40" alt="coolemoji" style="width: 20px; height: 20px; display: inline;" /> **New Update Released!**  
+  `<img src="https://cdn.discordapp.com/emojis/1226304396686524478.webp?size=40" alt="coolemoji"/> **New Update Released!**  
   The \`/contractor\` role has been revamped. Try it now! 🎉`,
 
   `:sparkles: *Community event this weekend!* Join our [Discord](https://discord.gg/yourserver) to participate.`,
 ];
 
 // Convert :emoji: to actual emoji
-const notices = rawNotices.map((text) => emoji.emojify(text));
+const notices = rawNotices.map((text) =>
+  renderDiscordEmoji(emoji.emojify(text))
+);
 
 export default function ModNotices() {
   return (
@@ -40,16 +50,19 @@ export default function ModNotices() {
             className="bg-black/40 border border-white/10 rounded-xl p-6 backdrop-blur text-left shadow-lg"
           >
             <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className="prose prose-invert max-w-full"
-              components={{
-                img: ({ node, ...props }) => (
-                  <img {...props} style={{ width: "20px", height: "20px", display: "inline-block" }} />
-                ),
-              }}
-            >
-              {notice}
-            </ReactMarkdown>
+  remarkPlugins={[remarkGfm]}
+  className="prose prose-invert max-w-full"
+  components={{
+    img: ({ node, ...props }) => (
+      <img
+        {...props}
+        style={{ width: "20px", height: "20px", display: "inline-block", verticalAlign: "middle" }}
+      />
+    ),
+  }}
+>
+  {notice}
+</ReactMarkdown>
           </div>
         ))}
       </div>
