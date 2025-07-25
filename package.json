@@ -23,7 +23,8 @@
     "react-router-dom": "^7.0.2",
     "web-push": "^3.6.7",
     "react-markdown": "^9.0.0", 
-    "remark-gfm": "^4.0.0"
+    "remark-gfm": "^4.0.0",
+    "node-emoji": "^2.1.0"
   },
   "devDependencies": {
     "@netlify/vite-plugin-react-router": "^0.0.0",
