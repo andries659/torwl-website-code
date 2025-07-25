@@ -101,7 +101,7 @@ export default function ServerInstallation() {
           ))}
         </div>
       </div>
+      <br />
     </section>
-    <br></br>
   );
 }
