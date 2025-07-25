@@ -26,6 +26,16 @@ const posts = [
     image: "/mod-updates.webp",
     tags: ["MOD", "PATCH NOTES", "DEV LOG"],
   },
+  {
+    title: "Mod Notices",
+    href: "/news/mod-notices",
+    category: "Mod",
+    date: "May 26, 2025",
+    updated: "May 27, 2025",
+    author: "Andries",
+    image: "/mod-notices.png",
+    tags: ["MOD", "NOTICE", "IMPORTANT", "UPDATE"]
+  },
 ];
 
 export default function PostsPage() {
