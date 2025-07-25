@@ -180,7 +180,6 @@ export default function Roadmap() {
                       ROLE
                     </span>
                   )}
-                  {
   {role.percent && (
   <span
     className={`text-white text-xs font-bold px-2 py-1 rounded ${
