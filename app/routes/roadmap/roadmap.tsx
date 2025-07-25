@@ -82,6 +82,7 @@ const plannedRoles = [
     team: "Neutral",
     description: "Douse players and ignite them to win.",
     finished: false,
+    percent: 0,
   },
   {
     name: "Survivor",
