@@ -21,7 +21,7 @@ const rawNotices = [
   `> ⚠️ **Warning:** Version \`1.2.4\` is not compatible with Among Us v2024.7.23!  
   Please downgrade or wait for an update.`,
 
-  `<img src="https://cdn.discordapp.com/emojis/1226304396686524478.webp?size=40" alt="coolemoji"/> **New Update Released!**  
+  `<:Etto:1249785837995032678> **New Update Released!**  
   The \`/contractor\` role has been revamped. Try it now! 🎉`,
 
   `:sparkles: *Community event this weekend!* Join our [Discord](https://discord.gg/yourserver) to participate.`,
