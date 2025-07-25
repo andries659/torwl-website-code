@@ -1,3 +1,4 @@
+import type { Route } from "./+types/installation";
 import React from "react";
 
 export default function ServerInstallation() {
