@@ -11,4 +11,5 @@ export default [
   route("/news/website-updates", "routes/posts/website-updates.tsx"),
   route("/news/mod-updates", "routes/posts/mod-updates.tsx"),
   route("/news", "routes/posts/posts.tsx"),
+  route("/server-installation", "routes/serverinstallation/ServerInstallation.tsx"),
 ] satisfies RouteConfig;
