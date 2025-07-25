@@ -57,6 +57,12 @@ const roadmapItems = [
 // ✅ Add `finished: true` for roles/modifiers that are done
 const plannedRoles = [
   {
+    name: "Snitch",
+    team: "Crewmate",
+    description: "Finish tasks to see the <color=red>Impostors</color>. Be warned, once you see them, they can see you.",
+    finished: true,
+  },
+  {
     name: "Witch Doctor",
     team: "Coven",
     description: "Can curse players to disable their abilities temporarily.",
@@ -69,9 +75,9 @@ const plannedRoles = [
     finished: true,
   },
   {
-    name: "Mimic",
+    name: "Arsonist",
     team: "Neutral",
-    description: "You can vote someone to kill them and take their place.",
+    description: "Douse players and ignite them to win.",
     finished: false,
   },
   {
@@ -81,9 +87,9 @@ const plannedRoles = [
     finished: false,
   },
   {
-    name: "Puppeteer",
+    name: "Blackmailer",
     team: "Impostor",
-    description: "Controll other players and let them kill for you.",
+    description: "Mute other players so they can't talk in the <b>next</b> meeting.",
     finished: false,
   },
   {
