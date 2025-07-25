@@ -18,21 +18,16 @@ function renderDiscordEmoji(text: string): string {
 
 // Replace emoji shortcodes with actual emojis
 const rawNotices = [
-  `# Dev Build Notice <:megaphone:1367962028916084786> 
-As y'all might've seen, there have been 3 dev builds. None were public or published, so I've come to a conclusion, to post ***daily** small/big dev builds, each containing something to test before v1.2.0 releases.
-
-# Dev-4 Build <:dev:904792335668359190>
+  `**Dev Build Notice <:megaphone:1367962028916084786>**
+As y'all might've seen, there have been 3 dev builds. None were public or published, so I've come to a conclusion, to post ***daily** small/big dev builds, each containing something to test before v1.2.0 releases.\n\n
+**Dev-4 Build <:dev:904792335668359190>**
 As y'all saw, Dev-1, Dev-2 & Dev-3 were all unannounced at all, but has been in the modNews JSON file, containing updates of what was added/changed/removed, or containing weird but silly bugs.
-But v1.2.0-Dev-4 will be a publicly released dev build, which is **NOT** behind paywalls/boosting whatsoever, this is because people feel like the mod owner is greedy and needs any money just to continue their mods. The dev builds will be published in <#1289344992933838964>.
-
-# Smol Sneak Peek For Dev-4 <:rainbow_penguin_peek:1226304396686524478>
-This version will contain, a new role (basically two, but Dark Fairy is incomplete), known as Survivor. All the previous roles that won in the poll, will be added to the dev builds, each containing something special, same for a QOL update <a:Eyes:1251498705471803536>.
-
-Happy playing, and have a great day/evening!
-
-— angel <:Etto:1249785837995032678>
-
--# *All dev build might not get released daily, due to some personal issues/plans, or just school getting in the way!`,
+But v1.2.0-Dev-4 will be a publicly released dev build, which is **NOT** behind paywalls/boosting whatsoever, this is because people feel like the mod owner is greedy and needs any money just to continue their mods. The dev builds will be published in <#1289344992933838964>.\n\n
+**Smol Sneak Peek For Dev-4 <:rainbow_penguin_peek:1226304396686524478>**
+This version will contain, a new role (basically two, but Dark Fairy is incomplete), known as Survivor. All the previous roles that won in the poll, will be added to the dev builds, each containing something special, same for a QOL update <a:Eyes:1251498705471803536>.\n\n
+Happy playing, and have a great day/evening!\n\n
+— angel <:Etto:1249785837995032678>\n\n
+*All dev build might not get released daily, due to some personal issues/plans, or just school getting in the way!`,
 ];
 
 // Convert :emoji: to actual emoji
