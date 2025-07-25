@@ -60,7 +60,7 @@ const plannedRoles = [
     name: "Snitch",
     team: "Crewmate",
     description: "Finish tasks to see the <color=red>Impostors</color>. Be warned, once you see them, they can see you.",
-    finished: true,
+    finished: false,
   },
   {
     name: "Witch Doctor",
