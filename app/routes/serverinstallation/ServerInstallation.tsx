@@ -49,7 +49,7 @@ export default function ServerInstallation() {
         <p className="mt-2">Want to play on Modded Servers but none are installed on your device? Follow the instructions below.</p>
         <p className="mt-2 font-semibold">Why do I need modded servers?</p>
         <p className="mt-1">
-          Modded Servers are required for features in TOHE, like Crowded lobbies, and offer fewer restrictions than official servers.
+          Modded Servers are required for hosting lobbies in TOR-W: L, like Crowded lobbies, and offer fewer restrictions than official servers.
         </p>
       </div>
 
