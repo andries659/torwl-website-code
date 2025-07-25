@@ -180,10 +180,13 @@ export default function Roadmap() {
                       ROLE
                     </span>
                   )}
-  {role.percent && (
+                  {/* ✅ Show percent badge */}
+{role.percent !== undefined && (
   <span
     className={`text-white text-xs font-bold px-2 py-1 rounded ${
-      role.percent === 10
+      role.percent === 0
+        ? "bg-gradient-to-r from-red-900 to-red-700"
+        : role.percent === 10
         ? "bg-gradient-to-r from-red-800 to-red-500"
         : role.percent === 20
         ? "bg-gradient-to-r from-red-700 to-red-400"
