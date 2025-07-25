@@ -74,8 +74,11 @@ export default function ModNotices() {
                         target="_blank"
                         rel="noopener noreferrer"
                         {...props}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-600 rounded text-white font-semibold hover:bg-blue-700 transition"
-                        style={{ textDecoration: "none" }}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-white font-semibold hover:bg-blue-700 transition"
+                        style={{ 
+                          textDecoration: "none",
+                          backgroundColor: "rgba(59, 130, 246, 0.6)" // lighter and more transparent blue
+                            }}
                       >
                         <span>#</span>
                         <span>{children}</span>
