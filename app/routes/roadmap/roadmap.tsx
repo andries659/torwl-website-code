@@ -68,12 +68,14 @@ const plannedRoles = [
     team: "Coven",
     description: "Can curse players to disable their abilities temporarily.",
     finished: true,
+    percent: 100,
   },
   {
     name: "Dark Fairy",
     team: "Coven",
     description: "Darken players to add them to your team. If you lose, the darkened players lose as well, and the same for winning.",
     finished: true,
+    percent: 90,
   },
   {
     name: "Arsonist",
@@ -86,30 +88,35 @@ const plannedRoles = [
     team: "Neutral",
     description: "Stay alive to win, that's all.",
     finished: false,
+    percent: 0,
   },
   {
     name: "Blackmailer",
     team: "Impostor",
     description: "Mute other players so they can't talk in the <b>next</b> meeting.",
     finished: false,
+    percent: 0,
   },
   {
     name: "Glow",
     team: "Modifier",
     description: "You give off light when lights are down.",
     finished: true,
+    percent: 100,
   },
   {
     name: "Bait",
     team: "Modifier",
     description: "Make your killer self-report.",
     finished: true,
+    percent: 100,
   },
   {
     name: "Burst",
     team: "Modifier",
     description: "You kill other players in your radius when you die.",
     finished: true,
+    percent: 100,
   },
 ];
 
