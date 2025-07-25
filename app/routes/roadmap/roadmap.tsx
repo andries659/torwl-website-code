@@ -59,7 +59,11 @@ const plannedRoles = [
   {
     name: "Snitch",
     team: "Crewmate",
-    description: "Finish tasks to see the <span className="text-red-500">Impostors</span>. Be warned, once you see them, they can see you.",
+    description: (
+  <>
+    Finish tasks to see the <span className="text-red-500">Impostors</span>. Be warned, once you see them, they can see you.
+  </>
+),
     finished: false,
     percent: 0,
   },
@@ -94,7 +98,11 @@ const plannedRoles = [
   {
     name: "Blackmailer",
     team: "Impostor",
-    description: <>Mute other players so they can't talk in the <b>next</b> meeting.</>,
+    description: (
+  <>
+    Mute other players so they can't talk in the <b>next</b> meeting.
+  </>
+),
     finished: false,
     percent: 0,
   },
