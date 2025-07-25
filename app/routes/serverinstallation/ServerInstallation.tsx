@@ -22,6 +22,7 @@ export default function ServerInstallation() {
   return (
     <section className="text-white space-y-10">
       {/* Intro */}
+      <br />
       <div className="w-full max-w-7xl mx-auto bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <h2 className="text-2xl text-yellow-500 font-semibold">🧪 Server Installation</h2>
         <p className="mt-2">Want to play on Modded Servers but none are installed on your device? Follow the instructions below.</p>
@@ -78,9 +79,7 @@ export default function ServerInstallation() {
           </div>
         </div>
       </div>
-
       {/* NikoCat Servers */}
-      <div className="w-full max-w-7xl mx-auto bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl border-2 border-yellow-500">
         <p className="font-bold text-lg text-center">NikoCat233's Modded Servers</p>
         <p className="text-sm text-gray-300 text-center mb-4">
           These have a built-in Anti-Cheat tailored for host-only mods.
