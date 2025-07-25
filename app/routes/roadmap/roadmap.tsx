@@ -148,11 +148,11 @@ export default function Roadmap() {
               <div className="text-xl font-semibold text-gray-900">{item.title}</div>
               <div className="text-gray-700 mb-1">Status: {displayStatus}</div>
               <div className="text-gray-800 mb-2">{item.description}</div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+              <div className="overflow-x-auto whitespace-nowrap border-b border-gray-600 pb-2 mb-4">
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`w-3 h-3 rounded-full ${tagColors[tag]}`}
+                    className={`inline-block w-3 h-3 rounded-full mr-2 ${tagColors[tag]}`}
                     title={tag}
                   ></span>
                 ))}
