@@ -13,7 +13,7 @@ const notices = [
   Please downgrade or wait for an update.`,
   `**New Update Released!**  
   The \`/contractor\` role has been revamped. Try it now! 🎉`,
-  <p>:sparkles: *Community event this weekend!* Join our [Discord](https://discord.gg/yourserver) to participate.</p>,
+  `:sparkles: *Community event this weekend!* Join our [Discord](https://discord.gg/yourserver) to participate.`,
 ];
 
 export default function ModNotices() {
