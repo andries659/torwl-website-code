@@ -93,7 +93,7 @@ const plannedRoles = [
     team: "Neutral",
     description: "Stay alive to win, that's all.",
     finished: false,
-    percent: 0,
+    percent: 90,
   },
   {
     name: "Blackmailer",
