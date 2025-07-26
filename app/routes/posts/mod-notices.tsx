@@ -44,9 +44,9 @@ export default function ModNotices() {
     <section className="text-white space-y-10">
       <br />
       <div className="w-full max-w-7xl mx-auto bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-red-500">
-        <h2 className="text-2xl text-red-500 font-semibold">📢 Mod Notices</h2>
+        <h2 className="text-2xl text-red-500 font-semibold"><:megaphone:1367962028916084786> Mod Notices</h2>
         <p className="mt-2">Stay up to date with the latest updates, warnings, and important information for TOR-W: L.</p>
-        <p className="mt-2 font-semibold">Supports Discord formatting & emojis</p>
+        <p className="mt-2 font-semibold">This is for if people are not in the server, and want to view the website. This will be updated to *ONLY* show the *LATEST* notice.</p>
       </div>
 
       {/* Notices */}
