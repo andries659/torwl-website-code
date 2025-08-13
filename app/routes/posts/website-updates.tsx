@@ -13,7 +13,7 @@ export default function WebsiteUpdates() {
       <PostMeta
         category="Website"
         date="May 25, 2025"
-        updated="May 29, 2025"
+        updated="August 13, 2025"
         author="Andries"
       />
 
@@ -38,6 +38,7 @@ export default function WebsiteUpdates() {
           <li>Changed the "Posts" section to "News".</li>
           <li>Made some cards for the "News" section (The new sleek design).</li>
           <li>Added images to the cards.</li>
+          <li>Added a `Tip` block at the [Mod Updates](https://torw-official.netlify.app/news/mod-updates) page, which has a hover/pressed effect.</li>
         </ul>
         <br />
         <div className="mb-4">
