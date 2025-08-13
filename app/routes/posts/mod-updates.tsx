@@ -103,7 +103,7 @@ export default function ModUpdates() {
         Welcome to the mod updates page! Here, you'll find the latest features, bug fixes,
         and changes to our mod. Stay tuned for more!
       </p>
-
+      <br></br>
       <div className="w-full max-w-7xl bg-black/50 rounded-2xl p-10 backdrop-blur-md shadow-xl text-center border-2 border-yellow-500">
         <div className="flex items-start space-x-4">
           <div className="text-3xl">💁‍♂️</div>
