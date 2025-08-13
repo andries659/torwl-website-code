@@ -21,7 +21,7 @@ const posts = [
     href: "/news/mod-updates",
     category: "Mod",
     date: "May 26, 2025",
-    updated: "May 27, 2025",
+    updated: "August 13, 2025",
     author: "Andries",
     image: "/mod-updates.webp",
     tags: ["MOD", "PATCH NOTES", "DEV LOG"],
