@@ -49,7 +49,7 @@ export default function ServerInstallation() {
         <section className="max-w-3xl text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white">Server Installation</h1>
           <p className="mt-4 text-lg md:text-2xl text-gray-100">
-            These Modded Servers can be used to play the TOR-W: L mod, as it's not playble on the Innersloth Servers.
+            These Modded Servers can be used to play the TOR-W: L mod, as it is not playble on the Innersloth Servers.
           </p>
         </section>
 
@@ -104,7 +104,7 @@ export default function ServerInstallation() {
 
           {/* NikoCat Servers */}
           <div className="mt-8 text-center">
-            <p className="font-bold text-lg">NikoCat233's Modded Servers</p>
+            <p className="font-bold text-lg">NikoCat233&apos;s Modded Servers</p>
             <p className="text-sm text-gray-300 mb-4">
               Includes built-in Anti-Cheat for host-only mods.
             </p>
