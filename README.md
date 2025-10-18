@@ -1,74 +1,36 @@
-# React Router Netlify Template
-
-A modern, production-ready template for building full-stack React applications using React Router,
-deployed to Netlify.
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-- 💻 Configured for deployment to Netlify
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Building for Production
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-Create a production build:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-npm run build
-```
+## Learn More
 
-## Previewing a Production build
+To learn more about Next.js, take a look at the following resources:
 
-To preview a production build locally, use the [Netlify CLI](https://cli.netlify.com):
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-npx netlify-cli serve
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```bash
-npm run build
-```
+## Deploy on Vercel
 
-## Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This template is preconfigured for deployment to Netlify.
-
-Follow <https://docs.netlify.com/welcome/add-new-site/> to add this project as a site
-in your Netlify account.
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
-## See also
-
-[Guide: how to deploy a React Router 7 site to Netlify](https://developers.netlify.com/guides/how-to-deploy-a-react-router-7-site-to-netlify/)
-
----
-
-Built with ❤️ using React Router.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,42 +1,28 @@
 {
-  "name": "desktop-test-website",
+  "name": "my-website",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "npm run dev",
-    "typecheck": "react-router typegen && tsc"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "@react-router/node": "^7.0.2",
-    "@react-router/serve": "^7.0.2",
-    "@remix-run/node": "^2.16.7",
-    "@remix-run/react": "^2.16.7",
-    "@remix-run/server-runtime": "^2.16.7",
-    "bad-words": "^4.0.0",
-    "isbot": "^5.1.17",
-    "lucide-react": "^0.511.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router": "^7.0.2",
-    "react-router-dom": "^7.0.2",
-    "web-push": "^3.6.7",
-    "react-markdown": "^9.0.0", 
-    "remark-gfm": "^4.0.0",
-    "node-emoji": "^2.1.0"
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@netlify/vite-plugin-react-router": "^0.0.0",
-    "@react-router/dev": "^7.0.2",
-    "@types/node": "^20",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.14",
-    "vite-tsconfig-paths": "^5.1.2"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4"
   }
 }
