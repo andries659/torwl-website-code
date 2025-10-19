@@ -389,18 +389,6 @@ export default function Roles() {
       <main className="min-h-screen flex flex-col items-center px-4 py-10 pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white">
         <h1 className="text-3xl md:text-5xl font-bold mb-8">Roles & Modifiers</h1>
 
-        <p className="max-w-2xl text-center mb-8">
-          This page only shows the roles I added to the mod. To see the base of all the other roles, please visit the{" "}
-          <a
-            href="https://launchpad.allofus.dev/index.php/Main_Page"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-bold text-white hover:text-purple-500"
-          >
-            Launchpad Wiki
-          </a>.
-        </p>
-
         {/* Roles Section (Only Renders If You Add Roles) */}
         {roles.length > 0 && (
           <section className="w-full max-w-4xl mb-10">
