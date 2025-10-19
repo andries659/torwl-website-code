@@ -6,7 +6,7 @@ import { FaPalette, FaVoteYea, FaPuzzlePiece, FaCog, FaGamepad, FaCheckCircle, F
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 
-// ✅ Define DownloadButton (NOT default export)
+// Define DownloadButton (NOT default export)
 function DownloadButton() {
   const [downloadUrl, setDownloadUrl] = useState(null);
 
@@ -37,7 +37,7 @@ function DownloadButton() {
   );
 }
 
-// ✅ Main Page — Only one default export
+// Main Page — Only one default export
 export default function Home() {
   return (
     <>
@@ -53,7 +53,7 @@ export default function Home() {
             A place for roles, features, and updates — optimized for both mobile and desktop.
           </p>
 
-          {/* ✅ Insert Animated Download Button */}
+          {/* Insert Animated Download Button */}
           <div className="mt-8 flex justify-center">
             <DownloadButton />
           </div>

@@ -270,6 +270,46 @@ export default function Roles() {
       "Crewmate Modifier": "bg-blue-400/30 text-blue-100",
     };
 
+    const getBadgeColor = (badge) => {
+      if (badge.startsWith("v1")) {
+        return "bg-indigo-500/30 text-indigo-100"; // custom v1 style
+      }
+      if (badge.endsWith("-a")) {
+        return "bg-orange-500/30 text-orange-100"; // Alpha
+      }
+      if (badge.endsWith("-b")) {
+        return "bg-yellow-500/30 text-yellow-100"; // Beta
+      }
+      if (badge.endsWith("-rc")) {
+        return "bg-purple-500/30 text-purple-100"; // Release Candidate
+      }
+      if (badge.endsWith("-r")) {
+        return "bg-green-500/30 text-green-100"; // Release (stable)
+      }
+      if (badge.endsWith("-d")) {
+        return "bg-gray-500/30 text-gray-100"; // Dev
+      }
+      if (badge.endsWith("-t")) {
+        return "bg-blue-500/30 text-blue-100"; // Test
+      }
+      if (badge.endsWith("-h")) {
+        return "bg-red-600/30 text-red-100"; // Hotfix
+      }
+      if (badge.endsWith("-p")) {
+        return "bg-indigo-500/30 text-indigo-100"; // Patch
+      }
+      if (badge.endsWith("-u")) {
+        return "bg-cyan-500/30 text-cyan-100"; // Update
+      }
+      if (badge.endsWith("-f")) {
+        return "bg-pink-500/30 text-pink-100"; // Feature
+      }
+      if (badge.endsWith("-o")) {
+        return "bg-teal-500/30 text-teal-100"; // Overhaul
+      }
+      return badgeColors[badge] || "bg-gray-500/30 text-gray-100"; // fallback
+    };
+
     return (
       <div className="p-4 md:p-5 rounded-xl bg-black/30 backdrop-blur-md shadow flex flex-col gap-3">
         <div className="flex items-center gap-4">
@@ -280,8 +320,9 @@ export default function Roles() {
               {item.badges.map((badge, i) => (
                 <span
                   key={i}
-                  className={`text-xs md:text-sm px-2 py-0.5 rounded-full ${badgeColors[badge] || "bg-white/20 text-white"
-                    }`}
+                  className={`text-xs md:text-sm px-2 py-0.5 rounded-full ${getBadgeColor(
+                    badge
+                  )}`}
                 >
                   {badge}
                 </span>
@@ -313,7 +354,7 @@ export default function Roles() {
             {/* Extra Text */}
             {item.extra && <p className="text-sm">{item.extra}</p>}
 
-            {/* ✅ Tips & Tricks Box */}
+            {/* Tips & Tricks Box */}
             {item.tips && (
               <div className="mt-3 p-3 bg-yellow-400/20 border border-yellow-500/40 rounded-lg flex items-start gap-3">
                 <FaLightbulb className="text-yellow-400 text-lg mt-1" />
@@ -333,7 +374,7 @@ export default function Roles() {
                     className={`flex flex-col items-center text-center ${img.type === "button" ? "w-auto" : "w-full"
                       }`}
                   >
-                    {/* ✅ Ability Button (small, centered) */}
+                    {/* Ability Button */}
                     {img.type === "button" ? (
                       <img
                         src={img.src}
@@ -341,7 +382,7 @@ export default function Roles() {
                         className="w-16 h-16 object-contain rounded-md mx-auto"
                       />
                     ) : (
-                      /* ✅ Screenshot (large, responsive, with modal) */
+                      /* Screenshot (modal on click) */
                       <button
                         type="button"
                         className="focus:outline-none"
