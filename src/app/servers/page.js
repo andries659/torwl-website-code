@@ -56,8 +56,13 @@ export default function ServerInstallation() {
         {/* Windows Installation */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl">
           <div className="flex items-center justify-center gap-2 mb-4 text-white">
-            <FaCog className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Windows Installation</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(59,130,246,0.2)" }} // light blue bg
+            >
+              <FaCog className="text-blue-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Windows Installation</h2>
           </div>
           <ol className="list-decimal list-inside mt-4 space-y-2 text-left md:text-lg">
             <li>Download the .bat file below.</li>
@@ -79,8 +84,13 @@ export default function ServerInstallation() {
         {/* Mobile Installation */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl">
           <div className="flex items-center justify-center gap-2 mb-4 text-white">
-            <FaCog className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Mobile Installation</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(59,130,246,0.2)" }} // light blue bg
+            >
+              <FaCog className="text-blue-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Mobile Installation</h2>
           </div>
           <ol className="list-decimal list-inside mt-4 space-y-2 text-left md:text-lg">
             <li>Open the game.</li>

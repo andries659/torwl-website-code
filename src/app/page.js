@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import { FaPalette, FaVoteYea, FaPuzzlePiece, FaCog, FaGamepad, FaCheckCircle, FaDownload } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import ChangelogSection from "./components/ChangelogSection";
 
 // Define DownloadButton (NOT default export)
 function DownloadButton() {
@@ -72,8 +73,13 @@ export default function Home() {
         {/* Features Section */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl">
           <div className="flex items-center justify-center gap-2 mb-6 text-white">
-            <FaPuzzlePiece className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Features</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(135, 58, 199, 0.57)" }}
+            >
+              <FaPuzzlePiece className="text-purple-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Features</h2>
           </div>
           <ul className="space-y-3 text-left md:text-lg">
             <li className="flex items-center gap-2"><FaPalette className="inline text-white" /> Gradient Colors and UI enhancements</li>
@@ -87,8 +93,13 @@ export default function Home() {
         {/* Compatibility Section */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl">
           <div className="flex items-center justify-center gap-2 mb-4 text-white">
-            <FaCheckCircle className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Compatibility</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(34,197,94,0.2)" }} // light green bg
+            >
+              <FaCheckCircle className="text-green-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Compatibility</h2>
           </div>
           <p className="md:text-lg">Supports version 2025.10.14 (17.0.1) on PC.</p>
           <p className="md:text-lg mt-2">Will support Starlight in the near future.</p>
@@ -99,8 +110,13 @@ export default function Home() {
         {/* Installation Section */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl">
           <div className="flex items-center justify-center gap-2 mb-4 text-white">
-            <FaCog className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Installation</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(59,130,246,0.2)" }} // light blue bg
+            >
+              <FaCog className="text-blue-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Installation</h2>
           </div>
           <p className="md:text-lg">Follow these steps to install:</p>
           <ul className="list-disc list-inside mt-4 space-y-2 text-lg">
@@ -109,6 +125,7 @@ export default function Home() {
             <li>Install Mira API</li>
           </ul>
         </section>
+        <ChangelogSection />
         <Footer />
       </main>
     </>

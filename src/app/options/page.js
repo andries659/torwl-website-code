@@ -662,7 +662,7 @@ export default function ExportConfigPage() {
                                 onClick={() => toggleCollapse(sectionKey)}
                                 className={`w-full p-4 flex justify-between items-center rounded-t-2xl ${headerLighterMap[activeTabColor] || "bg-zinc-700"}`}
                             >
-                                <div className="font-semibold">{sectionNames[sectionKey] || sectionKey}</div>
+                                <div className="font-bold">{sectionNames[sectionKey] || sectionKey}</div>
                                 <div className="text-sm">{collapsedSections[sectionKey] ? "▼" : "▲"}</div>
                             </button>
 
@@ -695,7 +695,7 @@ export default function ExportConfigPage() {
                                 onClick={() => toggleCollapse("RolesBlock")}
                                 className={`w-full p-4 flex justify-between items-center rounded-t-2xl ${headerLighterMap[activeTabColor] || "bg-zinc-700"}`}
                             >
-                                <div className="font-semibold">Roles (Num / Chance)</div>
+                                <div className="font-bold">Roles (Num / Chance)</div>
                                 <div className="text-sm">{collapsedSections["RolesBlock"] ? "▼" : "▲"}</div>
                             </button>
 
@@ -743,7 +743,15 @@ export default function ExportConfigPage() {
                 {/* Installation Section */}
                 <section className="w-full max-w-4xl bg-white/10 backdrop-blur-xl p-4 sm:p-6 md:p-8 rounded-xl mx-auto">
                     <div className="flex flex-col items-center text-center mb-6 text-white">
-                        <h2 className="flex items-center gap-2 text-xl sm:text-2xl md:text-4xl font-bold"><FaCog className="text-2xl sm:text-3xl md:text-4xl" /> Preset Config Installation</h2>
+                        <h2 className="flex items-center gap-2 text-xl sm:text-2xl md:text-4xl font-bold">
+                            <div
+                                className="flex items-center justify-center w-10 h-10 rounded-lg"
+                                style={{ backgroundColor: "rgba(59,130,246,0.2)" }} // light blue bg
+                            >
+                                <FaCog className="text-blue-500 text-2xl" />
+                            </div>
+                            Preset Config Installation
+                        </h2>
                     </div>
 
                     <p className="text-sm sm:text-base md:text-lg mb-4">Follow these steps to place your custom Preset Config:</p>
@@ -821,7 +829,7 @@ export default function ExportConfigPage() {
                 <div className="mt-6 flex gap-3 flex-wrap justify-center items-center">
                     <button
                         onClick={exportConfig}
-                        className="bg-zinc-600 px-5 py-3 rounded-xl font-semibold hover:bg-zinc-700"
+                        className="bg-zinc-600 px-5 py-3 rounded-xl font-bold hover:bg-zinc-700"
                     >
                         Export Config (Download TORWModPreset.cfg)
                     </button>

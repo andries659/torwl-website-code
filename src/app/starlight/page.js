@@ -30,7 +30,7 @@ export default function Starlight() {
             Quickly install and launch your Among Us mods on mobile, with guides, features, and downloads.
           </p>
           <Link href="/">
-            <button className="mt-8 px-6 py-3 rounded-2xl bg-yellow-500 text-gray-900 font-semibold shadow-lg hover:scale-105 transition">
+            <button className="mt-8 px-6 py-3 rounded-2xl bg-yellow-500 text-gray-900 font-bold shadow-lg hover:scale-105 transition">
               Back to Home
             </button>
           </Link>
@@ -39,8 +39,13 @@ export default function Starlight() {
         {/* Features Section */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl border-2 border-[#c49104]">
           <div className="flex items-center justify-center gap-2 mb-6 text-white">
-            <FaStar className="text-3xl text-yellow-400" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Features</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(250, 204, 21, 0.2)" }} // lighter yellow bg
+            >
+              <FaStar className="text-yellow-400 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Features</h2>
           </div>
           <ul className="space-y-3 text-left md:text-lg">
             <li className="flex items-center gap-2"><FaMobileAlt className="inline text-white" /> Mobile-first installation</li>
@@ -54,8 +59,13 @@ export default function Starlight() {
         <section className="w-full flex justify-center mt-8">
           <div className="w-full max-w-3xl bg-white/10 backdrop-blur-xl p-8 rounded-xl border-2 border-[#c49104]">
             <div className="flex items-center justify-center gap-2 mb-4 text-white">
-              <FaRocket className="text-3xl text-white" />
-              <h2 className="text-3xl md:text-4xl font-semibold">How to Launch</h2>
+              <div
+                className="flex items-center justify-center w-10 h-10 rounded-lg"
+                style={{ backgroundColor: "rgba(246, 59, 230, 0.2)" }}
+              >
+                <FaRocket className="text-pink-500 text-2xl" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold">How to Launch</h2>
             </div>
             <div className="md:text-lg mt-4 w-full">
               <p className="mb-4 text-lg md:text-2xl text-center">Watch this video for instructions:</p>
@@ -75,15 +85,20 @@ export default function Starlight() {
         {/* Download Section */}
         <section className="max-w-4xl bg-white/10 backdrop-blur-xl p-8 rounded-xl flex flex-col items-center border-2 border-[#c49104]">
           <div className="flex items-center justify-center gap-2 mb-4 text-white">
-            <FaDownload className="text-3xl text-white" />
-            <h2 className="text-3xl md:text-4xl font-semibold">Download</h2>
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-lg"
+              style={{ backgroundColor: "rgba(37,99,235,0.2)" }} // lighter blue bg
+            >
+              <FaDownload className="text-blue-500 text-2xl" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold">Download</h2>
           </div>
           <p className="md:text-lg mb-4">Click below to get the latest version for mobile:</p>
           <a
             href="https://allofus.dev/starlight.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-2xl bg-blue-600 text-white font-semibold shadow-lg hover:scale-105 transition"
+            className="px-6 py-3 rounded-2xl bg-blue-600 text-white font-bold shadow-lg hover:scale-105 transition"
           >
             Download Latest Version
           </a>

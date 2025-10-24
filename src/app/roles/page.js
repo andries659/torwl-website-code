@@ -315,7 +315,7 @@ export default function Roles() {
         <div className="flex items-center gap-4">
           {item.icon}
           <div className="flex-1">
-            <h2 className="text-lg md:text-xl font-semibold">{item.name}</h2>
+            <h2 className="text-lg md:text-xl font-bold">{item.name}</h2>
             <div className="flex flex-wrap gap-1 mt-1">
               {item.badges.map((badge, i) => (
                 <span
@@ -433,7 +433,7 @@ export default function Roles() {
         {/* Roles Section (Only Renders If You Add Roles) */}
         {roles.length > 0 && (
           <section className="w-full max-w-4xl mb-10">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-center">Roles</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Roles</h2>
             <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2">
               {roles.map((item) => (
                 <ItemCard key={item.name} item={item} />
@@ -444,7 +444,7 @@ export default function Roles() {
 
         {/* Modifiers Section */}
         <section className="w-full max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-center">Modifiers</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Modifiers</h2>
           <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2">
             {modifiers.map((item) => (
               <ItemCard key={item.name} item={item} />
