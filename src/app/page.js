@@ -109,6 +109,8 @@ export default function Home() {
             <li>Install Mira API</li>
           </ul>
         </section>
+
+          {/* Changelog Section (fetch from Github changelog for my mod) */}
         <Footer />
       </main>
     </>
