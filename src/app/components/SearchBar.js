@@ -1,10 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 
 const pages = [
   { title: "Home", url: "/" },
+  { title: "Reaper", url: "/roles#reaper" }, // Example anchor
 ];
 
 export default function SearchBar({ mobile = false }) {
@@ -32,12 +32,21 @@ export default function SearchBar({ mobile = false }) {
     if (mobile && open && inputRef.current) inputRef.current.focus();
   }, [mobile, open]);
 
+  // Smooth scroll for same-page anchors
+  const handleLinkClick = (url, e) => {
+    const [path, hash] = url.split("#");
+    if (hash && window.location.pathname === path) {
+      e.preventDefault();
+      const el = document.getElementById(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+      setOpen(false); // close mobile results
+    }
+  };
+
   if (mobile) {
     return (
       <div className="relative w-full">
-        {/* Mobile search container */}
         <div className="relative w-full">
-          {/* Icon */}
           <button
             onClick={() => setOpen(!open)}
             className={`absolute top-1/2 p-2 text-white text-lg transition-all duration-300 ease-in-out
@@ -46,7 +55,6 @@ export default function SearchBar({ mobile = false }) {
             <FaSearch />
           </button>
 
-          {/* Input */}
           <input
             ref={inputRef}
             type="text"
@@ -57,7 +65,6 @@ export default function SearchBar({ mobile = false }) {
             ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
           />
 
-          {/* Transparent button overlay to toggle open */}
           {!open && (
             <button
               onClick={() => setOpen(true)}
@@ -66,7 +73,6 @@ export default function SearchBar({ mobile = false }) {
           )}
         </div>
 
-        {/* Mobile search results with slide down animation */}
         <div
           className={`overflow-hidden transition-all duration-300 ease-in-out ${open && results.length > 0 ? "max-h-96 mt-1" : "max-h-0 mt-0"
             }`}
@@ -77,7 +83,9 @@ export default function SearchBar({ mobile = false }) {
                 key={r.url}
                 className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900"
               >
-                <Link href={r.url}>{r.title}</Link>
+                <a href={r.url} onClick={(e) => handleLinkClick(r.url, e)}>
+                  {r.title}
+                </a>
               </li>
             ))}
           </ul>
@@ -104,7 +112,9 @@ export default function SearchBar({ mobile = false }) {
               key={r.url}
               className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900"
             >
-              <Link href={r.url}>{r.title}</Link>
+              <a href={r.url} onClick={(e) => handleLinkClick(r.url, e)}>
+                {r.title}
+              </a>
             </li>
           ))}
         </ul>
