@@ -5,22 +5,27 @@ import { FaSearch } from "react-icons/fa";
 
 const pages = [
   { title: "Home", url: "/" },
-  { title: "About", url: "/about" },
-  { title: "Downloads", url: "/downloads" },
-  { title: "Mods", url: "/mods" },
 ];
 
 export default function SearchBar({ mobile = false }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // for mobile icon toggle
   const inputRef = useRef(null);
 
   const handleChange = (e) => {
     const q = e.target.value;
     setQuery(q);
-    if (!q) return setResults([]);
-    setResults(pages.filter(p => p.title.toLowerCase().includes(q.toLowerCase())));
+
+    if (!q) {
+      setResults([]);
+      return;
+    }
+
+    const filtered = pages.filter((p) =>
+      p.title.toLowerCase().includes(q.toLowerCase())
+    );
+    setResults(filtered);
   };
 
   useEffect(() => {
@@ -29,35 +34,49 @@ export default function SearchBar({ mobile = false }) {
 
   if (mobile) {
     return (
-      <div className="relative w-full flex justify-center items-center">
-        {/* Icon button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className={`z-10 flex items-center justify-center p-2 bg-white/30 backdrop-blur-md rounded-full text-white transition-all duration-300
-            ${open ? "absolute left-3" : ""}`}
-        >
-          <FaSearch className="text-lg" />
-        </button>
+      <div className="relative w-full">
+        {/* Mobile search container */}
+        <div className="relative w-full">
+          {/* Icon */}
+          <button
+            onClick={() => setOpen(!open)}
+            className={`absolute top-1/2 p-2 text-white text-lg transition-all duration-300 ease-in-out
+            ${open ? "left-2 -translate-y-1/2" : "left-1/2 -translate-x-1/2 -translate-y-1/2"}`}
+          >
+            <FaSearch />
+          </button>
 
-        {/* Input expands to the right of icon */}
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={handleChange}
-          placeholder="Search..."
-          className={`ml-0 transition-all duration-300 ease-in-out rounded border border-gray-300 bg-white/70 p-2 text-black
-            ${open ? "ml-12 w-[calc(100%-3rem)] opacity-100" : "w-0 opacity-0 pointer-events-none"}`}
-        />
+          {/* Input */}
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={handleChange}
+            placeholder="Search..."
+            className={`transition-all duration-300 ease-in-out w-full pl-10 p-2 border rounded border-gray-300 bg-white/70 text-black focus:outline-none
+            ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          />
 
-        {/* Search results */}
+          {/* Transparent button overlay to toggle open */}
+          {!open && (
+            <button
+              onClick={() => setOpen(true)}
+              className="absolute inset-0 w-full h-full"
+            />
+          )}
+        </div>
+
+        {/* Mobile search results with slide down animation */}
         <div
-          className={`absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out
-            ${open && results.length > 0 ? "max-h-96 mt-2" : "max-h-0 mt-0"}`}
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${open && results.length > 0 ? "max-h-96 mt-1" : "max-h-0 mt-0"
+            }`}
         >
           <ul className="w-full bg-white/90 border border-gray-300 rounded shadow-md z-50 relative">
             {results.map((r) => (
-              <li key={r.url} className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900">
+              <li
+                key={r.url}
+                className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900"
+              >
                 <Link href={r.url}>{r.title}</Link>
               </li>
             ))}
@@ -67,7 +86,7 @@ export default function SearchBar({ mobile = false }) {
     );
   }
 
-  // Desktop version
+  // Desktop
   return (
     <div className="relative w-full">
       <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none" />
@@ -81,7 +100,10 @@ export default function SearchBar({ mobile = false }) {
       {results.length > 0 && (
         <ul className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-300 rounded shadow-md z-50">
           {results.map((r) => (
-            <li key={r.url} className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900">
+            <li
+              key={r.url}
+              className="p-2 hover:bg-gray-100 text-blue-700 hover:text-blue-900"
+            >
               <Link href={r.url}>{r.title}</Link>
             </li>
           ))}
