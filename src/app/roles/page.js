@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaMask, FaGhost, FaShieldHeart, FaRandom, FaUserMd, FaCrosshairs, FaMountain, FaBroom, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
+import { FaMask, FaGhost, FaRandom, FaUserMd, FaCrosshairs, FaMountain, FaBroom, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
+import { FaShieldHeart } from "react-icons/fa6"
 
 export default function Roles() {
   const roles = [
