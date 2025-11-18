@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaMask, FaGhost, FaRandom, FaUserMd, FaCrosshairs, FaMountain, FaBroom, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
 import { FaShieldHeart } from "react-icons/fa6"
+import { LuShovel } from "react-icons/lu";
+import { PiBroom } from "react-icons/pi";
 
 export default function Roles() {
   const roles = [
@@ -70,7 +72,7 @@ export default function Roles() {
     {
       name: "Burrower",
       description: "Can dig vents around the map.",
-      icon: <FaMountain className="w-6 h-6 md:w-8 md:h-8 text-orange-900" />,
+      icon: <LuShovel className="w-6 h-6 md:w-8 md:h-8 text-orange-900" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to dig vents anywhere on the map.",
@@ -79,7 +81,7 @@ export default function Roles() {
     {
       name: "Janitor",
       description: "Can drag & hide bodies.",
-      icon: <FaBroom className="w-6 h-6 md:w-8 md:h-8 text-gray-400" />,
+      icon: <PiBroom className="w-6 h-6 md:w-8 md:h-8 text-gray-400" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to drag around bodies around the map, and hide them in vents.",
