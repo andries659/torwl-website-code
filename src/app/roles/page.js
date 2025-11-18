@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaMask, FaGhost, FaCertificate, FaRandom, FaUserMd, FaCrosshairs, FaMountain, FaBroom, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
+import { FaMask, FaGhost, FaShield, FaRandom, FaUserMd, FaCrosshairs, FaMountain, FaBroom, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
 
 export default function Roles() {
   const roles = [
@@ -37,7 +37,7 @@ export default function Roles() {
     {
       name: "Sheriff",
       description: "Shoot the Impostor.",
-      icon: <FaCertificate className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
+      icon: <FaShield className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can shoot any player, to guess if they are the Impostor. If you shoot the Impostor, you live. But if you shoot a Crewmate, you die.",
