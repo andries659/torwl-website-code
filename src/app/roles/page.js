@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaMask, FaGhost, FaRandom, FaUserMd, FaCrosshairs, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
-import { LuShovel } from "react-icons/lu";
+import { LuShovel, LuMailX } from "react-icons/lu";
 import { PiBroom } from "react-icons/pi";
 import { RiPoliceBadgeFill } from "react-icons/ri";
 
