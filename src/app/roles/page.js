@@ -17,7 +17,9 @@ export default function Roles() {
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "If you freeze a body, the body will stay forever, but can only be reported once as well.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate/Coroner.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Sealer",
@@ -26,7 +28,9 @@ export default function Roles() {
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You are able to seal vents, which prevents them from being used.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate/Sealer.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Medic",
@@ -35,7 +39,9 @@ export default function Roles() {
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You have the ability to revive dead players.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate/Medic.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Sheriff",
@@ -44,7 +50,9 @@ export default function Roles() {
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can shoot any player, to guess if they are the Impostor. If you shoot the Impostor, you live. But if you shoot a Crewmate, you die.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate/Sheriff.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Gambler",
@@ -53,7 +61,9 @@ export default function Roles() {
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can guess the roles of others. When you are correct, the role is revealed, if you are wrong, you die.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate/Gambler.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Teleporter",
@@ -64,7 +74,7 @@ export default function Roles() {
       extra: "",
       tips: "Using it well and timing it well, you can also catch Impostors in the act of killing!",
       images: [
-        { src: "/icons/Teleporter.png", label: "Pressing this button will zoom out your screen, so you can teleport anywhere on the map.", type: "button" },
+        { src: "/icons/Crewmate/Teleporter.png", label: "Pressing this button will zoom out your screen, so you can teleport anywhere on the map.", type: "button" },
         { src: "/screenshots/teleporter-1.png", label: "", type: "screenshot" },
         { src: "/screenshots/teleporter-2.png", label: "", type: "screenshot" }
       ]
@@ -76,7 +86,9 @@ export default function Roles() {
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to dig vents anywhere on the map.",
-      images: []
+      images: [
+        { src: "/icons/Impostor/Burrower.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Janitor",
@@ -85,7 +97,9 @@ export default function Roles() {
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to drag around bodies around the map, and hide them in vents.",
-      images: []
+      images: [
+        { src: "/icons/Impostor/Janitor.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Hitman",
@@ -94,7 +108,9 @@ export default function Roles() {
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to slow down the time and pick your targets.",
-      images: []
+      images: [
+        { src: "/icons/Impostor/Hitman.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Surgeon",
@@ -103,7 +119,9 @@ export default function Roles() {
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to inject players and kill them, and if you disect the body, it's unreportable.",
-      images: []
+      images: [
+        { src: "/icons/Impostor/Surgeon.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Swapshifter",
@@ -112,7 +130,20 @@ export default function Roles() {
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to choose people to make them switch places, it also works with you.",
-      images: []
+      images: [
+        { src: "/icons/Impostor/Swapshifter.png", label: " ", type: "button" }
+      ]
+    },
+    {
+      name: "Silencer",
+      description: "Silence players so they can not speak in the next meeting.",
+      icon: <LuMailX className="w-6 h-6 md:w-8 md:h-8 text-red-400" />,
+      badges: ["Impostor", "v2.0-f"],
+      video: "",
+      extra: "Silence players, which makes it unable for hem to talk during a meeting.",
+      images: [
+        { src: "/icons/Impostor/Silencer.png", label: "", type: "button" },
+      ]
     },
     {
       name: "Traitor",
@@ -127,7 +158,7 @@ export default function Roles() {
       extra: "This role has no ability button or anything. A 'Target' tag will be added to the Impostor the Traitor has to vote off to win.",
       tips: "Do not try to vote out the Impostor, since it could make you the next target.\nThink like an Impostor.",
       images: [
-        { src: "/icons/Traitor.png", label: "", type: "button" },
+        { src: "/icons/Neutral/Traitor.png", label: "", type: "button" },
         { src: "/screenshots/traitor.png", label: "", type: "screenshot" }
       ]
     },
@@ -140,7 +171,7 @@ export default function Roles() {
       extra: "This role has no ability button or anything. A 'Target' tag will be added to a random player the Executioner has to vote off to win.",
       tips: "Do not try to vote out your target, since it could make you the next target.\nThink like an Impostor.",
       images: [
-        { src: "/icons/Exe.png", label: " ", type: "button" },
+        { src: "/icons/Neutral/Executioner.png", label: " ", type: "button" },
         { src: "/screenshots/exe.png", label: "", type: "screenshot" }
       ]
     },
@@ -153,7 +184,7 @@ export default function Roles() {
       extra: "",
       tips: "When trying to kill, kill like a normal Impostor would. Don\'t rush anything.\nAlso, if you kill and get caught, and get voted out, YOU\'LL LOSE.",
       images: [
-        { src: "/icons/NK.png", label: "When using the ability button, you kill like a normal Impostor.\nBut you want to win ALONE.", type: "button" },
+        { src: "/icons/Neutral/NeutralKiller.png", label: "When using the ability button, you kill like a normal Impostor.\nBut you want to win ALONE.", type: "button" },
         { src: "/screenshots/nk-1.png", label: "", type: "screenshot" },
         { src: "/screenshots/nk-2.png", label: "", type: "screenshot" }
       ]
@@ -185,7 +216,7 @@ export default function Roles() {
       extra: "This role cannot win (so far). It can stop Impostors, Crewmates, or Neutrals from using their abilities for a set period of time.",
       tips: "Try to stop the Impostors from winning. Take a wild guess, and remove the abilities from your tarhet for a set period of time.",
       images: [
-        { src: "/icons/RoleBlock.png", label: "Pressing this button, while near a player, will remove their ability to do anything, for a set period of time set by the host.", type: "button" }
+        { src: "/icons/Coven/TavernKeeper.png", label: "Pressing this button, while near a player, will remove their ability to do anything, for a set period of time set by the host.", type: "button" }
       ]
     },
   ];
@@ -200,7 +231,7 @@ export default function Roles() {
       extra: "You're just a bit faster than the average player.",
       tips: "Even though the video is above the icon, it has no screenshots at all.",
       images: [
-        { src: "/icons/Flash.png", label: " ", type: "button" }
+        { src: "/icons/Universal/Flash.png", label: " ", type: "button" }
       ]
     },
     {
@@ -211,7 +242,7 @@ export default function Roles() {
       video: "",
       extra: "You're just there to brag how cool you look.",
       images: [
-        { src: "/icons/VIP.png", label: " ", type: "button" },
+        { src: "/icons/Universal/VIP.png", label: " ", type: "button" },
         { src: "/screenshots/vip.png", label: "", type: "screenshot" }]
     },
     {
@@ -222,7 +253,7 @@ export default function Roles() {
       video: "",
       extra: "There is not really a use, but the use is that your killer self reports when they kill you.",
       images: [
-        { src: "/icons/Bait.png", label: " ", type: "button" }
+        { src: "/icons/Crewmate-Mod/Bait.png", label: " ", type: "button" }
       ]
     },
     {
@@ -233,7 +264,7 @@ export default function Roles() {
       video: "",
       extra: "You're given access to a torch to see when lights are down.",
       images: [
-        { src: "/icons/Torch.png", label: " ", type: "button" },
+        { src: "/icons/Crewmate-Mod/Torch.png", label: " ", type: "button" },
         { src: "/screenshots/torch.png", label: "", type: "screenshot" }
       ]
     },
@@ -241,11 +272,11 @@ export default function Roles() {
       name: "Burst",
       description: "Explodes when killed.",
       icon: <FaBomb className="w-6 h-6 md:w-8 md:h-8 text-red-700" />,
-      badges: ["Crewmate Modifier", "v2.0.0-r"],
+      badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "When you get killed, you explode. Killing other players in a radius set by the host.",
       images: [
-        { src: "/icons/Burst.png", label: " ", type: "button" },
+        { src: "/icons/Crewmate-Mod/Burst.png", label: " ", type: "button" },
         { src: "/screenshots/burst.png", label: "", type: "screenshot" }
       ]
     },
@@ -253,7 +284,7 @@ export default function Roles() {
       name: "Mayor",
       description: "You get extra votes.",
       icon: <FaGavel className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
-      badges: ["Crewmate Modifier", "v2.0.0-r"],
+      badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "You get extra votes in meetings.",
       images: []
