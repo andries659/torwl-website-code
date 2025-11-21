@@ -9,6 +9,12 @@ export default function NewsModal({ onClose }) {
     const [news, setNews] = useState(null);
     const [selected, setSelected] = useState(null);
 
+    // Convert newlines → <br> and preserve HTML tags
+    const renderHTML = (html) => {
+        if (!html) return "";
+        return html.replace(/\n/g, "<br>");
+    };
+
     // Load news and track seen status
     useEffect(() => {
         let intervalId;
@@ -54,7 +60,7 @@ export default function NewsModal({ onClose }) {
             const updatedSeen = [...seen, item.id];
             localStorage.setItem("seenNews", JSON.stringify(updatedSeen));
 
-            // Update the news state so NEW badge disappears immediately
+            // Update the news immediately
             setNews(prev => prev.map(n =>
                 n.id === item.id ? { ...n, seen: true } : n
             ));
@@ -114,7 +120,12 @@ export default function NewsModal({ onClose }) {
 
                         <h2 className="text-2xl font-bold text-yellow-300 mb-2">{selected.title}</h2>
                         <p className="text-sm text-gray-400 mb-4">{selected.date}</p>
-                        <p className="whitespace-pre-line leading-relaxed">{selected.content}</p>
+
+                        {/* HTML FORMAT CODE ENABLED HERE */}
+                        <div
+                            className="leading-relaxed whitespace-pre-line"
+                            dangerouslySetInnerHTML={{ __html: renderHTML(selected.content) }}
+                        />
                     </div>
                 )}
             </div>
