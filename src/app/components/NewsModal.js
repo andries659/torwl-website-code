@@ -9,7 +9,13 @@ export default function NewsModal({ onClose }) {
     const [news, setNews] = useState(null);
     const [selected, setSelected] = useState(null);
 
-    // Load news and track seen status
+    // Convert newlines to <br> and allow HTML tags inside content
+    const renderHTML = (html) => {
+        if (!html) return "";
+        return html.replace(/\n/g, "<br>");
+    };
+
+    // Load news + seen status
     useEffect(() => {
         let intervalId;
 
@@ -18,16 +24,13 @@ export default function NewsModal({ onClose }) {
                 const res = await fetch("/news/news.json");
                 let data = await res.json();
 
-                // Sort by id descending (highest id first)
                 data.sort((a, b) => b.id - a.id);
 
-                // Get seen news from localStorage
                 const seen = JSON.parse(localStorage.getItem("seenNews") || "[]");
 
-                // Add a 'seen' property to each item
-                const updatedNews = data.map(n => ({
+                const updatedNews = data.map((n) => ({
                     ...n,
-                    seen: seen.includes(n.id)
+                    seen: seen.includes(n.id),
                 }));
 
                 setNews(updatedNews);
@@ -36,40 +39,31 @@ export default function NewsModal({ onClose }) {
             }
         }
 
-        // Initial load
         load();
-
-        // Poll every 10 seconds to update NEW badges
         intervalId = setInterval(load, 10000);
 
         return () => clearInterval(intervalId);
     }, []);
 
-    // Mark item as read when clicked
     function openArticle(item) {
         setSelected(item);
 
         const seen = JSON.parse(localStorage.getItem("seenNews") || "[]");
+
         if (!seen.includes(item.id)) {
             const updatedSeen = [...seen, item.id];
             localStorage.setItem("seenNews", JSON.stringify(updatedSeen));
 
-            // Update the news state so NEW badge disappears immediately
-            setNews(prev => prev.map(n =>
-                n.id === item.id ? { ...n, seen: true } : n
-            ));
+            setNews((prev) =>
+                prev.map((n) => (n.id === item.id ? { ...n, seen: true } : n))
+            );
         }
     }
-
-    // Convert \n to <br> while allowing HTML tags
-    const renderHTML = (html) => {
-        if (!html) return "";
-        return html.replace(/\n/g, "<br>");
-    };
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
             <div className="bg-gray-900 p-6 rounded-xl w-full max-w-lg text-white relative">
+
                 <button
                     onClick={onClose}
                     className="absolute top-3 right-3 text-xl cursor-pointer hover:text-red-600 transition-colors"
@@ -81,14 +75,15 @@ export default function NewsModal({ onClose }) {
                 {!selected ? (
                     <>
                         <h2 className="text-2xl font-bold text-amber-300 flex mb-4 gap-2">
-                            <FaNewspaper className="w-6 h-6 md:w-8 md:h-8 text-green-600" /> Latest News
+                            <FaNewspaper className="w-6 h-6 md:w-8 md:h-8 text-green-600" />
+                            Latest News
                         </h2>
 
                         {!news ? (
                             <p>Loading...</p>
                         ) : (
                             <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
-                                {news.map(item => (
+                                {news.map((item) => (
                                     <div
                                         key={item.id}
                                         onClick={() => openArticle(item)}
@@ -118,13 +113,18 @@ export default function NewsModal({ onClose }) {
                             <IoMdArrowRoundBack className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
                         </button>
 
-                        <h2 className="text-2xl font-bold text-yellow-300 mb-2">{selected.title}</h2>
+                        <h2 className="text-2xl font-bold text-yellow-300 mb-2">
+                            {selected.title}
+                        </h2>
+
                         <p className="text-sm text-gray-400 mb-4">{selected.date}</p>
 
-                        {/* HTML formatting enabled here */}
+                        {/* Render full HTML content */}
                         <div
                             className="leading-relaxed whitespace-pre-line"
-                            dangerouslySetInnerHTML={{ __html: renderHTML(selected.content) }}
+                            dangerouslySetInnerHTML={{
+                                __html: renderHTML(selected.content),
+                            }}
                         />
                     </div>
                 )}
