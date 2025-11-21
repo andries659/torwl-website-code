@@ -54,8 +54,8 @@ const sectionNames = {
     "LaunchpadReloaded.Options.Roles.Crewmate.SealerOptions": "Sealer Options",
     "LaunchpadReloaded.Options.Roles.Crewmate.SheriffOptions": "Sheriff Options",
     "LaunchpadReloaded.Options.Roles.Crewmate.TeleporterOptions": "Teleporter Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.BurrowerOptions": "Burrower Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.HackerOptions": "Hacker Options",
+    "LaunchpadReloaded.Options.Roles.Impostor.BurrowerOptions": '<img src="/icons/Impostor/Burrower.png" alt="alt" width="10" height="10"> Burrower Options',
+    "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions": "Silencer Options",
     "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions": "Hitman Options",
     "LaunchpadReloaded.Options.Roles.Impostor.JanitorOptions": "Janitor Options",
     "LaunchpadReloaded.Options.Roles.Impostor.SurgeonOptions": "Surgeon Options",
@@ -294,6 +294,11 @@ export default function ExportConfigPage() {
             { id: "ventDist", label: "Vent Distance", key: "VentDist", type: "float", value: 1.5 },
         ],
 
+        "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions": [
+            { id: "silenceCooldown", label: "Deadlock Cooldown", key: "SilenceCooldown", type: "float", value: 35 },
+            { id: "silenceUses", label: "Deadlock Uses", key: "SilenceUses", type: "float", value: 0 },
+        ],
+
         "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions": [
             { id: "deadlockCooldown", label: "Deadlock Cooldown", key: "DeadlockCooldown", type: "float", value: 40 },
             { id: "deadlockUses", label: "Deadlock Uses", key: "DeadlockUses", type: "float", value: 3 },
@@ -450,7 +455,7 @@ export default function ExportConfigPage() {
         ],
         "Impostor Role Settings": [
             "LaunchpadReloaded.Options.Roles.Impostor.BurrowerOptions",
-            "LaunchpadReloaded.Options.Roles.Impostor.HackerOptions",
+            "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions",
             "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions",
             "LaunchpadReloaded.Options.Roles.Impostor.JanitorOptions",
             "LaunchpadReloaded.Options.Roles.Impostor.SurgeonOptions",
