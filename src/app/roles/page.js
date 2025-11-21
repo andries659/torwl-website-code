@@ -3,78 +3,64 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaMask, FaGhost, FaRandom, FaUserMd, FaCrosshairs, FaGavel, FaLock, FaBriefcaseMedical, FaDice, FaSnowflake, FaBolt, FaBullhorn, FaFire, FaStar, FaExchangeAlt, FaUserSecret, FaSkullCrossbones, FaFlask, FaSkull, FaBomb, FaLightbulb, FaInfoCircle } from "react-icons/fa";
-import { LuShovel, LuMailX } from "react-icons/lu";
-import { PiBroom } from "react-icons/pi";
-import { RiPoliceBadgeFill } from "react-icons/ri";
+import { FaLightbulb, FaInfoCircle } from "react-icons/fa";
 
 export default function Roles() {
   const roles = [
     {
       name: "Coroner",
       description: "Freeze bodies to make them stay.",
-      icon: <FaSnowflake className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />,
+      icon: <img src="/icons/Crewmate/Coroner.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "If you freeze a body, the body will stay forever, but can only be reported once as well.",
-      images: [
-        { src: "/icons/Crewmate/Coroner.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Sealer",
       description: "You can seal vents.",
-      icon: <FaLock className="w-6 h-6 md:w-8 md:h-8 text-gray-500" />,
+      icon: <img src="/icons/Crewmate/Sealer.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You are able to seal vents, which prevents them from being used.",
-      images: [
-        { src: "/icons/Crewmate/Sealer.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Medic",
       description: "Revive dead players.",
-      icon: <FaBriefcaseMedical className="w-6 h-6 md:w-8 md:h-8 text-green-500" />,
+      icon: <img src="/icons/Crewmate/Medic.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You have the ability to revive dead players.",
-      images: [
-        { src: "/icons/Crewmate/Medic.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Sheriff",
       description: "Shoot the Impostor.",
-      icon: <RiPoliceBadgeFill className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
+      icon: <img src="/icons/Crewmate/Sheriff.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can shoot any player, to guess if they are the Impostor. If you shoot the Impostor, you live. But if you shoot a Crewmate, you die.",
-      images: [
-        { src: "/icons/Crewmate/Sheriff.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Gambler",
       description: "Guess the roles of others.",
-      icon: <FaDice className="w-6 h-6 md:w-8 md:h-8 text-purple-500" />,
+      icon: <img src="/icons/Crewmate/Gambler.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can guess the roles of others. When you are correct, the role is revealed, if you are wrong, you die.",
-      images: [
-        { src: "/icons/Crewmate/Gambler.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Teleporter",
       description: "Teleport across the map.",
-      icon: <FaExchangeAlt className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />,
+      icon: <img src="/icons/Crewmate/Teleporter.png" alt="alt" width="42" />,
       badges: ["Crewmate", "v1.1.0"],
       video: "",
       extra: "",
       tips: "Using it well and timing it well, you can also catch Impostors in the act of killing!",
       images: [
-        { src: "/icons/Crewmate/Teleporter.png", label: "Pressing this button will zoom out your screen, so you can teleport anywhere on the map.", type: "button" },
         { src: "/screenshots/teleporter-1.png", label: "", type: "screenshot" },
         { src: "/screenshots/teleporter-2.png", label: "", type: "screenshot" }
       ]
@@ -82,68 +68,56 @@ export default function Roles() {
     {
       name: "Burrower",
       description: "Can dig vents around the map.",
-      icon: <LuShovel className="w-6 h-6 md:w-8 md:h-8 text-orange-900" />,
+      icon: <img src="/icons/Impostor/Burrower.png" alt="alt" width="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to dig vents anywhere on the map.",
-      images: [
-        { src: "/icons/Impostor/Burrower.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Janitor",
       description: "Can drag & hide bodies.",
-      icon: <PiBroom className="w-6 h-6 md:w-8 md:h-8 text-gray-400" />,
+      icon: <img src="/icons/Impostor/Janitor.png" alt="alt" width="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to drag around bodies around the map, and hide them in vents.",
-      images: [
-        { src: "/icons/Impostor/Janitor.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Hitman",
       description: "Can slow time down and kill.",
-      icon: <FaCrosshairs className="w-6 h-6 md:w-8 md:h-8 text-red-600" />,
+      icon: <img src="/icons/Impostor/Hitman.png" alt="alt" width="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to slow down the time and pick your targets.",
-      images: [
-        { src: "/icons/Impostor/Hitman.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Surgeon",
       description: "Poison the crew to win..",
-      icon: <FaUserMd className="w-6 h-6 md:w-8 md:h-8 text-green-600" />,
+      icon: <img src="/icons/Impostor/Surgeon.png" alt="alt" width="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to inject players and kill them, and if you disect the body, it's unreportable.",
-      images: [
-        { src: "/icons/Impostor/Surgeon.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Swapshifter",
       description: "Switch people around.",
-      icon: <FaRandom className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />,
+      icon: <img src="/icons/Impostor/Swapshifter.png" alt="alt" width="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to choose people to make them switch places, it also works with you.",
-      images: [
-        { src: "/icons/Impostor/Swapshifter.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Silencer",
       description: "Silence players so they can not speak in the next meeting.",
-      icon: <LuMailX className="w-6 h-6 md:w-8 md:h-8 text-red-400" />,
+      icon: <img src="/icons/Impostor/Silencer.png" alt="alt" width="42" />,
       badges: ["Impostor", "v2.0-f"],
       video: "",
       extra: "Silence players, which makes it unable for hem to talk during a meeting.",
-      images: [
-        { src: "/icons/Impostor/Silencer.png", label: "", type: "button" },
-      ]
+      images: []
     },
     {
       name: "Traitor",
@@ -152,39 +126,36 @@ export default function Roles() {
           Act like an <span className="text-red-400 font-bold">Impostor</span>, to betray the <span className="text-red-400 font-bold">Impostor(s)</span>.
         </>
       ),
-      icon: <FaUserSecret className="w-6 h-6 md:w-8 md:h-8 text-red-500" />,
+      icon: <img src="/icons/Neutral/Traitor.png" alt="alt" width="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "This role has no ability button or anything. A 'Target' tag will be added to the Impostor the Traitor has to vote off to win.",
       tips: "Do not try to vote out the Impostor, since it could make you the next target.\nThink like an Impostor.",
       images: [
-        { src: "/icons/Neutral/Traitor.png", label: "", type: "button" },
         { src: "/screenshots/traitor.png", label: "", type: "screenshot" }
       ]
     },
     {
       name: "Executioner",
       description: "Vote out the target to win the game.",
-      icon: <FaSkullCrossbones className="w-6 h-6 md:w-8 md:h-8 text-gray-400" />,
+      icon: <img src="/icons/Neutral/Executioner.png" alt="alt" width="42" />,
       badges: ["Neutral", "v1.1.0"],
       video: "",
       extra: "This role has no ability button or anything. A 'Target' tag will be added to a random player the Executioner has to vote off to win.",
       tips: "Do not try to vote out your target, since it could make you the next target.\nThink like an Impostor.",
       images: [
-        { src: "/icons/Neutral/Executioner.png", label: " ", type: "button" },
         { src: "/screenshots/exe.png", label: "", type: "screenshot" }
       ]
     },
     {
       name: "Neutral Killer",
       description: "Kill players as a Neutral role to win alone.",
-      icon: <FaSkull className="w-6 h-6 md:w-8 md:h-8 text-red-600" />,
+      icon: <img src="/icons/Neutral/NeutralKiller.png" alt="alt" width="42" />,
       badges: ["Neutral", "v1.1.1"],
       video: "",
       extra: "",
       tips: "When trying to kill, kill like a normal Impostor would. Don\'t rush anything.\nAlso, if you kill and get caught, and get voted out, YOU\'LL LOSE.",
       images: [
-        { src: "/icons/Neutral/NeutralKiller.png", label: "When using the ability button, you kill like a normal Impostor.\nBut you want to win ALONE.", type: "button" },
         { src: "/screenshots/nk-1.png", label: "", type: "screenshot" },
         { src: "/screenshots/nk-2.png", label: "", type: "screenshot" }
       ]
@@ -192,36 +163,30 @@ export default function Roles() {
     {
       name: "Jester",
       description: "Must fool the crew.",
-      icon: <FaMask className="w-6 h-6 md:w-8 md:h-8 text-pink-500" />,
+      icon: <img src="/icons/Neutral/Jester.png" alt="alt" width="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Act suspicious to get ejected and win.",
-      images: [
-        { src: "/icons/Neutral/Jester.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Reaper",
       description: "Collect the souls.",
-      icon: <FaGhost className="w-6 h-6 md:w-8 md:h-8 text-gray-600" />,
+      icon: <img src="/icons/Neutral/Reaper.png" alt="alt" width="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Go around the map and collect souls from dead bodies.",
-      images: [
-        { src: "/icons/Neutral/Reaper.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Tavern Keeper",
       description: "Role Block players to stop them from using abilities.",
-      icon: <FaFlask className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />,
+      icon: <img src="/icons/Coven/TavernKeeper.png" alt="alt" width="42" />,
       badges: ["Coven", "v2.0.0-r"],
       video: "",
       extra: "This role cannot win (so far). It can stop Impostors, Crewmates, or Neutrals from using their abilities for a set period of time.",
       tips: "Try to stop the Impostors from winning. Take a wild guess, and remove the abilities from your tarhet for a set period of time.",
-      images: [
-        { src: "/icons/Coven/TavernKeeper.png", label: "Pressing this button, while near a player, will remove their ability to do anything, for a set period of time set by the host.", type: "button" }
-      ]
+      images: []
     },
   ];
 
@@ -229,71 +194,63 @@ export default function Roles() {
     {
       name: "Flash",
       description: "Moves faster than everyone else.",
-      icon: <FaBolt className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
+      icon: <img src="/icons/Universal/Flash.png" alt="alt" width="42" />,
       badges: ["Universal Modifier", "v1.0.0"],
       video: "/videos/flash.mp4",
       extra: "You're just a bit faster than the average player.",
       tips: "Even though the video is above the icon, it has no screenshots at all.",
-      images: [
-        { src: "/icons/Universal/Flash.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "VIP",
       description: "A modifier that makes you look fancy.",
-      icon: <FaStar className="w-6 h-6 md:w-8 md:h-8 text-yellow-500" />,
+      icon: <img src="/icons/Universal/VIP.png" alt="alt" width="42" />,
       badges: ["Universal Modifier", "v1.0.0"],
       video: "",
       extra: "You're just there to brag how cool you look.",
       images: [
-        { src: "/icons/Universal/VIP.png", label: " ", type: "button" },
-        { src: "/screenshots/vip.png", label: "", type: "screenshot" }]
+        { src: "/screenshots/vip.png", label: "", type: "screenshot" }
+      ]
     },
     {
       name: "Bait",
       description: "Your killer self reports when they kill you.",
-      icon: <FaBullhorn className="w-6 h-6 md:w-8 md:h-8 text-blue-400" />,
+      icon: <img src="/icons/Crewmate-Mod/Bait.png" alt="alt" width="42" />,
       badges: ["Crewmate Modifier", "v1.1.1"],
       video: "",
       extra: "There is not really a use, but the use is that your killer self reports when they kill you.",
-      images: [
-        { src: "/icons/Crewmate-Mod/Bait.png", label: " ", type: "button" }
-      ]
+      images: []
     },
     {
       name: "Torch",
       description: "Sees clearly in the dark.",
-      icon: <FaFire className="w-6 h-6 md:w-8 md:h-8 text-orange-400" />,
+      icon: <img src="/icons/Crewmate-Mod/Torch.png" alt="alt" width="42" />,
       badges: ["Crewmate Modifier", "v1.1.1"],
       video: "",
       extra: "You're given access to a torch to see when lights are down.",
       images: [
-        { src: "/icons/Crewmate-Mod/Torch.png", label: " ", type: "button" },
         { src: "/screenshots/torch.png", label: "", type: "screenshot" }
       ]
     },
     {
       name: "Burst",
       description: "Explodes when killed.",
-      icon: <FaBomb className="w-6 h-6 md:w-8 md:h-8 text-red-700" />,
+      icon: <img src="/icons/Crewmate-Mod/Burst.png" alt="alt" width="42" />,
       badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "When you get killed, you explode. Killing other players in a radius set by the host.",
       images: [
-        { src: "/icons/Crewmate-Mod/Burst.png", label: " ", type: "button" },
         { src: "/screenshots/burst.png", label: "", type: "screenshot" }
       ]
     },
     {
       name: "Mayor",
       description: "You get extra votes.",
-      icon: <FaGavel className="w-6 h-6 md:w-8 md:h-8 text-yellow-400" />,
+      icon: <img src="/icons/Crewmate-Mod/Mayor.png" alt="alt" width="42" />,
       badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "You get extra votes in meetings.",
-      images: [
-        { src: "/icons/Crewmate-Mod/Mayor.png", label: " ", type: "button" }
-      ]
+      images: []
     },
   ];
 

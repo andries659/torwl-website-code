@@ -30,41 +30,305 @@ const colorClasses = {
 
 // Friendly section names
 const sectionNames = {
-    "LaunchpadReloaded.Options.BattleRoyaleOptions": "Battle Royale Options",
-    "LaunchpadReloaded.Options.FunOptions": "Fun Options",
-    "LaunchpadReloaded.Options.GeneralOptions": "General Options",
-    "LaunchpadReloaded.Options.Modifiers.Crewmate.BaitOptions": "Bait Options",
-    "LaunchpadReloaded.Options.Modifiers.Crewmate.BurstOptions": "Burst Options",
-    "LaunchpadReloaded.Options.Modifiers.Crewmate.MayorOptions": "Mayor Options",
-    "LaunchpadReloaded.Options.Modifiers.Crewmate.TorchOptions": "Torch Options",
-    "LaunchpadReloaded.Options.Modifiers.CrewmateModifierOptions": "Crewmate Modifier Options",
-    "LaunchpadReloaded.Options.Modifiers.LpModifierOptions": "LP Modifier Options",
-    "LaunchpadReloaded.Options.Modifiers.Universal.FlashOptions": "Flash Options",
-    "LaunchpadReloaded.Options.Modifiers.Universal.GiantOptions": "Giant Options",
-    "LaunchpadReloaded.Options.Modifiers.Universal.GravityFieldOptions": "Gravity Field Options",
-    "LaunchpadReloaded.Options.Modifiers.Universal.KingOptions": "King Options",
-    "LaunchpadReloaded.Options.Modifiers.Universal.SmolOptions": "Smol Options",
-    "LaunchpadReloaded.Options.Modifiers.UniversalModifierOptions": "Universal Modifier Options",
-    "LaunchpadReloaded.Options.VotingOptions": "Voting Options",
-    "LaunchpadReloaded.Options.Roles.Coven.TavernKeeperOptions": "Tavern Keeper Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.CaptainOptions": "Captain Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.CoronerOptions": "Coroner Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.GamblerOptions": "Gambler Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.MedicOptions": "Medic Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.SealerOptions": "Sealer Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.SheriffOptions": "Sheriff Options",
-    "LaunchpadReloaded.Options.Roles.Crewmate.TeleporterOptions": "Teleporter Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.BurrowerOptions": '<img src="/icons/Impostor/Burrower.png" alt="alt" width="10" height="10"> Burrower Options',
-    "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions": "Silencer Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions": "Hitman Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.JanitorOptions": "Janitor Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.SurgeonOptions": "Surgeon Options",
-    "LaunchpadReloaded.Options.Roles.Impostor.SwapshifterOptions": "Swapshifter Options",
-    "LaunchpadReloaded.Options.Roles.Neutral.ExecutionerOptions": "Executioner Options",
-    "LaunchpadReloaded.Options.Roles.Neutral.JesterOptions": "Jester Options",
-    "LaunchpadReloaded.Options.Roles.Neutral.NeutralKillerOptions": "Neutral Killer Options",
-    "LaunchpadReloaded.Options.Roles.Neutral.ReaperOptions": "Reaper Options",
-    "LaunchpadReloaded.Options.Roles.Neutral.TraitorOptions": "Traitor Options",
+    "LaunchpadReloaded.Options.BattleRoyaleOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Battle Royal Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.FunOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Fun Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.GeneralOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> General Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.CrewmateModifierOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Crewmate Modifier Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.LpModifierOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> LP Modifier Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.UniversalModifierOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Universal Modifier Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.VotingOptions": (
+        <span className="flex items-center gap-2">
+            <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Voting Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Crewmate.BaitOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate-Mod/Bait.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Bait Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Crewmate.BurstOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate-Mod/Burst.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Burst Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Crewmate.MayorOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate-Mod/Mayor.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Mayor Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Crewmate.TorchOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate-Mod/Torch.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Torch Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Universal.FlashOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Universal/Flash.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Flash Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Modifiers.Universal.KingOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Universal/VIP.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            VIP Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Coven.TavernKeeperOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Coven/TavernKeeper.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Tavern Keeper Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.CoronerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Coroner.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Coroner Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.GamblerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Gambler.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Gambler Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.MedicOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Medic.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Medic Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.SealerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Sealer.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Sealer Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.SheriffOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Sheriff.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Sheriff Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Crewmate.TeleporterOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Crewmate/Teleporter.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Teleporter Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.BurrowerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Burrower.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Burrower Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Silencer.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Silencer Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Hitman.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Hitman Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.JanitorOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Janitor.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Janitor Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.SurgeonOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Surgeon.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Surgeon Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.SwapshifterOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Swapshifter.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Swapshifter Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.ExecutionerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/Executioner.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Executioner Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.JesterOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/Jester.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Jester Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.NeutralKillerOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/NeutralKiller.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Neutral Killer Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.ReaperOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/Reaper.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Reaper Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.TraitorOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/Traitor.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Traitor Options
+        </span>
+    ),
 };
 
 export default function ExportConfigPage() {
@@ -217,10 +481,17 @@ export default function ExportConfigPage() {
             },
         ],
 
+        "LaunchpadReloaded.Options.Modifiers.Universal.FlashOptions": [
+            { id: "flashAmount", label: "Flash Amount", key: "FlashAmount", type: "float", value: 1 },
+        ],
+
+        "LaunchpadReloaded.Options.Modifiers.Universal.KingOptions": [
+            { id: "kingAmount", label: "VIP Amount", key: "KingAmount", type: "float", value: 1 },
+        ],
+
         "LaunchpadReloaded.Options.Modifiers.CrewmateModifierOptions": [
             { id: "mayorChance", label: "Mayor Chance", key: "MayorChance", type: "float", value: 0 },
             { id: "torchChance", label: "Torch Chance", key: "TorchChance", type: "float", value: 0 },
-            { id: "vendettaChance", label: "Vendetta Chance", key: "VendettaChance", type: "float", value: 0 },
             { id: "baitChance", label: "Bait Chance", key: "BaitChance", type: "float", value: 0 },
             { id: "burstChance", label: "Burst Chance", key: "BurstChance", type: "float", value: 0 },
         ],
@@ -229,19 +500,8 @@ export default function ExportConfigPage() {
             { id: "modifierLimit", label: "Modifier Limit", key: "ModifierLimit", type: "float", value: 1 },
         ],
 
-        "LaunchpadReloaded.Options.Modifiers.Universal.FlashOptions": [
-            { id: "flashAmount", label: "Flash Amount", key: "FlashAmount", type: "float", value: 1 },
-        ],
-
-        "LaunchpadReloaded.Options.Modifiers.Universal.KingOptions": [
-            { id: "kingAmount", label: "King Amount", key: "KingAmount", type: "float", value: 1 },
-        ],
-
         "LaunchpadReloaded.Options.Modifiers.UniversalModifierOptions": [
-            { id: "giantChance", label: "Giant Chance", key: "GiantChance", type: "float", value: 0 },
-            { id: "smolChance", label: "Smol Chance", key: "SmolChance", type: "float", value: 0 },
             { id: "flashChance", label: "Flash Chance", key: "FlashChance", type: "float", value: 0 },
-            { id: "gravityChance", label: "Gravity Chance", key: "GravityChance", type: "float", value: 0 },
             { id: "kingChance", label: "King Chance", key: "KingChance", type: "float", value: 0 },
         ],
 
@@ -429,20 +689,17 @@ export default function ExportConfigPage() {
             "LaunchpadReloaded.Options.FunOptions",
             "LaunchpadReloaded.Options.GeneralOptions",
             "LaunchpadReloaded.Options.VotingOptions",
+            "LaunchpadReloaded.Options.Modifiers.CrewmateModifierOptions",
+            "LaunchpadReloaded.Options.Modifiers.LpModifierOptions",
+            "LaunchpadReloaded.Options.Modifiers.UniversalModifierOptions",
         ],
         "Modifier Settings": [
             "LaunchpadReloaded.Options.Modifiers.Crewmate.BaitOptions",
             "LaunchpadReloaded.Options.Modifiers.Crewmate.BurstOptions",
             "LaunchpadReloaded.Options.Modifiers.Crewmate.MayorOptions",
             "LaunchpadReloaded.Options.Modifiers.Crewmate.TorchOptions",
-            "LaunchpadReloaded.Options.Modifiers.CrewmateModifierOptions",
-            "LaunchpadReloaded.Options.Modifiers.LpModifierOptions",
             "LaunchpadReloaded.Options.Modifiers.Universal.FlashOptions",
-            "LaunchpadReloaded.Options.Modifiers.Universal.GiantOptions",
-            "LaunchpadReloaded.Options.Modifiers.Universal.GravityFieldOptions",
             "LaunchpadReloaded.Options.Modifiers.Universal.KingOptions",
-            "LaunchpadReloaded.Options.Modifiers.Universal.SmolOptions",
-            "LaunchpadReloaded.Options.Modifiers.UniversalModifierOptions",
         ],
         "Crewmate Role Settings": [
             "LaunchpadReloaded.Options.Roles.Crewmate.CaptainOptions",
@@ -700,7 +957,11 @@ export default function ExportConfigPage() {
                                 onClick={() => toggleCollapse("RolesBlock")}
                                 className={`w-full p-4 flex justify-between items-center rounded-t-2xl ${headerLighterMap[activeTabColor] || "bg-zinc-700"}`}
                             >
-                                <div className="font-bold">Roles (Num / Chance)</div>
+                                <div className="font-bold">
+                                    <span className="flex items-center gap-2">
+                                        <FaCogs className="w-6 h-6 md:w-8 md:h-8 text-white" /> Roles (Num / Chance)
+                                    </span>
+                                </div>
                                 <div className="text-sm">{collapsedSections["RolesBlock"] ? "▼" : "▲"}</div>
                             </button>
 
