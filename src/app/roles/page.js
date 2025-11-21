@@ -196,7 +196,9 @@ export default function Roles() {
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Act suspicious to get ejected and win.",
-      images: []
+      images: [
+        { src: "/icons/Neutral/Jester.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Reaper",
@@ -205,7 +207,9 @@ export default function Roles() {
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Go around the map and collect souls from dead bodies.",
-      images: []
+      images: [
+        { src: "/icons/Neutral/Reaper.png", label: " ", type: "button" }
+      ]
     },
     {
       name: "Tavern Keeper",
@@ -287,7 +291,9 @@ export default function Roles() {
       badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "You get extra votes in meetings.",
-      images: []
+      images: [
+        { src: "/icons/Crewmate-Mod/Mayor.png", label: " ", type: "button" }
+      ]
     },
   ];
 
