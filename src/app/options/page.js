@@ -274,6 +274,28 @@ const sectionNames = {
             Swapshifter Options
         </span>
     ),
+    "LaunchpadReloaded.Options.Roles.Impostor.ToxifierOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Toxifier.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Toxifier Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Impostor.PoltergeistOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Impostor/Poltergeist.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Poltergeist Options
+        </span>
+    ),
     "LaunchpadReloaded.Options.Roles.Neutral.ExecutionerOptions": (
         <span className="flex items-center gap-2">
             <img
@@ -327,6 +349,17 @@ const sectionNames = {
                 height={28}
             />
             Traitor Options
+        </span>
+    ),
+    "LaunchpadReloaded.Options.Roles.Neutral.SurvivorOptions": (
+        <span className="flex items-center gap-2">
+            <img
+                src="/icons/Neutral/Survivor.png"
+                alt="alt"
+                width={28}
+                height={28}
+            />
+            Survivor Options
         </span>
     ),
 };
@@ -555,8 +588,8 @@ export default function ExportConfigPage() {
         ],
 
         "LaunchpadReloaded.Options.Roles.Impostor.SilencerOptions": [
-            { id: "silenceCooldown", label: "Deadlock Cooldown", key: "SilenceCooldown", type: "float", value: 35 },
-            { id: "silenceUses", label: "Deadlock Uses", key: "SilenceUses", type: "float", value: 0 },
+            { id: "silenceCooldown", label: "Silence Cooldown", key: "SilenceCooldown", type: "float", value: 35 },
+            { id: "silenceUses", label: "Silence Uses", key: "SilenceUses", type: "float", value: 0 },
         ],
 
         "LaunchpadReloaded.Options.Roles.Impostor.HitmanOptions": [
@@ -588,6 +621,17 @@ export default function ExportConfigPage() {
             { id: "canSwapImpostors", label: "Can Swap Impostors", key: "CanSwapImpostors", type: "boolean", value: true },
         ],
 
+        "LaunchpadReloaded.Options.Roles.Impostor.ToxifierOptions": [
+            { id: "toxifyCooldown", label: "Toxify Cooldown", key: "ToxifyCooldown", type: "float", value: 10 },
+            { id: "toxifiedDelay", label: "Toxified Delay", key: "ToxifiedDelay", type: "float", value: 10 },
+            { id: "toxifyUses", label: "Toxify Uses", key: "ToxifyUses", type: "float", value: 0 },
+        ],
+
+        "LaunchpadReloaded.Options.Roles.Impostor.PoltergeistOptions": [
+            { id: "curseCooldown", label: "Curse Cooldown", key: "CurseCooldown", type: "float", value: 10 },
+            { id: "curseDuration", label: "Curse Duration", key: "CurseDuration", type: "float", value: 10 },
+        ],
+
         "LaunchpadReloaded.Options.Roles.Neutral.ExecutionerOptions": [
             { id: "executionerCanCallMeeting", label: "Can Call Meeting", key: "CanCallMeeting", type: "boolean", value: false },
             { id: "executionerTargetDeathNewRole", label: "Target Death New Role", key: "TargetDeathNewRole", type: "int", value: 1 },
@@ -610,6 +654,12 @@ export default function ExportConfigPage() {
         "LaunchpadReloaded.Options.Roles.Neutral.TraitorOptions": [
             { id: "traitorCanCallMeeting", label: "Can Call Meeting", key: "CanCallMeeting", type: "boolean", value: false },
             { id: "traitorTargetDeathNewRole", label: "Target Death New Role", key: "TargetDeathNewRole", type: "int", value: 1 },
+        ],
+
+        "LaunchpadReloaded.Options.Roles.Neutral.SurvivorOptions": [
+            { id: "vestCooldown", label: "Vest Cooldown", key: "VestCooldown", type: "float", value: 25 },
+            { id: "vestDuration", label: "Vest Duration", key: "VestDuration", type: "float", value: 10 },
+            { id: "maxVestUses", label: "Max Vests", key: "MaxVests", type: "float", value: 10 },
         ],
 
         "LaunchpadReloaded.Options.VotingOptions": [
@@ -638,6 +688,9 @@ export default function ExportConfigPage() {
             { id: "numTraitor", label: "Num Traitor Role", key: "Num LaunchpadReloaded.Roles.Neutral.TraitorRole", type: "int", value: 1 },
             { id: "chanceTraitor", label: "Chance Traitor Role", key: "Chance LaunchpadReloaded.Roles.Neutral.TraitorRole", type: "int", value: 100 },
 
+            { id: "numSurvivor", label: "Num Survivor Role", key: "Num LaunchpadReloaded.Roles.Neutral.SurvivorRole", type: "int", value: 1 },
+            { id: "chanceSurvivor", label: "Chance Survivor Role", key: "Chance LaunchpadReloaded.Roles.Neutral.SurvivorRole", type: "int", value: 100 },
+
             { id: "numBurrower", label: "Num Burrower Role", key: "Num LaunchpadReloaded.Roles.Impostor.BurrowerRole", type: "int", value: 1 },
             { id: "chanceBurrower", label: "Chance Burrower Role", key: "Chance LaunchpadReloaded.Roles.Impostor.BurrowerRole", type: "int", value: 100 },
 
@@ -656,8 +709,11 @@ export default function ExportConfigPage() {
             { id: "numSilencer", label: "Num Silencer Role", key: "Num LaunchpadReloaded.Roles.Impostor.SilencerRole", type: "int", value: 1 },
             { id: "chanceSilencer", label: "Chance Silencer Role", key: "Chance LaunchpadReloaded.Roles.Impostor.SilencerRole", type: "int", value: 100 },
 
-            { id: "numCaptain", label: "Num Captain Role", key: "Num LaunchpadReloaded.Roles.Crewmate.CaptainRole", type: "int", value: 1 },
-            { id: "chanceCaptain", label: "Chance Captain Role", key: "Chance LaunchpadReloaded.Roles.Crewmate.CaptainRole", type: "int", value: 100 },
+            { id: "numToxifier", label: "Num Toxifier Role", key: "Num LaunchpadReloaded.Roles.Impostor.ToxifierRole", type: "int", value: 1 },
+            { id: "chanceToxifier", label: "Chance Toxifier Role", key: "Chance LaunchpadReloaded.Roles.Impostor.ToxifierRole", type: "int", value: 100 },
+
+            { id: "numPoltergeist", label: "Num Poltergeist Role", key: "Num LaunchpadReloaded.Roles.Impostor.PoltergeistRole", type: "int", value: 1 },
+            { id: "chancePoltergeist", label: "Chance Poltergeist Role", key: "Chance LaunchpadReloaded.Roles.Impostor.PoltergeistRole", type: "int", value: 100 },
 
             { id: "numCoroner", label: "Num Coroner Role", key: "Num LaunchpadReloaded.Roles.Crewmate.CoronerRole", type: "int", value: 1 },
             { id: "chanceCoroner", label: "Chance Coroner Role", key: "Chance LaunchpadReloaded.Roles.Crewmate.CoronerRole", type: "int", value: 100 },
@@ -717,6 +773,8 @@ export default function ExportConfigPage() {
             "LaunchpadReloaded.Options.Roles.Impostor.JanitorOptions",
             "LaunchpadReloaded.Options.Roles.Impostor.SurgeonOptions",
             "LaunchpadReloaded.Options.Roles.Impostor.SwapshifterOptions",
+            "LaunchpadReloaded.Options.Roles.Impostor.ToxifierOptions",
+            "LaunchpadReloaded.Options.Roles.Impostor.PoltergeistOptions",
         ],
         "Neutral Role Settings": [
             "LaunchpadReloaded.Options.Roles.Neutral.ExecutionerOptions",
@@ -724,6 +782,7 @@ export default function ExportConfigPage() {
             "LaunchpadReloaded.Options.Roles.Neutral.NeutralKillerOptions",
             "LaunchpadReloaded.Options.Roles.Neutral.ReaperOptions",
             "LaunchpadReloaded.Options.Roles.Neutral.TraitorOptions",
+            "LaunchpadReloaded.Options.Roles.Neutral.SurvivorOptions",
         ],
         "Coven Role Settings": [
             "LaunchpadReloaded.Options.Roles.Coven.TavernKeeperOptions",

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Search from "./SearchBar";
 import { FaNewspaper } from "react-icons/fa";
 import NewsModal from "./NewsModal";
 
@@ -52,17 +51,14 @@ export default function Navbar() {
           <Link href="/" className="text-2xl font-bold text-white">TOR-W: L</Link>
 
 
-          <div className="hidden md:block w-1/3"><Search /></div>
-
-
           {/* Desktop menu */}
           <div className="hidden md:flex gap-6 text-white items-center">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
             <Link href="/roles" className="hover:text-purple-400 transition-colors">Roles</Link>
-            <Link href="/options" className="hover:text-purple-400 transition-colors">Mod Options</Link>
+            <Link href="/options" className="hover:text-purple-400 transition-colors">Options</Link>
             <Link href="/servers" className="hover:text-purple-400 transition-colors">Server Installation</Link>
             <Link href="/starlight" className="text-yellow-400 hover:text-yellow-200 transition-colors">Starlight</Link>
-
+            <Link href="/features" className="hover:text-purple-400 transition-colors">Features</Link>
 
             <button
               onClick={() => setOpenNews(true)}
@@ -110,12 +106,10 @@ export default function Navbar() {
         <div className={`md:hidden absolute left-1/2 transform -translate-x-1/2 w-3/4 top-16 bg-white/10 backdrop-blur-xl border border-white/30 rounded-xl flex flex-col items-center overflow-hidden transition-all duration-500 ${open ? "max-h-[500px] py-4" : "max-h-0 py-0"}`}>
           <Link href="/" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Home</Link>
           <Link href="/roles" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Roles</Link>
-          <Link href="/options" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Mod Options</Link>
+          <Link href="/options" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Options</Link>
           <Link href="/servers" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Server Installation</Link>
           <Link href="/starlight" onClick={() => setOpen(false)} className="py-2 w-full text-center text-yellow-400 hover:text-yellow-200">Starlight</Link>
-
-
-          <div className="w-full mt-2 px-4"><Search mobile /></div>
+          <Link href="/features" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Features</Link>
         </div>
       </nav>
 
