@@ -101,7 +101,7 @@ export default function Home() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold">Compatibility</h2>
           </div>
-          <p className="md:text-lg">Supports version 2025.10.14 (17.0.1) on PC.</p>
+          <p className="md:text-lg">Supports version 2025.11.18 (17.1.0) on PC.</p>
           <p className="md:text-lg mt-2">Will support Starlight in the near future.</p>
           <p className="md:text-lg mt-2">Not a host-only mod — all players must install it.</p>
           <p className="md:text-lg mt-2">Only works on private TOR-W servers (not official Among Us servers).</p>
