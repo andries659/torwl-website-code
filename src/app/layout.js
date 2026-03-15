@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "TOR-W: L",
-  description: "",
+  description: "The ofiicial TOR-W:L mod website.",
 };
 
 export default function RootLayout({ children }) {

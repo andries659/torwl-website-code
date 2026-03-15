@@ -10,7 +10,7 @@ export default function Roles() {
     {
       name: "Coroner",
       description: "Freeze bodies to make them stay.",
-      icon: <img src="/icons/Crewmate/Coroner.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Coroner.png" alt="Coroner" width="42" height="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "If you freeze a body, the body will stay forever, but can only be reported once as well.",
@@ -19,7 +19,7 @@ export default function Roles() {
     {
       name: "Sealer",
       description: "You can seal vents.",
-      icon: <img src="/icons/Crewmate/Sealer.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Sealer.png" alt="Sealer" width="42" height="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You are able to seal vents, which prevents them from being used.",
@@ -28,7 +28,7 @@ export default function Roles() {
     {
       name: "Medic",
       description: "Revive dead players.",
-      icon: <img src="/icons/Crewmate/Medic.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Medic.png" alt="Medic" width="42" height="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You have the ability to revive dead players.",
@@ -37,7 +37,7 @@ export default function Roles() {
     {
       name: "Sheriff",
       description: "Shoot the Impostor.",
-      icon: <img src="/icons/Crewmate/Sheriff.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Sheriff.png" alt="Sheriff" width="42" height="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can shoot any player, to guess if they are the Impostor. If you shoot the Impostor, you live. But if you shoot a Crewmate, you die.",
@@ -46,7 +46,7 @@ export default function Roles() {
     {
       name: "Gambler",
       description: "Guess the roles of others.",
-      icon: <img src="/icons/Crewmate/Gambler.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Gambler.png" alt="Gambler" width="42" height="42" />,
       badges: ["Crewmate", "v1.0.0"],
       video: "",
       extra: "You can guess the roles of others. When you are correct, the role is revealed, if you are wrong, you die.",
@@ -55,7 +55,7 @@ export default function Roles() {
     {
       name: "Teleporter",
       description: "Teleport across the map.",
-      icon: <img src="/icons/Crewmate/Teleporter.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Crewmate/Teleporter.png" alt="Teleporter" width="42" height="42" />,
       badges: ["Crewmate", "v1.1.0"],
       video: "",
       extra: "",
@@ -68,7 +68,7 @@ export default function Roles() {
     {
       name: "Burrower",
       description: "Can dig vents around the map.",
-      icon: <img src="/icons/Impostor/Burrower.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Impostor/Burrower.png" alt="Burrower" width="42" height="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to dig vents anywhere on the map.",
@@ -77,7 +77,7 @@ export default function Roles() {
     {
       name: "Janitor",
       description: "Can drag & hide bodies.",
-      icon: <img src="/icons/Impostor/Janitor.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Impostor/Janitor.png" alt="Janitor" width="42" height="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to drag around bodies around the map, and hide them in vents.",
@@ -86,7 +86,7 @@ export default function Roles() {
     {
       name: "Hitman",
       description: "Can slow time down and kill.",
-      icon: <img src="/icons/Impostor/Hitman.png" alt="alt" width="42" height="42" />,
+      icon: <img src="/icons/Impostor/Hitman.png" alt="Hitman" width="42" height="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to slow down the time and pick your targets.",
@@ -94,8 +94,8 @@ export default function Roles() {
     },
     {
       name: "Surgeon",
-      description: "Poison the crew to win..",
-      icon: <img src="/icons/Impostor/Surgeon.png" alt="alt" width="42" height="42" />,
+      description: "Poison the crew to win.",
+      icon: <img src="/icons/Impostor/Surgeon.png" alt="Surgeon" width="42" height="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to inject players and kill them, and if you disect the body, it's unreportable.",
@@ -104,7 +104,7 @@ export default function Roles() {
     {
       name: "Swapshifter",
       description: "Switch people around.",
-      icon: <img src="/icons/Impostor/Swapshifter.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Impostor/Swapshifter.png" alt="Swapshifter" width="42" height="42" />,
       badges: ["Impostor", "v1.0.0"],
       video: "",
       extra: "You are able to choose people to make them switch places, it also works with you.",
@@ -113,16 +113,16 @@ export default function Roles() {
     {
       name: "Silencer",
       description: "Silence players so they can not speak in the next meeting.",
-      icon: <img src="/icons/Impostor/Silencer.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Impostor/Silencer.png" alt="Silencer" width="42" height="42" />,
       badges: ["Impostor", "v2.0-f"],
       video: "",
-      extra: "Silence players, which makes it unable for hem to talk during a meeting.",
+      extra: "Silence players, which makes it unable for them to talk during a meeting.",
       imgs: []
     },
     {
       name: "Toxifier",
       description: "Toxify players to kill them, the kill does have a delay!",
-      icon: <img src="/icons/Impostor/Toxifier.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Impostor/Toxifier.png" alt="Toxifier" width="42" height="42" />,
       badges: ["Impostor", "v2.1-r"],
       video: "",
       extra: "",
@@ -131,7 +131,7 @@ export default function Roles() {
     {
       name: "Poltergeist",
       description: "Curse players to stop them from winning.",
-      icon: <img src="/icons/Impostor/Poltergeist.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Impostor/Poltergeist.png" alt="Poltergeist" width="42" height="42" />,
       badges: ["Impostor", "v2.1-r"],
       video: "",
       extra: "",
@@ -141,38 +141,34 @@ export default function Roles() {
       name: "Traitor",
       description: (
         <>
-          Act like an <span className="text-red-400 font-bold">Impostor</span>, to betray the <span className="text-red-400 font-bold">Impostor(s)</span>.
+          Act like an <span style={{ color: "#ff5f5f", fontWeight: 700 }}>Impostor</span>, to betray the <span style={{ color: "#ff5f5f", fontWeight: 700 }}>Impostor(s)</span>.
         </>
       ),
-      icon: <img src="/icons/Neutral/Traitor.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/Traitor.png" alt="Traitor" width="42" height="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "This role has no ability button or anything. A 'Target' tag will be added to the Impostor the Traitor has to vote off to win.",
       tips: "Do not try to vote out the Impostor, since it could make you the next target.\nThink like an Impostor.",
-      imgs: [
-        { src: "/screenshots/traitor.png", label: "", type: "screenshot" }
-      ]
+      imgs: [{ src: "/screenshots/traitor.png", label: "", type: "screenshot" }]
     },
     {
       name: "Executioner",
       description: "Vote out the target to win the game.",
-      icon: <img src="/icons/Neutral/Executioner.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/Executioner.png" alt="Executioner" width="42" height="42" />,
       badges: ["Neutral", "v1.1.0"],
       video: "",
       extra: "This role has no ability button or anything. A 'Target' tag will be added to a random player the Executioner has to vote off to win.",
-      tips: "Do not try to vote out your target, since it could make you the next target.\nThink like an Impostor.",
-      imgs: [
-        { src: "/screenshots/exe.png", label: "", type: "screenshot" }
-      ]
+      tips: "Do not try to vote out your target too obviously, since it could make you the next target.\nThink like an Impostor.",
+      imgs: [{ src: "/screenshots/exe.png", label: "", type: "screenshot" }]
     },
     {
       name: "Neutral Killer",
       description: "Kill players as a Neutral role to win alone.",
-      icon: <img src="/icons/Neutral/NeutralKiller.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/NeutralKiller.png" alt="Neutral Killer" width="42" height="42" />,
       badges: ["Neutral", "v1.1.1"],
       video: "",
       extra: "",
-      tips: "When trying to kill, kill like a normal Impostor would. Don\'t rush anything.\nAlso, if you kill and get caught, and get voted out, YOU\'LL LOSE.",
+      tips: "When trying to kill, kill like a normal Impostor would. Don't rush anything.\nAlso, if you kill and get caught, and get voted out, YOU'LL LOSE.",
       imgs: [
         { src: "/screenshots/nk-1.png", label: "", type: "screenshot" },
         { src: "/screenshots/nk-2.png", label: "", type: "screenshot" }
@@ -181,7 +177,7 @@ export default function Roles() {
     {
       name: "Jester",
       description: "Must fool the crew.",
-      icon: <img src="/icons/Neutral/Jester.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/Jester.png" alt="Jester" width="42" height="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Act suspicious to get ejected and win.",
@@ -190,7 +186,7 @@ export default function Roles() {
     {
       name: "Reaper",
       description: "Collect the souls.",
-      icon: <img src="/icons/Neutral/Reaper.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/Reaper.png" alt="Reaper" width="42" height="42" />,
       badges: ["Neutral", "v1.0.0"],
       video: "",
       extra: "Go around the map and collect souls from dead bodies.",
@@ -199,7 +195,7 @@ export default function Roles() {
     {
       name: "Survive",
       description: "Survive till the end.",
-      icon: <img src="/icons/Neutral/Survivor.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Neutral/Survivor.png" alt="Survivor" width="42" height="42" />,
       badges: ["Neutral", "v2.1-r"],
       video: "",
       extra: "",
@@ -208,11 +204,11 @@ export default function Roles() {
     {
       name: "Tavern Keeper",
       description: "Role Block players to stop them from using abilities.",
-      icon: <img src="/icons/Coven/TavernKeeper.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Coven/TavernKeeper.png" alt="Tavern Keeper" width="42" height="42" />,
       badges: ["Coven", "v2.0.0-r"],
       video: "",
       extra: "This role cannot win (so far). It can stop Impostors, Crewmates, or Neutrals from using their abilities for a set period of time.",
-      tips: "Try to stop the Impostors from winning. Take a wild guess, and remove the abilities from your tarhet for a set period of time.",
+      tips: "Try to stop the Impostors from winning. Take a wild guess, and remove the abilities from your target for a set period of time.",
       imgs: []
     },
   ];
@@ -221,7 +217,7 @@ export default function Roles() {
     {
       name: "Flash",
       description: "Moves faster than everyone else.",
-      icon: <img src="/icons/Universal/Flash.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Universal/Flash.png" alt="Flash" width="42" height="42" />,
       badges: ["Universal Modifier", "v1.0.0"],
       video: "/videos/flash.mp4",
       extra: "You're just a bit faster than the average player.",
@@ -231,18 +227,16 @@ export default function Roles() {
     {
       name: "VIP",
       description: "A modifier that makes you look fancy.",
-      icon: <img src="/icons/Universal/VIP.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Universal/VIP.png" alt="VIP" width="42" height="42" />,
       badges: ["Universal Modifier", "v1.0.0"],
       video: "",
       extra: "You're just there to brag how cool you look.",
-      imgs: [
-        { src: "/screenshots/vip.png", label: "", type: "screenshot" }
-      ]
+      imgs: [{ src: "/screenshots/vip.png", label: "", type: "screenshot" }]
     },
     {
       name: "Bait",
       description: "Your killer self reports when they kill you.",
-      icon: <img src="/icons/Crewmate-Mod/Bait.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Crewmate-Mod/Bait.png" alt="Bait" width="42" height="42" />,
       badges: ["Crewmate Modifier", "v1.1.1"],
       video: "",
       extra: "There is not really a use, but the use is that your killer self reports when they kill you.",
@@ -251,29 +245,25 @@ export default function Roles() {
     {
       name: "Torch",
       description: "Sees clearly in the dark.",
-      icon: <img src="/icons/Crewmate-Mod/Torch.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Crewmate-Mod/Torch.png" alt="Torch" width="42" height="42" />,
       badges: ["Crewmate Modifier", "v1.1.1"],
       video: "",
       extra: "You're given access to a torch to see when lights are down.",
-      imgs: [
-        { src: "/screenshots/torch.png", label: "", type: "screenshot" }
-      ]
+      imgs: [{ src: "/screenshots/torch.png", label: "", type: "screenshot" }]
     },
     {
       name: "Burst",
       description: "Explodes when killed.",
-      icon: <img src="/icons/Crewmate-Mod/Burst.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Crewmate-Mod/Burst.png" alt="Burst" width="42" height="42" />,
       badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "When you get killed, you explode. Killing other players in a radius set by the host.",
-      imgs: [
-        { src: "/screenshots/burst.png", label: "", type: "screenshot" }
-      ]
+      imgs: [{ src: "/screenshots/burst.png", label: "", type: "screenshot" }]
     },
     {
       name: "Mayor",
       description: "You get extra votes.",
-      icon: <img src="/icons/Crewmate-Mod/Mayor.png" alt="alt" width="42"  height="42" />,
+      icon: <img src="/icons/Crewmate-Mod/Mayor.png" alt="Mayor" width="42" height="42" />,
       badges: ["Crewmate Modifier", "v2.0-r"],
       video: "",
       extra: "You get extra votes in meetings.",
@@ -281,203 +271,471 @@ export default function Roles() {
     },
   ];
 
+  // Badge style map — uses inline CSS to stay consistent with the tor- theme
+  const badgeStyles = {
+    Crewmate:             { color: "#93c5fd", background: "rgba(59,130,246,0.15)", border: "rgba(59,130,246,0.3)" },
+    Impostor:             { color: "#fca5a5", background: "rgba(239,68,68,0.15)",  border: "rgba(239,68,68,0.3)" },
+    Neutral:              { color: "#fde68a", background: "rgba(234,179,8,0.15)",  border: "rgba(234,179,8,0.3)" },
+    Coven:                { color: "#d8b4fe", background: "rgba(168,85,247,0.15)", border: "rgba(168,85,247,0.3)" },
+    "Universal Modifier": { color: "#86efac", background: "rgba(34,197,94,0.15)", border: "rgba(34,197,94,0.3)" },
+    "Crewmate Modifier":  { color: "#7dd3fc", background: "rgba(14,165,233,0.15)", border: "rgba(14,165,233,0.3)" },
+  };
+
+  const versionStyles = {
+    "-a":  { color: "#fdba74", background: "rgba(249,115,22,0.15)",  border: "rgba(249,115,22,0.3)" },
+    "-b":  { color: "#fde68a", background: "rgba(234,179,8,0.15)",   border: "rgba(234,179,8,0.3)" },
+    "-rc": { color: "#d8b4fe", background: "rgba(168,85,247,0.15)",  border: "rgba(168,85,247,0.3)" },
+    "-r":  { color: "#86efac", background: "rgba(34,197,94,0.15)",   border: "rgba(34,197,94,0.3)" },
+    "-d":  { color: "#cbd5e1", background: "rgba(100,116,139,0.15)", border: "rgba(100,116,139,0.3)" },
+    "-t":  { color: "#93c5fd", background: "rgba(59,130,246,0.15)",  border: "rgba(59,130,246,0.3)" },
+    "-h":  { color: "#fca5a5", background: "rgba(239,68,68,0.15)",   border: "rgba(239,68,68,0.3)" },
+    "-p":  { color: "#a5b4fc", background: "rgba(99,102,241,0.15)",  border: "rgba(99,102,241,0.3)" },
+    "-u":  { color: "#67e8f9", background: "rgba(6,182,212,0.15)",   border: "rgba(6,182,212,0.3)" },
+    "-f":  { color: "#f9a8d4", background: "rgba(236,72,153,0.15)",  border: "rgba(236,72,153,0.3)" },
+    "-o":  { color: "#5eead4", background: "rgba(20,184,166,0.15)",  border: "rgba(20,184,166,0.3)" },
+    default: { color: "#a5b4fc", background: "rgba(99,102,241,0.15)", border: "rgba(99,102,241,0.3)" },
+  };
+
+  function getBadgeStyle(badge) {
+    if (badgeStyles[badge]) return badgeStyles[badge];
+    const suffix = Object.keys(versionStyles).find(s => s !== "default" && badge.endsWith(s));
+    return versionStyles[suffix] || versionStyles.default;
+  }
+
   function ItemCard({ item }) {
     const [open, setOpen] = useState(false);
     const [modalimg, setModalimg] = useState(null);
 
-    const badgeColors = {
-      Crewmate: "bg-blue-500/30 text-blue-100",
-      Impostor: "bg-red-500/30 text-red-100",
-      Neutral: "bg-yellow-500/30 text-yellow-100",
-      Coven: "bg-purple-500/30 text-purple-100",
-      "Universal Modifier": "bg-green-400/30 text-green-100",
-      "Crewmate Modifier": "bg-blue-400/30 text-blue-100",
-    };
-
-    const getBadgeColor = (badge) => {
-      if (badge.startsWith("v1")) {
-        return "bg-indigo-500/30 text-indigo-100"; // custom v1 style
-      }
-      if (badge.endsWith("-a")) {
-        return "bg-orange-500/30 text-orange-100"; // Alpha
-      }
-      if (badge.endsWith("-b")) {
-        return "bg-yellow-500/30 text-yellow-100"; // Beta
-      }
-      if (badge.endsWith("-rc")) {
-        return "bg-purple-500/30 text-purple-100"; // Release Candidate
-      }
-      if (badge.endsWith("-r")) {
-        return "bg-green-500/30 text-green-100"; // Release (stable)
-      }
-      if (badge.endsWith("-d")) {
-        return "bg-gray-500/30 text-gray-100"; // Dev
-      }
-      if (badge.endsWith("-t")) {
-        return "bg-blue-500/30 text-blue-100"; // Test
-      }
-      if (badge.endsWith("-h")) {
-        return "bg-red-600/30 text-red-100"; // Hotfix
-      }
-      if (badge.endsWith("-p")) {
-        return "bg-indigo-500/30 text-indigo-100"; // Patch
-      }
-      if (badge.endsWith("-u")) {
-        return "bg-cyan-500/30 text-cyan-100"; // Update
-      }
-      if (badge.endsWith("-f")) {
-        return "bg-pink-500/30 text-pink-100"; // Feature
-      }
-      if (badge.endsWith("-o")) {
-        return "bg-teal-500/30 text-teal-100"; // Overhaul
-      }
-      return badgeColors[badge] || "bg-gray-500/30 text-gray-100"; // fallback
-    };
-
     return (
-      <div className="p-4 md:p-5 rounded-xl bg-black/30 backdrop-blur-md shadow flex flex-col gap-3">
-        <div className="flex items-center gap-4">
-          {item.icon}
-          <div className="flex-1">
-            <h2 className="text-lg md:text-xl font-bold">{item.name}</h2>
-            <div className="flex flex-wrap gap-1 mt-1">
-              {item.badges.map((badge, i) => (
-                <span
-                  key={i}
-                  className={`text-xs md:text-sm px-2 py-0.5 rounded-full ${getBadgeColor(
-                    badge
-                  )}`}
-                >
-                  {badge}
-                </span>
-              ))}
+      <>
+        <div className="tor-role-card">
+          {/* Card header */}
+          <div className="tor-role-header">
+            <div className="tor-role-icon">{item.icon}</div>
+            <div className="tor-role-meta">
+              <h2 className="tor-role-name">{item.name}</h2>
+              <div className="tor-badge-row">
+                {item.badges.map((badge, i) => {
+                  const s = getBadgeStyle(badge);
+                  return (
+                    <span key={i} className="tor-badge" style={{ color: s.color, background: s.background, borderColor: s.border }}>
+                      {badge}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
-            <p className="mt-1 text-gray-200 text-sm md:text-base flex items-center gap-2">
-              <FaInfoCircle className="text-blue-400 flex-shrink-0" />
-              <span className="underline font-bold">Description:</span>
-            </p>
-            <p className="ml-6 text-gray-300 text-sm md:text-base">
-              {item.description}
-            </p>
           </div>
-        </div>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="mt-2 text-xs md:text-sm px-3 py-1 rounded bg-white/10 hover:bg-white/20 transition"
-        >
-          {open ? "Show Less ▲" : "Show More ▼"}
-        </button>
+          {/* Description */}
+          <div className="tor-role-desc">
+            <FaInfoCircle style={{ color: "#4eb8ff", flexShrink: 0, marginTop: 2 }} />
+            <span>{item.description}</span>
+          </div>
 
-        <div
-          className={`overflow-hidden transition-all duration-300 ${open ? "max-h-[1000px] opacity-100 mt-2" : "max-h-0 opacity-0"
-            }`}
-        >
-          <div className="p-3 bg-black/20 rounded-lg space-y-3">
+          {/* Expand toggle */}
+          <button className={`tor-expand-btn${open ? " open" : ""}`} onClick={() => setOpen(!open)}>
+            {open ? "Show Less" : "Show More"}
+            <span className="tor-expand-arrow">{open ? "▲" : "▼"}</span>
+          </button>
 
-            {/* Extra Text */}
-            {item.extra && <p className="text-sm">{item.extra}</p>}
+          {/* Expandable body */}
+          <div className={`tor-expand-body${open ? " open" : ""}`}>
+            <div className="tor-expand-inner">
+              {item.extra && <p className="tor-extra-text">{item.extra}</p>}
 
-            {/* Tips & Tricks Box */}
-            {item.tips && (
-              <div className="mt-3 p-3 bg-yellow-400/20 border border-yellow-500/40 rounded-lg flex items-start gap-3">
-                <FaLightbulb className="text-yellow-400 text-lg mt-1" />
-                <p className="text-yellow-100 text-sm">{item.tips}</p>
-              </div>
-            )}
-
-            {/* Local Video */}
-            {item.video && <video className="w-full rounded-lg" controls src={item.video} />}
-
-            {/* imgs */}
-            {item.imgs && item.imgs.length > 0 && (
-              <div className="flex flex-wrap gap-4 justify-center">
-                {item.imgs.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`flex flex-col items-center text-center ${img.type === "button" ? "w-auto" : "w-full"
-                      }`}
-                  >
-                    {/* Ability Button */}
-                    {img.type === "button" ? (
-                      <img
-                        src={img.src}
-                        alt={img.label || ""}
-                        className="w-16 h-16 object-contain rounded-md mx-auto"
-                      />
-                    ) : (
-                      /* Screenshot (modal on click) */
-                      <button
-                        type="button"
-                        className="focus:outline-none"
-                        onClick={() => setModalimg(img.src)}
-                      >
-                        <img
-                          src={img.src}
-                          alt={img.label || ""}
-                          className="w-full max-w-md h-auto object-contain rounded-lg shadow-lg"
-                        />
-                      </button>
-                    )}
-                    {img.label && <span className="text-xs mt-1">{img.label}</span>}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {modalimg && (
-              <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-                <div className="relative max-w-3xl w-full p-4">
-                  <button
-                    onClick={() => setModalimg(null)}
-                    className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-red-500 hover:text-red-700 text-xl font-bold px-3 py-1 rounded"
-                  >
-                    ✕
-                  </button>
-                  <img
-                    src={modalimg}
-                    alt="Expanded view"
-                    className="w-full h-auto rounded-lg shadow-xl"
-                  />
+              {item.tips && (
+                <div className="tor-tips-box">
+                  <FaLightbulb style={{ color: "#ffe066", fontSize: 15, flexShrink: 0, marginTop: 2 }} />
+                  <p className="tor-tips-text">{item.tips}</p>
                 </div>
-              </div>
-            )}
+              )}
+
+              {item.video && (
+                <video className="tor-video" controls src={item.video} />
+              )}
+
+              {item.imgs && item.imgs.length > 0 && (
+                <div className="tor-imgs-row">
+                  {item.imgs.map((img, i) => (
+                    <div key={i} className={`tor-img-wrap${img.type === "button" ? " tor-img-btn-wrap" : ""}`}>
+                      {img.type === "button" ? (
+                        <img src={img.src} alt={img.label || ""} className="tor-ability-btn-img" />
+                      ) : (
+                        <button type="button" className="tor-screenshot-btn" onClick={() => setModalimg(img.src)}>
+                          <img src={img.src} alt={img.label || ""} className="tor-screenshot-img" />
+                        </button>
+                      )}
+                      {img.label && <span className="tor-img-label">{img.label}</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* Image lightbox */}
+        {modalimg && (
+          <div className="tor-lightbox" onClick={() => setModalimg(null)}>
+            <div className="tor-lightbox-inner" onClick={e => e.stopPropagation()}>
+              <button className="tor-lightbox-close" onClick={() => setModalimg(null)}>✕</button>
+              <img src={modalimg} alt="Expanded view" className="tor-lightbox-img" />
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen flex flex-col items-center px-4 py-10 pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white">
-        <h1 className="text-3xl md:text-5xl font-bold mb-8">Roles & Modifiers</h1>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap');
 
-        {/* Roles Section (Only Renders If You Add Roles) */}
-        {roles.length > 0 && (
-          <section className="w-full max-w-4xl mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Roles</h2>
-            <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2">
-              {roles.map((item) => (
-                <ItemCard key={item.name} item={item} />
-              ))}
+        .tor-roles-page {
+          min-height: 100vh;
+          background: #080b14;
+          color: #f0eeff;
+          font-family: 'Syne', sans-serif;
+          position: relative;
+          overflow-x: hidden;
+        }
+
+        /* Nebulae */
+        .tor-nb1 { position: fixed; width: 600px; height: 600px; background: rgba(120,70,255,0.09); filter: blur(90px); border-radius: 50%; top: -200px; right: -100px; pointer-events: none; z-index: 0; }
+        .tor-nb2 { position: fixed; width: 450px; height: 450px; background: rgba(255,70,150,0.06); filter: blur(80px); border-radius: 50%; bottom: 10%; left: -130px; pointer-events: none; z-index: 0; }
+
+        .tor-roles-main {
+          position: relative;
+          z-index: 1;
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 100px 24px 64px;
+        }
+
+        /* Page title */
+        .tor-page-title {
+          text-align: center;
+          margin-bottom: 56px;
+        }
+        .tor-page-eyebrow {
+          display: inline-block;
+          font-family: 'Space Mono', monospace;
+          font-size: 11px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #a07bff;
+          border: 1px solid rgba(160,123,255,0.3);
+          padding: 5px 14px;
+          border-radius: 100px;
+          margin-bottom: 16px;
+        }
+        .tor-page-h1 {
+          font-size: clamp(32px, 6vw, 56px);
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          background: linear-gradient(135deg, #a07bff, #ff6eb4, #ffe066);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        /* Section heading */
+        .tor-section-heading {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 20px;
+        }
+        .tor-section-line {
+          flex: 1;
+          height: 1px;
+          background: rgba(255,255,255,0.07);
+        }
+        .tor-section-title {
+          font-size: 13px;
+          font-family: 'Space Mono', monospace;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: rgba(240,238,255,0.4);
+        }
+
+        /* Grid */
+        .tor-roles-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 14px;
+          margin-bottom: 56px;
+        }
+
+        /* Role card */
+        .tor-role-card {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 16px;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          transition: border-color 0.25s, transform 0.2s;
+        }
+        .tor-role-card:hover {
+          border-color: rgba(160,123,255,0.28);
+          transform: translateY(-2px);
+        }
+
+        .tor-role-header {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        .tor-role-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+        .tor-role-meta { flex: 1; min-width: 0; }
+        .tor-role-name {
+          font-size: 16px;
+          font-weight: 800;
+          color: #f0eeff;
+          letter-spacing: -0.01em;
+          margin-bottom: 6px;
+        }
+        .tor-badge-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+        }
+        .tor-badge {
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
+          letter-spacing: 0.06em;
+          padding: 2px 8px;
+          border-radius: 100px;
+          border: 1px solid;
+          white-space: nowrap;
+        }
+
+        /* Description */
+        .tor-role-desc {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          font-size: 13px;
+          color: rgba(240,238,255,0.65);
+          font-family: 'Space Mono', monospace;
+          line-height: 1.6;
+          padding: 10px 12px;
+          background: rgba(255,255,255,0.03);
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* Expand button */
+        .tor-expand-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 9px 14px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
+          color: rgba(240,238,255,0.5);
+          font-family: 'Space Mono', monospace;
+          font-size: 11px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .tor-expand-btn:hover,
+        .tor-expand-btn.open {
+          background: rgba(160,123,255,0.08);
+          border-color: rgba(160,123,255,0.25);
+          color: #a07bff;
+        }
+        .tor-expand-arrow { font-size: 9px; }
+
+        /* Expandable area */
+        .tor-expand-body {
+          overflow: hidden;
+          max-height: 0;
+          opacity: 0;
+          transition: max-height 0.35s ease, opacity 0.3s ease;
+        }
+        .tor-expand-body.open {
+          max-height: 1200px;
+          opacity: 1;
+        }
+        .tor-expand-inner {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          padding-top: 4px;
+        }
+
+        .tor-extra-text {
+          font-family: 'Space Mono', monospace;
+          font-size: 12px;
+          color: rgba(240,238,255,0.6);
+          line-height: 1.7;
+          padding: 12px 14px;
+          background: rgba(255,255,255,0.03);
+          border-radius: 10px;
+          border-left: 2px solid rgba(160,123,255,0.4);
+        }
+
+        .tor-tips-box {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 12px 14px;
+          background: rgba(255,224,102,0.07);
+          border: 1px solid rgba(255,224,102,0.2);
+          border-radius: 10px;
+        }
+        .tor-tips-text {
+          font-family: 'Space Mono', monospace;
+          font-size: 12px;
+          color: rgba(253,230,138,0.85);
+          line-height: 1.7;
+          white-space: pre-line;
+        }
+
+        .tor-video {
+          width: 100%;
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .tor-imgs-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+        .tor-img-wrap { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .tor-img-btn-wrap { width: auto; }
+        .tor-ability-btn-img { width: 64px; height: 64px; object-fit: contain; border-radius: 8px; }
+        .tor-screenshot-btn { border: none; background: none; cursor: pointer; width: 100%; }
+        .tor-screenshot-img {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.08);
+          transition: border-color 0.2s;
+        }
+        .tor-screenshot-img:hover { border-color: rgba(160,123,255,0.4); }
+        .tor-img-label {
+          margin-top: 4px;
+          font-family: 'Space Mono', monospace;
+          font-size: 11px;
+          color: rgba(240,238,255,0.35);
+        }
+
+        /* Lightbox */
+        .tor-lightbox {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.85);
+          backdrop-filter: blur(8px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 300;
+          padding: 20px;
+          animation: torFadeIn 0.2s ease;
+        }
+        @keyframes torFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .tor-lightbox-inner {
+          position: relative;
+          max-width: 860px;
+          width: 100%;
+        }
+        .tor-lightbox-close {
+          position: absolute;
+          top: -14px;
+          right: -14px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.1);
+          border: 1px solid rgba(255,255,255,0.15);
+          color: #f0eeff;
+          font-size: 14px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s;
+          z-index: 1;
+        }
+        .tor-lightbox-close:hover { background: rgba(255,95,95,0.3); }
+        .tor-lightbox-img {
+          width: 100%;
+          height: auto;
+          border-radius: 14px;
+          border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 600px) {
+          .tor-roles-main { padding: 88px 14px 48px; }
+          .tor-roles-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
+
+      <div className="tor-roles-page">
+        <div className="tor-nb1" />
+        <div className="tor-nb2" />
+
+        <Navbar />
+
+        <main className="tor-roles-main">
+          {/* Page title */}
+          <div className="tor-page-title">
+            <div className="tor-page-eyebrow">TOR-W : L</div>
+            <h1 className="tor-page-h1">Roles & Modifiers</h1>
+          </div>
+
+          {/* Roles */}
+          {roles.length > 0 && (
+            <section>
+              <div className="tor-section-heading">
+                <div className="tor-section-line" />
+                <span className="tor-section-title">Roles</span>
+                <div className="tor-section-line" />
+              </div>
+              <div className="tor-roles-grid">
+                {roles.map(item => <ItemCard key={item.name} item={item} />)}
+              </div>
+            </section>
+          )}
+
+          {/* Modifiers */}
+          <section>
+            <div className="tor-section-heading">
+              <div className="tor-section-line" />
+              <span className="tor-section-title">Modifiers</span>
+              <div className="tor-section-line" />
+            </div>
+            <div className="tor-roles-grid">
+              {modifiers.map(item => <ItemCard key={item.name} item={item} />)}
             </div>
           </section>
-        )}
 
-        {/* Modifiers Section */}
-        <section className="w-full max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">Modifiers</h2>
-          <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2">
-            {modifiers.map((item) => (
-              <ItemCard key={item.name} item={item} />
-            ))}
-          </div>
-        </section>
-        <br></br>
-        <Footer />
-      </main>
+          <Footer />
+        </main>
+      </div>
     </>
   );
 }

@@ -9,110 +9,265 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openNews, setOpenNews] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     let intervalId;
-
     async function checkNews() {
       try {
         const res = await fetch("/news/news.json");
         let data = await res.json();
-
-        // Sort by id descending (highest id first)
         data.sort((a, b) => b.id - a.id);
-
         const seen = JSON.parse(localStorage.getItem("seenNews") || "[]");
-        const unreadExists = data.some(item => !seen.includes(item.id));
-        setHasUnread(unreadExists);
+        setHasUnread(data.some((item) => !seen.includes(item.id)));
       } catch (err) {
         console.error("Failed to fetch news:", err);
       }
     }
-
-    // Initial check
     checkNews();
-
-    // Poll every 10 seconds (adjust as needed)
     intervalId = setInterval(checkNews, 10000);
-
-    // Cleanup on unmount
     return () => clearInterval(intervalId);
   }, []);
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/roles", label: "Roles" },
+    { href: "/options", label: "Options" },
+    { href: "/servers", label: "Servers" },
+    { href: "/features", label: "Features" },
+  ];
+
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50">
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-md border-b border-white/20" />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Space+Mono&display=swap');
 
+        .tor-nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          z-index: 100;
+          transition: background 0.3s, border-color 0.3s;
+        }
+        .tor-nav.scrolled {
+          background: rgba(8, 11, 20, 0.88);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .tor-nav:not(.scrolled) {
+          background: transparent;
+          border-bottom: 1px solid transparent;
+        }
 
-        <div className="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+        /* Inner row — full width, padded on both sides */
+        .tor-nav-inner {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0 24px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
 
+        .tor-logo {
+          font-family: 'Syne', sans-serif;
+          font-size: 20px;
+          font-weight: 800;
+          letter-spacing: 0.05em;
+          background: linear-gradient(90deg, #a07bff, #ff6eb4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-decoration: none;
+          flex-shrink: 0;
+        }
 
-          <Link href="/" className="text-2xl font-bold text-white">TOR-W: L</Link>
+        /* Desktop links */
+        .tor-nav-links {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .tor-nav-links a,
+        .tor-nav-btn {
+          font-family: 'Space Mono', monospace;
+          font-size: 12px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: rgba(240,238,255,0.55);
+          text-decoration: none;
+          padding: 6px 12px;
+          border-radius: 8px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          transition: color 0.2s, background 0.2s;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          white-space: nowrap;
+        }
+        .tor-nav-links a:hover,
+        .tor-nav-btn:hover {
+          color: #f0eeff;
+          background: rgba(255,255,255,0.05);
+        }
+        .tor-nav-links a.starlight { color: #ffe066; }
+        .tor-nav-links a.starlight:hover { background: rgba(255,224,102,0.08); }
 
+        .tor-news-btn { position: relative; }
+        .tor-unread-dot {
+          position: absolute;
+          top: 4px;
+          right: 6px;
+          width: 7px;
+          height: 7px;
+          background: #ff5f5f;
+          border-radius: 50%;
+          box-shadow: 0 0 6px #ff5f5f;
+          pointer-events: none;
+        }
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex gap-6 text-white items-center">
-            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-            <Link href="/roles" className="hover:text-purple-400 transition-colors">Roles</Link>
-            <Link href="/options" className="hover:text-purple-400 transition-colors">Options</Link>
-            <Link href="/servers" className="hover:text-purple-400 transition-colors">Server Installation</Link>
-            <Link href="/starlight" className="text-yellow-400 hover:text-yellow-200 transition-colors">Starlight</Link>
-            <Link href="/features" className="hover:text-purple-400 transition-colors">Features</Link>
+        /* Mobile controls — hidden on desktop */
+        .tor-mobile-controls {
+          display: none;
+          align-items: center;
+          gap: 8px;
+        }
+        .tor-mobile-news-btn {
+          position: relative;
+          width: 38px;
+          height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 8px;
+          background: rgba(255,255,255,0.04);
+          color: rgba(240,238,255,0.6);
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .tor-hamburger {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          width: 38px;
+          height: 38px;
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 8px;
+          background: rgba(255,255,255,0.04);
+          cursor: pointer;
+        }
+        .tor-hamburger span {
+          display: block;
+          width: 18px;
+          height: 1.5px;
+          background: white;
+          transition: all 0.3s;
+          transform-origin: center;
+        }
+        .tor-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .tor-hamburger.open span:nth-child(2) { opacity: 0; }
+        .tor-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-            <button
-              onClick={() => setOpenNews(true)}
-              className="relative hover:text-blue-300 transition-colors flex items-center"
-            >
-              <FaNewspaper className="mr-1" /> News
+        /* Mobile dropdown — full width, flush edges */
+        .tor-mobile-menu {
+          width: 100%;
+          box-sizing: border-box;
+          background: rgba(13,17,32,0.97);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border-top: 1px solid rgba(255,255,255,0.07);
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.4s ease;
+        }
+        .tor-mobile-menu.open {
+          max-height: 420px;
+        }
+        .tor-mobile-menu-inner {
+          padding: 8px 16px 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .tor-mobile-menu a {
+          display: block;
+          padding: 12px 16px;
+          font-family: 'Space Mono', monospace;
+          font-size: 13px;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: rgba(240,238,255,0.65);
+          text-decoration: none;
+          border-radius: 10px;
+          transition: background 0.2s, color 0.2s;
+        }
+        .tor-mobile-menu a:hover { background: rgba(255,255,255,0.05); color: #f0eeff; }
+        .tor-mobile-menu a.starlight { color: #ffe066; }
+        .tor-mobile-menu a.starlight:hover { background: rgba(255,224,102,0.08); }
 
+        @media (max-width: 768px) {
+          .tor-nav-links { display: none; }
+          .tor-mobile-controls { display: flex; }
+          .tor-nav-inner { padding: 0 16px; }
+        }
+      `}</style>
 
-              {hasUnread && (
-                <span className="absolute -top-1 -right-2 w-3 h-3 bg-red-500 rounded-full"></span>
-              )}
+      <nav className={`tor-nav${scrolled ? " scrolled" : ""}`}>
+        <div className="tor-nav-inner">
+          <Link href="/" className="tor-logo">TOR-W : L</Link>
+
+          {/* Desktop — hidden on mobile */}
+          <div className="tor-nav-links">
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href}>{label}</Link>
+            ))}
+            <Link href="/starlight" className="starlight">✦ Starlight</Link>
+            <button className="tor-nav-btn tor-news-btn" onClick={() => setOpenNews(true)}>
+              <FaNewspaper />
+              News
+              {hasUnread && <span className="tor-unread-dot" />}
             </button>
           </div>
 
-
-          {/* Mobile */}
-          <div className="md:hidden flex items-center gap-3 relative">
-            <button
-              onClick={() => setOpenNews(true)}
-              className="relative w-10 h-10 flex justify-center items-center border border-white/30 rounded-md backdrop-blur-md text-white text-xl"
-            >
+          {/* Mobile — hidden on desktop */}
+          <div className="tor-mobile-controls">
+            <button className="tor-mobile-news-btn" onClick={() => setOpenNews(true)}>
               <FaNewspaper />
-
-
-              {hasUnread && (
-                <span className="absolute top-1 right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-              )}
+              {hasUnread && <span className="tor-unread-dot" />}
             </button>
-
-
-            {/* Hamburger */}
             <button
+              className={`tor-hamburger${open ? " open" : ""}`}
               onClick={() => setOpen(!open)}
-              className="relative w-10 h-10 flex flex-col justify-center items-center p-2 border border-white/30 backdrop-blur-md rounded-md"
             >
-              <span className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ${open ? "rotate-45" : "-translate-y-2"}`} />
-              <span className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-              <span className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ${open ? "-rotate-45" : "translate-y-2"}`} />
+              <span /><span /><span />
             </button>
           </div>
         </div>
 
-
-        {/* Mobile dropdown */}
-        <div className={`md:hidden absolute left-1/2 transform -translate-x-1/2 w-3/4 top-16 bg-white/10 backdrop-blur-xl border border-white/30 rounded-xl flex flex-col items-center overflow-hidden transition-all duration-500 ${open ? "max-h-[500px] py-4" : "max-h-0 py-0"}`}>
-          <Link href="/" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Home</Link>
-          <Link href="/roles" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Roles</Link>
-          <Link href="/options" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Options</Link>
-          <Link href="/servers" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Server Installation</Link>
-          <Link href="/starlight" onClick={() => setOpen(false)} className="py-2 w-full text-center text-yellow-400 hover:text-yellow-200">Starlight</Link>
-          <Link href="/features" onClick={() => setOpen(false)} className="text-white py-2 w-full text-center hover:text-purple-400">Features</Link>
+        {/* Mobile dropdown — full width, no floating */}
+        <div className={`tor-mobile-menu${open ? " open" : ""}`}>
+          <div className="tor-mobile-menu-inner">
+            {navLinks.map(({ href, label }) => (
+              <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>
+            ))}
+            <Link href="/starlight" className="starlight" onClick={() => setOpen(false)}>✦ Starlight</Link>
+          </div>
         </div>
       </nav>
-
 
       {openNews && <NewsModal onClose={() => setOpenNews(false)} />}
     </>
