@@ -7,23 +7,21 @@ import { FaCog, FaWindows, FaMobileAlt, FaDownload, FaExternalLinkAlt, FaShieldA
 
 export default function ServerInstallation() {
   const moddedServers = [
-    { name: "Modded EU",   region: "EU",   href: "amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false" },
-    { name: "Modded NA",   region: "NA",   href: "amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Fau-us.duikbo.at&usedtls=false" },
-    { name: "Modded Asia", region: "ASIA", href: "amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false" },
+    { name: "Modded EU",   region: "EU",   href: "window.location.href='amongus://init?servername=Modded_EU&serverport=443&serverip=https%3A%2F%2Fau-eu.duikbo.at&usedtls=false'" },
+    { name: "Modded NA",   region: "NA",   href: "window.location.href='amongus://init?servername=Modded_NA&serverport=443&serverip=https%3A%2F%2Faumods.org&usedtls=false'" },
+    { name: "Modded Asia", region: "AS", href: "window.location.href='amongus://init?servername=Modded_AS&serverport=443&serverip=https%3A%2F%2Fau-as.duikbo.at&usedtls=false'" },
   ];
 
   const nikoServers = [
-    { name: "NikoCat EU",   region: "EU",   href: "amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.me&usedtls=false" },
-    { name: "NikoCat NA",   region: "NA",   href: "amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.me&usedtls=false" },
-    { name: "NikoCat Asia", region: "ASIA", href: "amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.me&usedtls=false" },
-    { name: "NikoCat CN",   region: "CN",   href: "amongus://init?servername=Niko233(CN)&serverport=443&serverip=https%3A%2F%2Fau-cn.niko233.me&usedtls=false" },
+    { name: "NikoCat EU",   region: "EU",   href: "window.location.href='amongus://init?servername=Niko233(EU)&serverport=443&serverip=https%3A%2F%2Fau-eu.niko233.top&usedtls=false'" },
+    { name: "NikoCat NA",   region: "NA",   href: "window.location.href='amongus://init?servername=Niko233(NA)&serverport=443&serverip=https%3A%2F%2Fau-us.niko233.top&usedtls=false'" },
+    { name: "NikoCat Asia", region: "AS", href: "window.location.href='amongus://init?servername=Niko233(AS)&serverport=443&serverip=https%3A%2F%2Fau-as.niko233.top&usedtls=false'" },
   ];
 
   const regionColors = {
     EU:   { color: "#7dd3fc", bg: "rgba(14,165,233,0.12)",  border: "rgba(14,165,233,0.3)"  },
     NA:   { color: "#86efac", bg: "rgba(34,197,94,0.12)",   border: "rgba(34,197,94,0.3)"   },
-    ASIA: { color: "#fdba74", bg: "rgba(249,115,22,0.12)",  border: "rgba(249,115,22,0.3)"  },
-    CN:   { color: "#f9a8d4", bg: "rgba(236,72,153,0.12)",  border: "rgba(236,72,153,0.3)"  },
+    AS:   { color: "#fdba74", bg: "rgba(249,115,22,0.12)",  border: "rgba(249,115,22,0.3)"  },
   };
 
   return (
@@ -289,7 +287,7 @@ export default function ServerInstallation() {
               </div>
             </div>
             <div style={{ textAlign: "center" }}>
-              <a href="/server/Setup_Custom_Server.bat" download className="tor-dl-btn">
+              <a href="https://au.niko233.top/Setup_Custom_Server.bat" download className="tor-dl-btn">
                 <FaDownload style={{ fontSize: 14 }} />
                 Download .bat Installer
               </a>

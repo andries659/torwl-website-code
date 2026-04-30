@@ -41,6 +41,7 @@ export default function Navbar() {
     { href: "/options", label: "Options" },
     { href: "/servers", label: "Servers" },
     { href: "/features", label: "Features" },
+    { href: "/guide", label: "Guide" },
   ];
 
   return (
